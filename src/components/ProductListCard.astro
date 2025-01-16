@@ -1,0 +1,43 @@
+---
+import ImgWrap from "./basic/ImgWrap.astro";
+
+export type TProductListCardData = {
+		brand: string;
+		imgSrc: string;
+		sizes?: Array<string | number>;
+		title: string;
+		price: string;
+		priceWithDiscount: string;
+		discount: string;
+	};
+interface Props {
+	className?: string;
+	type?: "storefront";
+	data: TProductListCardData;
+}
+
+const { className, data, type } = Astro.props;
+---
+<a class:list={["product-list-card", className, type === "storefront" && "product-list-card_storefront"]}>
+	<div class="product-list-card__top">
+		<ImgWrap className="product-list-card__img">
+			<img src={data.imgSrc || "img/product.webp"} alt="Product">
+		</ImgWrap>
+		{ data.sizes &&
+			<div class="product-list-card__sizes">
+				{data.sizes?.map(size => <div class="product-list-card__size-item">{size}</div>)}
+			</div>
+		}
+	</div>
+	<div class="product-list-card__info">
+		<div class="product-list-card__brand">Doucal's</div>
+		<h3 class="product-list-card__title">Жіночі утеплені лофери з натуральної шкіри</h3>
+		<div class="product-list-card__footer">
+			<div class="product-list-card__price">
+				<div class="product-list-card__full-price product-list-card__full-price_discount">22 090</div>
+				<div class="product-list-card__discount-price">16 788 ₴</div>
+			</div>
+			<div class="product-list-card__discount">-30%</div>
+		</div>
+	</div>
+</a>

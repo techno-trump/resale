@@ -1,0 +1,156 @@
+---
+import ImgWrap from '../components/basic/ImgWrap.astro';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="ReSale Cabinet" description="Cabinet">
+	<div class="cabinet section-space-bottom">
+		<div class="container cabinet__container">
+			<div class="cabinet__header">
+				<nav aria-label="Breadcrumb" class="breadcrumbs tg-breadcrumbs cabinet__breadcrumbs">
+					<a href="/" class="breadcrumbs__item text-link">Главная</a>
+					<span class="breadcrumbs__separator">›</span>
+					<span class="breadcrumbs__item breadcrumb__item_active">Одежда</span>
+				</nav>
+			</div>
+			<aside class="cabinet__sidebar cabinet-sidebar">
+				<div class="cabinet-sidebar__inner">
+					<nav class="cabinet-sidebar__body">
+						<ul class="cabinet-sidebar__list">
+							<li class="cabinet-sidebar__item">
+								<a href="/my-goods" class="cabinet-sidebar__link btn btn_rect">
+									<span class="icon-clapper cabinet-sidebar__icon btn__icon"></span>
+									Мої товари
+								</a>
+							</li>
+							<li class="cabinet-sidebar__item">
+								<a href="/sales" class="cabinet-sidebar__link btn btn_rect">
+									<span class="cabinet-sidebar__icon btn__icon icon-uah"></span>
+									Продажі
+								</a>
+							</li>
+							<li class="cabinet-sidebar__item">
+								<a href="/orders" class="cabinet-sidebar__link btn btn_rect">
+									<span class="cabinet-sidebar__icon btn__icon icon-return"></span>
+									Оформлені повернення
+								</a>
+							</li>
+						</ul>
+						<ul class="cabinet-sidebar__list">
+							<li class="cabinet-sidebar__item">
+								<a href="/profile" class="cabinet-sidebar__link cabinet-sidebar__link_active btn btn_rect">
+									<span class="cabinet-sidebar__icon btn__icon icon-person"></span>
+									Мій профіль
+								</a>
+							</li>
+							<li class="cabinet-sidebar__item">
+								<a href="/payment-info" class="cabinet-sidebar__link btn btn_rect">
+									<span class="cabinet-sidebar__icon btn__icon icon-paycard"></span>
+									Платіжна інформація
+								</a>
+							</li>
+							<li class="cabinet-sidebar__item">
+								<a href="/addresses" class="cabinet-sidebar__link btn btn_rect">
+									<span class="cabinet-sidebar__icon btn__icon icon-map-pin"></span>
+									Мої адреси
+								</a>
+							</li>
+							<li class="cabinet-sidebar__item">
+								<a href="/navigation" class="cabinet-sidebar__link btn btn_rect">
+									<span class="cabinet-sidebar__icon btn__icon icon-settings"></span>
+									Налаштування
+								</a>
+							</li>
+							<li class="cabinet-sidebar__item">
+								<a href="/feedback" class="cabinet-sidebar__link btn btn_rect">
+									<span class="cabinet-sidebar__icon btn__icon icon-headphones"></span>
+									Зворотній зв'язок
+								</a>
+							</li>
+							<li class="cabinet-sidebar__item">
+								<a href="/logout" class="cabinet-sidebar__link btn btn_rect">
+									<span class="cabinet-sidebar__icon btn__icon icon-logout"></span>
+									Вихід
+								</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</aside>
+			<h1 class="cabinet__title tg-page-title">Мій профіль</h1>
+			<!-- Main content -->
+			<div class="cabinet__body">
+				<div class="cabinet__section">
+					<!-- Stats cards -->
+					<div class="cabinet__dashboard cabinet-dashboard">
+						<div class="cabinet-dashboard__card cabinet-dashboard-card">
+							<span class="cabinet-dashboard-card__icon icon-several-things"></span>
+							<span class="cabinet-dashboard-card__label">На сайті</span>
+							<span class="cabinet-dashboard-card__value">12</span>
+						</div>
+						<div class="cabinet-dashboard__card cabinet-dashboard-card">
+							<span class="cabinet-dashboard-card__icon icon-shopper-small"></span>
+							<span class="cabinet-dashboard-card__label">Покупки</span>
+							<span class="cabinet-dashboard-card__value">4</span>
+						</div>
+						<div class="cabinet-dashboard__card cabinet-dashboard-card">
+							<span class="cabinet-dashboard-card__icon icon-cart-small"></span>
+							<span class="cabinet-dashboard-card__label">Продажі</span>
+							<span class="cabinet-dashboard-card__value">55</span>
+						</div>
+						<div class="cabinet-dashboard__card cabinet-dashboard-card">
+							<span class="cabinet-dashboard-card__icon icon-uah-in-circle"></span>
+							<span class="cabinet-dashboard-card__label">Сумма продажів</span>
+							<span class="cabinet-dashboard-card__value">11 300 ₴</span>
+						</div>
+					</div>
+				</div>
+				<!-- Profile form -->
+				<form class="cabinet__form">
+					<div class="cabinet__section">
+						<h2 class="cabinet__section-title">Основні дані</h2>
+						
+						<div class="cabinet__form-body">
+							<div class="form-field">
+								<label class="form-field__label">Ім'я</label>
+								<input type="text" class="form-field__input" placeholder="Введіть ім'я" required>
+							</div>
+							<div class="form-field">
+								<label class="form-field__label">Прізвище</label>
+								<input type="text" class="form-field__input" placeholder="Введіть прізвище">
+							</div>
+							<div class="form-field">
+								<label class="form-field__label">Номер телефону</label>
+								<input type="tel" class="form-field__input" placeholder="Введіть номер телефону">
+							</div>
+							<div class="form-field">
+								<label class="form-field__label">E-mail</label>
+								<input type="email" class="form-field__input" placeholder="Введіть пошту">
+							</div>
+						</div>
+					</div>
+					<div class="cabinet__section">
+						<h2 class="cabinet__section-title">Пароль</h2>
+						<div class="cabinet__form-body">
+							<div class="form-field form-field_span-2">
+								<label class="form-field__label">Старий пароль</label>
+								<input type="password" class="form-field__input" placeholder="Введіть пароль">
+							</div>
+							<div class="form-field">
+								<label class="form-field__label">Новий пароль</label>
+								<input type="password" class="form-field__input" placeholder="Введіть пароль">
+							</div>
+							<div class="form-field">
+								<label class="form-field__label">Повторіть новий пароль</label>
+								<input type="password" class="form-field__input" placeholder="Введіть пароль">
+							</div>
+						</div>
+					</div>
+					<div class="cabinet__section">
+						<button type="submit" class="btn btn_rect btn_primary cabinet__submit">Зберегти зміни</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</Layout>

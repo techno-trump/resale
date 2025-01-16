@@ -1,0 +1,31 @@
+---
+import ImgWrap from './basic/ImgWrap.astro';
+export type TSearchResultData = {
+		brand: string;
+		title: string;
+		price: string;
+		priceWithDiscount: string;
+		discount: string;
+	};
+interface Props {
+	className?: string;
+	data: TSearchResultData;
+}
+
+const { className, data } = Astro.props;
+---
+
+<a href="" class="search-results-card">
+	<ImgWrap className="search-results-card__img">
+		<img src="img/search-result.webp" title={`${data.brand} ${data.title}`} alt={`${data.brand} ${data.title}`} />
+	</ImgWrap>
+	<div class="search-results-card__info">
+		<div class="search-results-card__brand">{data.brand}</div>
+		<h6 class="search-results-card__title">{data.title}</h6>
+		<div class="search-results-card__price">
+			<div class="search-results-card__full-price">{data.price}</div>
+			<div class="search-results-card__with-discount">{data.priceWithDiscount}</div>
+		</div>
+		<div class="search-results-card__discount">{data.discount}</div>
+	</div>
+</a>

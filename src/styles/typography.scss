@@ -1,0 +1,118 @@
+@use "./config.scss" as config;
+.tg-regular {
+	font-size: 18px;
+	font-weight: 500;
+	line-height: 1.3;
+	@media (max-width: config.$mbpT) {
+		font-size: 14px;
+	}
+}
+.tg-h1 {
+	font-size: 66px;
+	font-weight: 600;
+	line-height: 1.3;
+	@media (max-width: config.$mbpT) {
+		font-size: 36px;
+		font-weight: 600;
+		line-height: 22px;
+		letter-spacing: 0.03em;
+	}
+	@media (max-width: config.$mbpM) {
+		font-size: 22px;
+		font-weight: 600;
+		line-height: 26.4px;
+		letter-spacing: 0.05em;
+	}
+}
+.tg-h2 {
+	font-size: 34px;
+	font-weight: 700;
+	line-height: 44.2px;
+	@media (max-width: config.$mbpT) {
+		font-size: 24px;
+		line-height: 22px;
+	}
+}
+.tg-h3 {
+	font-size: 32px;
+	font-weight: 600;
+	line-height: 44.8px;
+	@media (max-width: config.$mbpT) {
+		font-size: 24px;
+		line-height: 22px;
+	}
+	@media (max-width: config.$mbpM) {
+		font-size: 22px;
+	}
+}
+.tg-h4 {
+	font-size: 24px;
+	font-weight: 600;
+	line-height: 31.2px;
+	@media (max-width: config.$mbpT) {
+		font-size: 20px;
+		line-height: 22px;
+	}
+	@media (max-width: config.$mbpM) {
+		font-size: 16px;
+		line-height: 22px;
+		letter-spacing: 0.01em;
+	}
+}
+.tg-h5 {
+	font-size: 20px;
+	font-weight: 600;
+	line-height: 22px;
+	@media (max-width: config.$mbpT) {
+		font-size: 16px;
+		line-height: 22px;
+	}
+}
+.tg-h6 {
+	font-size: 18px;
+	font-weight: 600;
+	line-height: 22px;
+	letter-spacing: 0.05em;
+	@media (max-width: config.$mbpT) {
+		font-size: 12px;
+	}
+}
+.tg-section-title {
+	font-size: 34px;
+	font-weight: 700;
+	line-height: 1.3;
+	@media (max-width: config.$mbpT) {
+		font-size: 24px;
+	}
+	@media (max-width: config.$mbpM) {
+		font-size: 22px;
+	}
+}
+.tg-breadcrumbs {
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 1.3;
+	@media (max-width: config.$mbpM) {
+		font-size: 12px;
+	}
+}
+.tg-page-title {
+	font-size: 34px;
+	font-weight: 700;
+	line-height: 1.3;
+	@media (max-width: config.$mbpM) {
+		font-size: 26px;
+	}
+}
+.text-light {
+	opacity: 0.7;
+}
+.tg-product-info {
+	color: var(--color, #858585);
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 1.3;
+	@media (max-width: config.$mbpT) {
+		font-weight: 400;
+	}
+}

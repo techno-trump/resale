@@ -1,0 +1,19 @@
+---
+interface Props {
+	checkboxClassName?: string;
+	className?: string;
+	name: string;
+	form?: string;
+	checked?: boolean;
+	id?: string;
+}
+
+const { className, checkboxClassName, id, form, name, checked } = Astro.props;
+---
+
+<span class:list={["cm-checkbox", className]}>
+	<input id={id} type="checkbox" form={form} name={name} checked={checked} class:list={["cm-checkbox__input", checkboxClassName]}>
+	<span class="cm-checkbox__body">
+		<span class="icon-check-arrow cm-checkbox__arrow"></span>
+	</span>
+</span>

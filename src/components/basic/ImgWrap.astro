@@ -1,0 +1,13 @@
+---
+interface Props {
+	className?: string;
+	cover?: boolean;
+}
+
+const { className, cover } = Astro.props;
+---
+<div class:list={["img-wrap", className, cover && "img-wrap_cover"]}>
+	<div class="img-wrap__inner">
+		<slot class="img-wrap__item"/>
+	</div>
+</div>

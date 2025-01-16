@@ -1,0 +1,15 @@
+{
+  "extends": "astro/tsconfigs/strict",
+	"compilerOptions": {
+    "target": "es5", // или другой уровень совместимости
+    "module": "esnext", // или commonjs, в зависимости от вашего проекта
+    "strict": true, // Включение строгого режима
+		"noEmit": false,
+		"allowImportingTsExtensions": false,
+		"baseUrl": ".",
+		"paths": {
+			"img/*": ["public/img/*"]
+		}
+  },
+  "include": ["src/**/*", "public/**/*"]
+}

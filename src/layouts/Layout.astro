@@ -1,0 +1,46 @@
+---
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+
+interface Props {
+	title: string;
+	description: string;
+	empty?: boolean;
+}
+
+const { title, description, empty = false } = Astro.props;
+
+const mode = import.meta.env.MODE;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<style is:inline>
+			@import url(https://fonts.googleapis.com/css?family=Inter+Tight:regular,500,600,700,500italic&display=swap);
+			@import url(https://fonts.googleapis.com/css?family=Lato:regular,700&display=swap);
+			@import url(https://fonts.googleapis.com/css?family=Mukta+Malar:regular&display=swap);
+			@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:700&display=swap);
+		</style>
+		{mode === "production" && <link rel="stylesheet" href="./assets/main.css" />}
+		<!-- <link rel="stylesheet" href="./libs/jquery.fancybox.min.css" /> -->
+		<script is:inline src="https://cdn.jsdelivr.net/npm/vanilla-drawers@1.1.21/dist/drawers.umd.js" type="module"></script>
+		<script is:inline src="./libs/fslightbox.js" defer></script>
+		<!-- <script is:inline src="./libs/jquery.fancybox.min.js" defer></script> -->
+		<script is:inline src="./assets/main.js" type="module"></script>
+		<title>{title}</title>
+	</head>
+	<body class="tg-regular">
+		{empty ? null : <Header></Header>}
+		<main>
+			<slot />
+		</main>
+		{empty ? null : <Footer></Footer>}
+		<slot name="drawers" />
+	</body>
+</html>

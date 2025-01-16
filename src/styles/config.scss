@@ -1,0 +1,24 @@
+@use "./mixins.scss" as mixins;
+// Брейк-поинты без единиц измерения
+// Up to
+$mbpFullHdNu: 1920; // FullHd
+$mbpPCNu: 1440; // PC
+$mbpFooterCollapseNu: 1300; // PC
+$mbpTNu: 1024; // Tablets, laptops
+$mbpMNu: 768; // Mobile
+$mbpMMNu: 520; // Medium Mobile
+$mbpSMNu: 360; // Small Mobile
+$mbpESMNu: 320; // Extra Small Mobile
+$mbpNanoNu: 280; // Nano (половинка Samsung Galaxy Fold)
+
+// Брейк-поинты
+// Up to
+$mbpFullHd: mixins.px($mbpFullHdNu);
+$mbpPC: mixins.px($mbpPCNu); // PC
+$mbpFooterCollapse: mixins.px($mbpFooterCollapseNu); // PC
+$mbpT: mixins.px($mbpTNu); // Tablets, laptops
+$mbpM: mixins.px($mbpMNu); // Mobile
+$mbpMM: mixins.px($mbpMMNu); // Medium Mobile
+$mbpSM: mixins.px($mbpSMNu); // Small Mobile
+$mbpESM: mixins.px($mbpESMNu); // Extra Small Mobile
+$mbpNano: mixins.px($mbpNanoNu); // Extra Small Mobile

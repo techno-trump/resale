@@ -1,0 +1,64 @@
+---
+import ImgWrap from '../components/basic/ImgWrap.astro';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="ReSale Feedbacks" description="Feedbacks">
+	<div class="feedbacks">
+		<div class="container feedbacks__container">
+			<div class="feedbacks__header page-header">
+				<nav aria-label="Breadcrumb" class="breadcrumbs tg-breadcrumbs page-header__breadcrumbs">
+					<a href="/" class="breadcrumbs__item text-link">Главная</a>
+					<span class="breadcrumbs__separator">›</span>
+					<span class="breadcrumbs__item breadcrumb__item_active">Відгуки клієнтів</span>
+				</nav>
+				<h1 class="tg-page-title page-header__title">Відгуки клієнтів</h1>
+			</div>
+		</div>
+		
+		<div class="feedbacks__body section-space-bottom feedbacks-slider" data-component=":feedbacks-slider:">
+			<div class="container feedbacks__container">
+				<div class="feedbacks-slider__body">
+					{
+						Array(5).fill({}).map(item => 
+							<div class="feedback-art-card">
+								<ImgWrap className='feedback-art-card__bg'>
+									<img src="img/feedback-bg.webp" alt="DiForte Emporio Armani Store">
+								</ImgWrap>
+								<div class="feedback-art-card__wrap">
+									<div class="feedback-art-card__inner">
+										<div class="feedback-art-card__header">
+											<img src="img/logo.svg"class="feedback-art-card__logo" alt="ReSale Logo" title="ReSale">
+										</div>
+										<div class="feedback-art-card__from">Наталья</div>
+										<div class="feedback-art-card__date">
+											<div class="feedback-art-card__date-icon icon-calendar"></div>
+											18 января 2022
+										</div>
+										<div class="feedback-art-card__text">Отличный магазин! Купила себе пуховик,а мужу джинсы!Очень приятные скидки))Большое спасибо консультанту Юле, оперативно предоставила всю интересующую информацию,также быстро отправили заказ!Мои самые наилучшие рекомендации магазину DiForte!!!</div>
+										<div class="feedback-art-card__images">
+											<ImgWrap className='feedback-art-card__img'>
+												<img src="img/feedback-img_01.webp" alt="Feedback Img">
+											</ImgWrap>
+											<ImgWrap className='feedback-art-card__img'>
+												<img src="img/feedback-img_02.webp" alt="Feedback Img">
+											</ImgWrap>
+										</div>
+										<div class="feedback-art-card__stars rate-stars">
+											<span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span>
+										</div>
+										<div class="feedback-art-card__rate">5.0</div>
+									</div>
+								</div>
+							</div>
+						)
+					}
+				</div>
+				<div class="feedbacks-slider__footer">
+					<button type="button" class="btn btn_rect btn_slider feedbacks-slider__prev-btn"><span class="icon-small-arrow-left btn__icon"></span></button>
+					<button type="button" class="btn btn_rect btn_slider feedbacks-slider__next-btn"><span class="icon-small-arrow-right btn__icon"></span></button>
+				</div>
+			</div>
+		</div>
+	</div>
+</Layout>

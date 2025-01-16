@@ -1,0 +1,10 @@
+---
+interface Props {
+	className?: string;
+	tel?: string;
+	label?: string;
+}
+
+const { className, tel, label } = Astro.props;
+---
+<a href={`tel:${tel ? tel : "+380980000000"}`} class:list={["text-link", className]}>{label ? label : "+38 098 000-00-00"}</a>

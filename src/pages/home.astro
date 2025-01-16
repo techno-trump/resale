@@ -1,0 +1,104 @@
+---
+import ImgWrap from '../components/basic/ImgWrap.astro';
+import Layout from '../layouts/Layout.astro';
+
+const categories = [
+		{ src: "img/home/cat-01.webp", alt: "Category 1", label: "ОДЯГ" },
+		{ src: "img/home/cat-02.webp", alt: "Category 2", label: "ВЗУТТЯ" },
+		{ src: "img/home/cat-03.webp", alt: "Category 3", label: "СУМКИ" },
+		{ src: "img/home/cat-04.webp", alt: "Category 4", label: "АКСЕСУАРИ" },
+		{ src: "img/home/cat-05.webp", alt: "Category 5", label: "НОВІ РЕЧІ" },
+	];
+const brands = [
+	{ src: "img/brands/chanel.webp", alt: "Chanel" },
+	{ src: "img/brands/giorgio-armani.webp", alt: "Giorgio armani" },
+	{ src: "img/brands/armani.webp", alt: "Armani" },
+	{ src: "img/brands/versace.webp", alt: "Versace" },
+	{ src: "img/brands/prada.webp", alt: "Prada" },
+	{ src: "img/brands/armani.webp", alt: "Armani" },
+];
+---
+
+<Layout title="ReSale" description="Home page">
+	<div class="home-hero">
+		<picture>
+			<img src={"img/home/poster.webp"} class="home-hero__bg" alt="Home Hero Poster" />
+		</picture>
+		<div class="home-hero__body">
+			<div class="container home-hero__body-container">
+				<h1 class="home-hero__title">Автенфіковані брендові речі</h1>
+			</div>
+		</div>
+		<div class="home-hero__footer advantages tg-h6">
+			<div class="container">
+				<ul class="advantages__inner">
+					<li class="advantages__item"><span class="icon-fitting advantages__item-icon"></span>Шоурум примірка</li>
+					<li class="advantages__item"><span class="icon-genuine advantages__item-icon"></span>Аутентифіковані на орігінальність</li>
+					<li class="advantages__item"><span class="icon-clapper advantages__item-icon"></span>+5 000 товарів</li>
+					<li class="advantages__item"><span class="icon-dress advantages__item-icon"></span>Сотні нових товарів щодня</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="home-categories section-space">
+		<div class="container">
+			<div class="home-categories__inner">
+				<div class="home-categories__main flex-even flex-even_center">
+					<div class="flex-even__inner">{
+						categories.map(item => 
+								<div class="flex-even__item">
+									<a class="home-category-card home-categories__card">
+										<ImgWrap className='home-category-card__img'>
+											<img src={item.src} alt={item.alt}>
+										</ImgWrap>
+										<div class="home-category-card__label">
+											{item.label}<span class="icon-arrow-right"></span>
+										</div>
+									</a>
+								</div>
+							)
+						}</div>
+				</div>
+				<div class="home-categories__adds">
+					<a href="" class="btn btn_rect btn_dark btn_huge">
+						Недавно переглянуті товари
+					</a>
+					<a href="" class="btn btn_rect btn_dark btn_huge">
+						ТОП бренди
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="welcome light-bg section-space">
+		<div class="container">
+			<div class="welcome__inner">
+				<div class="welcome__info">
+					<h2 class="welcome__title tg-section-title">Вітаємо Вас в ReSale</h2>
+					<div class="welcome__msg">Вітаємо Вас в мережі магазинів DiForte! Ми найбільша мережа преміум сегменту в західній Україні, яка постійно зростає і розвивається. У нас працюють фахівці, які люблять свою справу і постійно вдосконалюють свої навички. Наші консультанти готові допомогти вибрати саме ту річ, яка вам необхідна, допомогти визначитися з розмірної сіткою, запропонувати кілька варіантів від однієї одиниці до повного лука, від базових речей до вечірніх суконь. Ми дбаємо про те, щоб світ став прекрасніший.</div>
+					<a href="" class="btn btn_rect btn_primary btn_big">ПРОДАТИ РЕЧІ</a>
+				</div>
+				<ImgWrap className='welcome__img'>
+					<img src="img/home/things.webp" alt="Case">
+				</ImgWrap>
+			</div>
+		</div>
+	</div>
+	<div class="top-brands section-space">
+		<div class="container">
+			<div class="top-brands__title tg-section-title">ТОП бренди</div>
+			<div class="top-brands__body">
+					{
+						brands.map(item => <div class="top-brand-card">
+							<ImgWrap className='top-brand-card__img'>
+								<img src={item.src} alt={item.alt}>
+							</ImgWrap>
+						</div>)
+					}
+			</div>
+		</div>
+	</div>
+</Layout>
+<style>
+
+</style>

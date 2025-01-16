@@ -1,0 +1,126 @@
+---
+import HeaderMenuItem from "./HeaderMenuItem.astro";
+import LangSwitch from "./LangSwitch.astro";
+import SearchInput from "./SearchInput.astro";
+import TelLink from "./TelLink.astro";
+---
+
+<header id="header" class="header">
+	<div class="header__top">
+		<div class="container header__container header__container_top">
+			<div class="burger-btn header__burger-btn" data-drawer-toggle="burger-menu"></div>
+			<a href="" class="header__logo">
+				<figure class="logo">
+					<img src="img/logo.svg"class="logo__img" alt="ReSale Logo" title="ReSale">
+					<figcaption class="logo__caption">ReSale Logotype</figcaption>
+				</figure>
+			</a>
+			<SearchInput className="header__search"></SearchInput>
+			<TelLink className="tg-h6 header__phone"></TelLink>
+			<div class="header-item-wrap header__cabinet-btn">
+				<button type="button" class="btn btn_icon">
+					<label for="" class="btn__label">Sing in</label>
+					<span class="icon-person btn__icon"></span>
+				</button>
+			</div>
+			<div class="header-item-wrap header__cart-btn">
+				<button type="button" class="btn btn_icon">
+					<label for="" class="btn__label">Cart</label>
+					<span class="icon-shopper btn__icon"></span>
+				</button>
+			</div>
+			<button class="btn btn_rect btn_primary btn_sm tg-h6 uppercase header__cta">Продати товар</button>
+			<div class="header__lang-switch">
+				<LangSwitch></LangSwitch>
+			</div>
+		</div>
+	</div>
+	<div class="header__bottom header-bottom" data-drawer="burger-menu">
+		<div data-elem="drawer.panel" class="header-bottom__panel">
+			<div class="container header-bottom__container" >
+				<div class="header-bottom__inner">
+					<a href="" class="header-bottom__logo header-bottom__logo_main">
+						<figure class="logo">
+							<img src="img/logo.svg"class="logo__img" alt="ReSale Logo" title="ReSale">
+							<figcaption class="logo__caption">ReSale Logotype</figcaption>
+						</figure>
+					</a>
+					<menu class="header-menu">
+						<HeaderMenuItem title="Одяг"></HeaderMenuItem>
+						<HeaderMenuItem title="Взуття" submenu={[
+								[
+									{ title: "Все сумки" },
+									{ title: "Новинки в категории" },
+									{ title: "Скидки в категории", primary: true },
+								],
+								[
+									{ title: "Барсетки" },
+									{ title: "Дорожные сумки" },
+									{ title: "Клатчи и вечерние сумки" },
+									{ title: "Повседневные сумки" },
+									{ title: "Поясные сумки" },
+									{ title: "Рюкзаки" },
+									{ title: "Спортивные сумки" },
+									{ title: "Сумки шоперы" },
+								],
+							]}></HeaderMenuItem>
+						<HeaderMenuItem title="Сумки" submenu={[
+							[
+								{ title: "Все сумки" },
+								{ title: "Новинки в категории" },
+								{ title: "Скидки в категории", primary: true },
+							],
+							[
+								{ title: "Барсетки" },
+								{ title: "Дорожные сумки" },
+								{ title: "Клатчи и вечерние сумки" },
+								{ title: "Повседневные сумки" },
+								{ title: "Поясные сумки" },
+							],
+						]}></HeaderMenuItem>
+						<HeaderMenuItem title="Аксесуары" submenu={[
+							[
+								{ title: "Все сумки" },
+								{ title: "Новинки в категории" },
+								{ title: "Скидки в категории", primary: true },
+							],
+							[
+								{ title: "Барсетки" },
+								{ title: "Дорожные сумки" },
+								{ title: "Клатчи и вечерние сумки" },
+								{ title: "Повседневные сумки" },
+								{ title: "Поясные сумки" },
+								{ title: "Рюкзаки" },
+							],
+						]}></HeaderMenuItem>
+						<HeaderMenuItem title="Нові речі" submenu={[
+							[
+								{ title: "Все сумки" },
+								{ title: "Новинки в категории" },
+								{ title: "Скидки в категории", primary: true },
+							],
+							[
+								{ title: "Барсетки" },
+								{ title: "Дорожные сумки" },
+								{ title: "Клатчи и вечерние сумки" },
+								{ title: "Повседневные сумки" },
+								{ title: "Поясные сумки" },
+								{ title: "Рюкзаки" },
+								{ title: "Спортивные сумки" },
+								{ title: "Сумки шоперы" },
+							],
+						]}></HeaderMenuItem>
+						<div class="header-menu__underlay"></div>
+					</menu>
+					<a href="" class="header-bottom__logo header-bottom__logo_secondary">
+						<figure class="logo">
+							<span class="icon-sign-right logo__icon"></span>
+							<img src="img/brands/diforte.svg" class="logo__img" alt="DiForte Logo" title="DiForte">
+							<figcaption class="logo__caption">DiForte Logotype</figcaption>
+						</figure>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>

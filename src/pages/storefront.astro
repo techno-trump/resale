@@ -1,0 +1,302 @@
+---
+import Checkbox from 'src/components/Checkbox.astro';
+import ImgWrap from '../components/basic/ImgWrap.astro';
+import Layout from '../layouts/Layout.astro';
+import ProductListCard from 'src/components/ProductListCard.astro';
+
+const materialFilters = [
+	{ name: "Материал 1" },
+	{ name: "Материал 2" },
+	{ name: "Материал 3" },
+	{ name: "Материал 4" },
+	{ name: "Материал 5" },
+	{ name: "Материал 6" },
+];
+const colorFilters = [
+	{ name: "Белый" },
+	{ name: "Черный" },
+	{ name: "Серый" },
+	{ name: "Серый" },
+	{ name: "Голубой" },
+	{ name: "Красный" },
+];
+const sizesFilters = [
+	{ name: "23" },
+	{ name: "23" },
+	{ name: "24" },
+	{ name: "24" },
+	{ name: "25" },
+	{ name: "25" },
+	{ name: "26" },
+	{ name: "26" },
+	{ name: "27" },
+	{ name: "27" },
+	{ name: "28" },
+	{ name: "28" },
+];
+---
+
+<Layout title="ReSale" description="Home page">
+	<div class="storefront section-space-bottom _layout-grid">
+		<div class="storefront-header">
+			<div class="container storefront-header__container">
+				<nav aria-label="Breadcrumb" class="breadcrumbs tg-breadcrumbs storefront-header__breadcrumbs">
+					<a href="/" class="breadcrumbs__item text-link">Главная</a>
+					<span class="breadcrumbs__separator">›</span>
+					<span class="breadcrumbs__item breadcrumb__item_active">Одежда</span>
+				</nav>
+				<h1 class="tg-page-title storefront-header__title">Одежда</h1>
+				<div class="storefront-header__grid-type-select grid-type-select" data-component=":grid-type-select:">
+					<button type="button" class="btn btn_icon grid-type-select__btn grid-type-select__btn_grid _active">
+						<span class="btn__label">Grid</span>
+						<span class="btn__icon icon-grid-mode"></span>
+					</button>
+					<button type="button" class="btn btn_icon grid-type-select__btn grid-type-select__btn_column">
+						<span class="btn__label">Column</span>
+						<span class="btn__icon icon-column-mode"></span>
+					</button>
+				</div>
+				<div class="storefront-header__sort">
+					<div class="storefront-controls">
+						<span class="storefront-controls__label">Сортувати по:</span>
+						<div class="storefront-controls__body storefront-sort">
+							<a href="#" class="storefront-sort-option storefront-sort-option_active text-link">Новинкам</a>
+							<a href="#" class="storefront-sort-option text-link">Ціна</a>
+							<a href="#" class="storefront-sort-option text-link">Популярні</a>
+							<a href="#" class="storefront-sort-option text-link">Акції</a>
+						</div>
+					</div>
+					<div class="storefront-controls">
+						<span class="storefront-controls__label">Виводити по:</span>
+						<div class="storefront-controls__body">
+							<select class="by-page-select" data-component=":select:" data-type=":select.simple:">
+								<option value="20">20</option>
+								<option value="50">50</option>
+								<option value="100">100</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="storefront-header__filter">
+					<button type="button" class="btn btn_rect btn_sm btn_light filter-btn" data-drawer-open="storefront-filters">
+						<span class="btn__icon icon-filter"></span>
+						<span class="btn__label">Фільтр</span>
+					</button>
+				</div>
+			</div>
+			<div class="drawers" slot="drawers">
+				<div  class="drawer" data-drawer="storefront-filters">
+					<form id="storefront-filters" name="storefront-filters" class="drawer__panel storefront-filters" data-elem="drawer.panel">
+						<div class="drawer__header">
+							<div class="drawer__title">Фильтр</div>
+							<button type="button" class="drawer__close-btn btn btn_rect" data-drawer-close="storefront-filters">
+								<span class="icon-thick-cross"></span>
+							</button>
+						</div>
+						<div class="storefront-filters__body">
+							<div class="storefront-filters-group" data-component=":disclosure:">
+								<div class="storefront-filters-group__header" data-elem="disclosure.toggle">МАТЕРИАЛ</div>
+								<div class="storefront-filters-group__body">
+									<div class="storefront-filters-group__inner" data-elem="disclosure.inner">
+										<div class="storefront-filter-fields-group">
+											{
+												materialFilters.map(item => (
+													<label class="filter-field">
+														<Checkbox className="filter-field__input" name={item.name}></Checkbox>
+														<span class="filter-field__label">{item.name}</span>
+													</label>
+												))
+											}
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="storefront-filters-group" data-component=":disclosure:">
+								<div class="storefront-filters-group__header" data-elem="disclosure.toggle">ЦВЕТ</div>
+								<div class="storefront-filters-group__body">
+									<div class="storefront-filters-group__inner" data-elem="disclosure.inner">
+										<div class="storefront-filter-fields-group">
+											{
+												colorFilters.map(item => (
+													<label class="filter-field">
+														<Checkbox className="filter-field__input" name={item.name}></Checkbox>
+														<span class="filter-field__label">{item.name}</span>
+													</label>
+												))
+											}
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="storefront-filters-group" data-component=":disclosure:">
+								<div class="storefront-filters-group__header" data-elem="disclosure.toggle">Цена</div>
+								<div class="storefront-filters-group__body">
+									<div class="storefront-filters-group__inner" data-elem="disclosure.inner">
+										<div class="value-multi-input" data-component=":multy-input:">
+											<div class="value-multi-input__range-select double-range-select" data-component=":multy-range-select:">
+												<input class="double-range-select__range-from"
+													name="__price-from"
+													type="range" 
+													min="1000"
+													max="120000"
+													value="1000"
+												>
+												<input class="double-range-select__range-to"
+													name="__price-to"
+													type="range" 
+													min="1000"
+													max="120000"
+													value="25000"
+												>
+											</div>
+											<div class="value-multi-input__direct-inputs">
+												<label class="value-multi-input__direct-input input-with-unit">
+													<input class="value-multi-input__value-from input-with-unit__input"
+														name="price-from"
+														type="number"
+														value="1000"
+													>
+													<span class="input-with-unit__unit">Грн.</span>
+												</label>
+												<label class="value-multi-input__direct-input input-with-unit">
+													<input class="value-multi-input__value-to input-with-unit__input"
+														name="price-to"
+														type="number"
+														value="25000"
+													>
+													<span class="input-with-unit__unit">Грн.</span>
+												</label>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="storefront-filters-group" data-component=":disclosure:">
+								<div class="storefront-filters-group__header" data-elem="disclosure.toggle">Категорія</div>
+								<div class="storefront-filters-group__body">
+									<div class="storefront-filters-group__inner" data-elem="disclosure.inner">
+										<div class="storefront-filter-fields-group">
+											<div class="multilevel-checklist">
+												<div class="multilevel-checklist disclosure" data-component=":disclosure:multilevel-checklist:">
+													<div class="multilevel-checklist__current">
+														<button type="button" class="btn multilevel-checklist__toggle" data-elem="disclosure.toggle">
+															<span class="icon-big-arrow-down btn__icon"></span>
+														</button>
+														<Checkbox checkboxClassName="multilevel-checklist__checkbox multilevel-checklist__checkbox_current" name="accessory"></Checkbox>
+														<!-- Можно сделать как ссылкой, так и лейблом к чекбокс,  -->
+														<a href="" class="multilevel-checklist__current-title">Аксессуары</a>
+														<!-- <label class="filter-field">
+															<Checkbox className="filter-field__input multilevel-checklist__checkbox" name="accessory"></Checkbox>
+															<span class="filter-field__label">Аксессуары</span>
+														</label> -->
+													</div>
+													<div class="disclosure__body">
+														<div class="disclosure__inner multilevel-checklist__inner" data-elem="disclosure.inner">
+															<label class="filter-field">
+																<Checkbox className="filter-field__input" checkboxClassName="multilevel-checklist__checkbox" name="heats"></Checkbox>
+																<span class="filter-field__label">Капелюхи</span>
+															</label>
+															<label class="filter-field">
+																<Checkbox className="filter-field__input" checkboxClassName="multilevel-checklist__checkbox" name="wallets"></Checkbox>
+																<span class="filter-field__label">Кошельки</span>
+															</label>
+															<div class="multilevel-checklist">
+																<div class="multilevel-checklist disclosure" data-component=":disclosure:">
+																	<div class="multilevel-checklist__current">
+																		<button type="button" class="btn multilevel-checklist__toggle" data-elem="disclosure.toggle">
+																			<span class="icon-big-arrow-down btn__icon"></span>
+																		</button>
+																		<label class="filter-field">
+																			<Checkbox className="filter-field__input" checkboxClassName="multilevel-checklist__checkbox multilevel-checklist__checkbox_current" name="accessory"></Checkbox>
+																			<span class="filter-field__label">Аксессуары</span>
+																		</label>
+																	</div>
+																	<div class="disclosure__body">
+																		<div class="disclosure__inner multilevel-checklist__inner" data-elem="disclosure.inner">
+																			<label class="filter-field">
+																				<Checkbox className="filter-field__input" checkboxClassName="multilevel-checklist__checkbox" name="heats"></Checkbox>
+																				<span class="filter-field__label">Капелюхи</span>
+																			</label>
+																			<label class="filter-field">
+																				<Checkbox className="filter-field__input" checkboxClassName="multilevel-checklist__checkbox" name="wallets"></Checkbox>
+																				<span class="filter-field__label">Кошельки</span>
+																			</label>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="storefront-filters-group" data-component=":disclosure:">
+								<div class="storefront-filters-group__header" data-elem="disclosure.toggle">РАЗМЕР</div>
+								<div class="storefront-filters-group__body">
+									<div class="storefront-filters-group__inner" data-elem="disclosure.inner">
+										<div class="storefront-filter-fields-group storefront-filter-fields-group_col-2">
+											{
+												sizesFilters.map(item => (
+													<label class="filter-field">
+														<Checkbox className="filter-field__input" name={item.name}></Checkbox>
+														<span class="filter-field__label">{item.name}</span>
+													</label>
+												))
+											}
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="storefront-filters-group" data-component=":disclosure:">
+								<div class="storefront-filters-group__header" data-elem="disclosure.toggle">ПОЛ</div>
+								<div class="storefront-filters-group__body">
+									<div class="storefront-filters-group__inner" data-elem="disclosure.inner">
+										<div class="storefront-filter-fields-group">
+											<label class="filter-field">
+												<Checkbox className="filter-field__input" name="sex-male"></Checkbox>
+												<span class="filter-field__label">Мужское</span>
+											</label>
+											<label class="filter-field">
+												<Checkbox className="filter-field__input" name="sex-female"></Checkbox>
+												<span class="filter-field__label">Женское</span>
+											</label>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="storefront-filters__footer">
+							<button type="submit" class="btn btn_rect btn_primary btn_md">СМОТРЕТЬ ПРОДУКТЫ</button>
+							<button type="reset" class="btn btn_rect btn_light btn_md">СБРОСИТЬ ФИЛЬТРЫ</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="container storefront__body-container">
+			<div class="storefront-grid storefront__grid">
+				{	
+					Array(12).fill({
+						sizes: [28, 29, 30],
+					}).map(item => <ProductListCard type="storefront" data={item}></ProductListCard>)
+				}
+			</div>
+			<div class="pagination">
+				<a href="" class="pagination__item btn"><span class="icon-small-arrow-left"></span></a>
+				<a href="" class="pagination__item btn">1</a>
+				<a href="" class="pagination__item btn pagination__item_active">2</a>
+				<a href="" class="pagination__item btn">3</a>
+				<a href="" class="pagination__item btn">...</a>
+				<a href="" class="pagination__item btn">24</a>
+				<a href="" class="pagination__item btn"><span class="icon-small-arrow-right"></span></a>
+			</div>
+		</div>
+	</div>
+</Layout>
+<style>
+
+</style>

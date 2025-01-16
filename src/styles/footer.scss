@@ -1,0 +1,77 @@
+@use "./config.scss" as config;
+.footer {
+	color: var(--text-main-invert);
+	background-color: var(--sf-deep-dark);
+	padding: 60px 0 46px;
+	&__container {
+		display: grid;
+		grid-auto-flow: column;
+		gap: 40px;
+		justify-content: space-between;
+		@media (max-width: config.$mbpFooterCollapse) {
+			grid-auto-flow: row;
+			grid-template-columns: 1fr 1fr 1fr;
+		}
+		@media (max-width: config.$mbpM) {
+			grid-template-columns: 1fr 1fr;
+		}
+		@media (max-width: config.$mbpMM) {
+			grid-template-columns: 1fr;
+		}
+	}
+	&__contacts {
+		@media (max-width: config.$mbpFooterCollapse) {
+			grid-column: 1/ span 2;
+		}
+		@media (max-width: config.$mbpM) {
+			grid-column: auto/ span 1;
+		}
+	}
+	&__tel {
+		--hover-color: var(--text-secondary-light);
+	}
+	&__terms {
+		display: inline-grid;
+		align-content: start;
+		gap: 24px;
+		@media (max-width: config.$mbpFooterCollapse) {
+			align-self: end;
+		}
+		@media (max-width: config.$mbpMM) {
+			gap: 14px;
+		}
+	}
+}
+.footer-menu-group {
+	&__title {
+		margin-bottom: 36px;
+		@media (max-width: config.$mbpT) {
+			margin-bottom: 22px;
+		}
+	}
+	&__list {
+		display: inline-grid;
+		gap: 16px;
+		@media (max-width: config.$mbpT) {
+			gap: 12px;
+		}
+	}
+}
+
+.footer-contacts {
+	display: inline-grid;
+	align-content: start;
+	justify-items: start;
+	gap: 24px;
+	@media (max-width: config.$mbpT) {
+		gap: 18px;
+	}
+	@media (max-width: config.$mbpMM) {
+		gap: 14px;
+	}
+}
+.social-media {
+	display: inline-grid;
+	grid-auto-flow: column;
+	gap: 16px;
+}

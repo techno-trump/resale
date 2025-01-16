@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="ReSale" description="Index page" empty={true}>
+	<div class="container">
+		<div class="pages">
+			<h3>Pages</h3>
+			<ol>
+				<li><a href="./home.html" class="link">Home</a></li>
+				<li><a href="./storefront.html" class="link">Storefront</a></li>
+				<li><a href="./product-card.html" class="link">Product Card</a></li>
+				<li><a href="./cabinet.html" class="link">Cabinet</a></li>
+				<li><a href="./shops.html" class="link">Shops</a></li>
+				<li><a href="./about.html" class="link">About</a></li>
+				<li><a href="./feedbacks.html" class="link">Feedbacks</a></li>
+			</ol>
+		</div>
+	</div>
+</Layout>
+<style>
+	.container {
+		padding: 40px;
+	}
+	h3 {
+		font-weight: 600;
+		margin-bottom: 20px;
+	}
+</style>

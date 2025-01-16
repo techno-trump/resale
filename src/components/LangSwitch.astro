@@ -1,0 +1,39 @@
+---
+interface Props {
+	className?: string;
+}
+
+const { className } = Astro.props;
+---
+
+<div class:list={["lang-switch tg-h6", className]} data-component=":lang-switch:">
+	<div class="lang-switch__wrap">
+		<div class="lang-switch__selected">Укр</div>
+		<span class="lang-switch__arrow icon-big-arrow-down"></span>
+	</div>
+	<div class="lang-switch__panel">
+		<div class="lang-switch__panel-header">
+			<div class="lang-switch__panel-title">Выбрать язык</div>
+			<div class="lang-switch__close-btn-area">
+				<buton type="button" class="btn btn_icon btn_sm lang-switch__close-btn">
+					<span class="btn__label">Close language selector</span>
+					<span class="btn__icon icon-thin-cross"></span>
+				</button>
+			</div>
+		</div>
+		<ul class="lang-switch__list" data-elem=":lang-switch.list:">
+			<li>
+				<a href="" class="_active lang-switch-link">
+					<span class="lang-switch-link__title lang-switch-link__title_desc">Укр</span>
+					<span class="lang-switch-link__title lang-switch-link__title_mob">Українська</span>
+				</a>
+			</li>
+			<li>
+				<a href="" class="lang-switch-link">
+					<span class="lang-switch-link__title lang-switch-link__title_desc">Рус</span>
+					<span class="lang-switch-link__title lang-switch-link__title_mob">Русский</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>
