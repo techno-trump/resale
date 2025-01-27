@@ -8,6 +8,7 @@ import TomSelect from "tom-select";
 import KeenSlider from "keen-slider";
 import MultilevelChecklist from "./multilevel-checklist.js";
 import { initDoubleRangeInputs, initMultiInputs } from "./double-range-input.js";
+import { initPortals } from "./portal.js";
 
 window.app = window.app || {};
 window.app.hoverMedia = window.matchMedia("(any-hover: hover)");
@@ -101,10 +102,15 @@ class Search {
 }
 document.querySelectorAll(`[data-component*=":search:"]`).forEach(elem => new Search(elem));
 new Header(document.querySelector("#header"));
+initPortals();
 app.drawers.init();
 app.drawers.get("storefront-filters")?.setOptions({
 	modal: false,
 	lockPageScroll: false,
+});
+
+matchMedia("(max-width: 768px)").addEventListener("change", ({ matches }) => {
+	if (!matches) app.drawers.close("burger-menu");
 });
 
 document.querySelectorAll(`[data-component*=":select:"]`).forEach(elem => {

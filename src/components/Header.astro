@@ -15,8 +15,19 @@ import TelLink from "./TelLink.astro";
 					<figcaption class="logo__caption">ReSale Logotype</figcaption>
 				</figure>
 			</a>
-			<SearchInput className="header__search"></SearchInput>
-			<TelLink className="tg-h6 header__phone"></TelLink>
+			<div class="header__top-categories-area" data-portal-src="header-categories">
+				<div class="header-categories">
+					<button type="button" class="text-link _active">Жіноче</button>
+					<button type="button" class="text-link">Чоловіче</button>
+					<button type="button" class="text-link">Дитяче</button>
+				</div>
+			</div>
+			<div class="header__tel-area">
+				<TelLink className="tg-h6 header__tel"></TelLink>
+			</div>
+			<div class="header-item-wrap">
+				<SearchInput className="header__search"></SearchInput>
+			</div>
 			<div class="header-item-wrap header__cabinet-btn">
 				<button type="button" class="btn btn_icon">
 					<label for="" class="btn__label">Sing in</label>
@@ -45,6 +56,7 @@ import TelLink from "./TelLink.astro";
 							<figcaption class="logo__caption">ReSale Logotype</figcaption>
 						</figure>
 					</a>
+					<div class="header-bottom__categories-area" data-portal-dest="header-categories"></div>
 					<menu class="header-menu">
 						<HeaderMenuItem title="Одяг"></HeaderMenuItem>
 						<HeaderMenuItem title="Взуття" submenu={[
@@ -112,6 +124,10 @@ import TelLink from "./TelLink.astro";
 						]}></HeaderMenuItem>
 						<div class="header-menu__underlay"></div>
 					</menu>
+					<div class="header-bottom__actions">
+						<button class="btn btn_rect btn_light btn_bordered btn_md tg-h6 uppercase">Новинки</button>
+						<button class="btn btn_rect btn_primary btn_md tg-h6 uppercase">Продати товар</button>
+					</div>
 					<a href="" class="header-bottom__logo header-bottom__logo_secondary">
 						<figure class="logo">
 							<span class="icon-sign-right logo__icon"></span>

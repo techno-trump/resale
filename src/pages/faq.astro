@@ -1,0 +1,84 @@
+---
+import ImgWrap from '../components/basic/ImgWrap.astro';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="ReSale Frequently Asked Questions" description="Frequently Asked Questions">
+	<div class="faq section-space-bottom">
+		<div class="container faq__container">
+			<div class="faq__header page-header">
+				<nav aria-label="Breadcrumb" class="breadcrumbs tg-breadcrumbs page-header__breadcrumbs">
+					<a href="/" class="breadcrumbs__item text-link">Главная</a>
+					<span class="breadcrumbs__separator">›</span>
+					<span class="breadcrumbs__item breadcrumb__item_active">Питання і відповіді</span>
+				</nav>
+				<h1 class="tg-page-title page-header__title">Питання і відповіді</h1>
+			</div>
+			<div class="faq__body">
+				<!-- <div class="faq__col"> -->
+					{Array(18).fill(null).map(() => [{
+							question: "Все что на сайте есть - заказываешь , пишусь что продали этот размер",
+						},
+						{
+							question: "Все что на сайте есть - заказываешь",
+						},
+						{
+							question: "Все что на сайте есть - заказываешь , пишусь что продали",
+						}][Math.floor(Math.random() * 2)]).map(item => (
+							<div class="disclosure disclosure_faq" data-component=":disclosure:">
+								<div class="disclosure__header" data-elem="disclosure.toggle">
+									<div class="disclosure__title">{item.question}</div>
+									<div class="disclosure__indicator icon-small-thick-arrow-down"></div>
+								</div>
+								<div class="disclosure__body">
+									<div class="disclosure__inner" data-elem="disclosure.inner">
+										<div class="faq__answer">
+											Отличный магазин! Купила себе пуховик,а мужу джинсы!Очень приятные скидки))Большое спасибо консультанту Юле, оперативно предоставила всю интересующую информацию,также быстро отправили заказ!Мои самые наилучшие рекомендации магазину DiForte!!! Отличный магазин! Купила себе пуховик,а мужу джинсы!Очень приятные скидки))Большое спасибо консультанту Юле, оперативно предоставила всю интересующую информацию,также быстро отправили заказ!Мои самые наилучшие рекомендации магазину DiForte!!!Отличный магазин! 
+										</div>
+									</div>
+								</div>
+							</div>
+						))}
+				<!-- </div> -->
+				<!-- <div class="faq__col">
+					{Array(9).fill(null).map(() => [{
+							question: "Все что на сайте есть - заказываешь , пишусь что продали этот размер",
+						},
+						{
+							question: "Все что на сайте есть - заказываешь",
+						},
+						{
+							question: "Все что на сайте есть - заказываешь , пишусь что продали",
+						}][Math.floor(Math.random() * 2)]).map(item => (
+							<div class="disclosure disclosure_faq" data-component=":disclosure:">
+								<div class="disclosure__header" data-elem="disclosure.toggle">
+									<div class="disclosure__title">{item.question}</div>
+									<div class="disclosure__indicator icon-small-thick-arrow-down"></div>
+								</div>
+								<div class="disclosure__body">
+									<div class="disclosure__inner" data-elem="disclosure.inner">
+										<div class="faq__answer">
+											Отличный магазин! Купила себе пуховик,а мужу джинсы!Очень приятные скидки))Большое спасибо консультанту Юле, оперативно предоставила всю интересующую информацию,также быстро отправили заказ!Мои самые наилучшие рекомендации магазину DiForte!!! Отличный магазин! Купила себе пуховик,а мужу джинсы!Очень приятные скидки))Большое спасибо консультанту Юле, оперативно предоставила всю интересующую информацию,также быстро отправили заказ!Мои самые наилучшие рекомендации магазину DiForte!!!Отличный магазин! 
+										</div>
+									</div>
+								</div>
+							</div>
+						))}
+				</div> -->
+			</div>
+			<div class="faq__footer">
+				<div class="showroom-baner">
+					<div class="showroom-baner__icon icon-headphones"></div>
+					<div class="showroom-baner__info">
+						<div class="showroom-baner__main">ШОУРУМ СКОРО</div>
+						<div class="showroom-baner__sub">Для примірки доступні всі бутики дифорте</div>
+					</div>
+					<div class="showroom-baner__btn btn btn_rect btn_light">
+						<div class="btn__icon icon-headphones"></div>
+						<div class="btn__label">Зв'язатися з магазином</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</Layout>

@@ -15,124 +15,140 @@ import Layout from '../layouts/Layout.astro';
 				<h1 class="tg-page-title page-header__title">Магазини</h1>
 			</div>
 			<div class="shops__body">
-				<div class="brand-section">
-					<h2 class="brand-section__title brand-section-title">
-						<ImgWrap className='brand-section-title__img'>
-							<img src="img/brands/diforte.svg" class="filter-invert" alt="DiForte Logo" title="DiForte">
-						</ImgWrap>
-						<span class="brand-section-title__text">DiForte</span>
-					</h2>
-					<p class="brand-section__schedule">Наші менеджери дадуть відповіді на будь які питання, кожен день з 10.00 до 20.00</p>
-					<!-- Shops list -->
-					<ul class="shops-list brand-section__list">
-						<li class="shops-list__item shop-card">
-							<ImgWrap className='shop-card__img'>
-								<img src="img/store.webp" alt="DiForte Emporio Armani Store">
+				<div class="brand-section disclosure disclosure_shops" data-component=":disclosure:">
+					<div class="disclosure__header" data-elem="disclosure.toggle">
+						<h2 class="brand-section__title brand-section-title">
+							<ImgWrap className='brand-section-title__img'>
+								<img src="img/brands/diforte.svg" class="filter-invert" alt="DiForte Logo" title="DiForte">
 							</ImgWrap>
-							<div class="shop-card__info">
-								<h3 class="shop-card__title">DiForte Emporio Armani</h3>
-								<address class="shop-card__contacts">
-									<span class="shop-card-contact shop-card__address">
-										<span class="icon-map-pin-in-circle shop-card-contact__icon"></span>
-										<span class="shop-card-contact__text">Львів, вул. Шпитальна 1, тц Магнус</span>
-									</span>
-									<a href="tel:+380930719384" class="shop-card-contact shop-card__phone text-link">
-										<span class="icon-tel shop-card-contact__icon"></span>
-										<span class="shop-card-contact__text">+380930719384</span>
-									</a>
-								</address>
-							</div>
-							<div class="shop-card__actions">
-								<button class="btn btn_rect btn_light shop-card__btn">
-									<div class="btn__icon icon-headphones"></div>
-									<div class="btn__label">Зв'язатися з магазином</div>
-								</button>
-								<button class="btn btn_rect btn_primary shop-card__btn">
-									<div class="btn__icon icon-map-pin"></div>
-									<div class="btn__label">Подивитись на карті</div>
-								</button>
-							</div>
-						</li>
-						<li class="shops-list__item shop-card">
-							<ImgWrap className='shop-card__img'>
-								<img src="img/store.webp" alt="DiForte Emporio Armani Store">
-							</ImgWrap>
-							<div class="shop-card__info">
-								<h3 class="shop-card__title">DiForte Emporio Armani</h3>
-								<address class="shop-card__contacts">
-									<span class="shop-card-contact shop-card__address">
-										<span class="icon-map-pin-in-circle shop-card-contact__icon"></span>
-										<span class="shop-card-contact__text">Львів, вул. Шпитальна 1, тц Магнус</span>
-									</span>
-									<a href="tel:+380930719384" class="shop-card-contact shop-card__phone text-link">
-										<span class="icon-tel shop-card-contact__icon"></span>
-										<span class="shop-card-contact__text">+380930719384</span>
-									</a>
-								</address>
-							</div>
-							<div class="shop-card__actions">
-								<button class="btn btn_rect btn_light shop-card__btn">
-									<div class="btn__icon icon-headphones"></div>
-									<div class="btn__label">Зв'язатися з магазином</div>
-								</button>
-								<button class="btn btn_rect btn_primary shop-card__btn">
-									<div class="btn__icon icon-map-pin"></div>
-									<div class="btn__label">Подивитись на карті</div>
-								</button>
-							</div>
-						</li>
-						<li class="shops-list__item shop-card">
-							<ImgWrap className='shop-card__img'>
-								<img src="img/store.webp" alt="DiForte Emporio Armani Store">
-							</ImgWrap>
-							<div class="shop-card__info">
-								<h3 class="shop-card__title">DiForte Emporio Armani</h3>
-								<address class="shop-card__contacts">
-									<span class="shop-card-contact shop-card__address">
-										<span class="icon-map-pin-in-circle shop-card-contact__icon"></span>
-										<span class="shop-card-contact__text">Львів, вул. Шпитальна 1, тц Магнус</span>
-									</span>
-									<a href="tel:+380930719384" class="shop-card-contact shop-card__phone text-link">
-										<span class="icon-tel shop-card-contact__icon"></span>
-										<span class="shop-card-contact__text">+380930719384</span>
-									</a>
-								</address>
-							</div>
-							<div class="shop-card__actions">
-								<button class="btn btn_rect btn_light shop-card__btn">
-									<div class="btn__icon icon-headphones"></div>
-									<div class="btn__label">Зв'язатися з магазином</div>
-								</button>
-								<button class="btn btn_rect btn_primary shop-card__btn">
-									<div class="btn__icon icon-map-pin"></div>
-									<div class="btn__label">Подивитись на карті</div>
-								</button>
-							</div>
-						</li>
-					</ul>
+							<span class="brand-section-title__text">DiForte</span>
+						</h2>
+						<div class="disclosure__indicator icon-small-thick-arrow-down"></div>
+					</div>
+					<div class="disclosure__body">
+						<div class="disclosure__inner" data-elem="disclosure.inner">
+							<!-- <p class="brand-section__schedule">Наші менеджери дадуть відповіді на будь які питання, кожен день з 10.00 до 20.00</p> -->
+							<!-- Shops list -->
+							<ul class="shops-list brand-section__list">
+								<li class="shops-list__item shop-card">
+									<ImgWrap className='shop-card__img'>
+										<img src="img/store.webp" alt="DiForte Emporio Armani Store">
+									</ImgWrap>
+									<div class="shop-card__info">
+										<h3 class="shop-card__title">DiForte Emporio Armani</h3>
+										<address class="shop-card__contacts">
+											<span class="shop-card-contact shop-card__address">
+												<span class="icon-map-pin-in-circle shop-card-contact__icon"></span>
+												<span class="shop-card-contact__text">Львів, вул. Шпитальна 1, тц Магнус</span>
+											</span>
+											<a href="tel:+380930719384" class="shop-card-contact shop-card__phone text-link">
+												<span class="icon-tel shop-card-contact__icon"></span>
+												<span class="shop-card-contact__text">+380930719384</span>
+											</a>
+										</address>
+									</div>
+									<div class="shop-card__actions">
+										<button class="btn btn_rect btn_light shop-card__btn">
+											<div class="btn__icon icon-headphones"></div>
+											<div class="btn__label">Зв'язатися з магазином</div>
+										</button>
+										<button class="btn btn_rect btn_primary shop-card__btn">
+											<div class="btn__icon icon-map-pin"></div>
+											<div class="btn__label">Подивитись на карті</div>
+										</button>
+									</div>
+								</li>
+								<li class="shops-list__item shop-card">
+									<ImgWrap className='shop-card__img'>
+										<img src="img/store.webp" alt="DiForte Emporio Armani Store">
+									</ImgWrap>
+									<div class="shop-card__info">
+										<h3 class="shop-card__title">DiForte Emporio Armani</h3>
+										<address class="shop-card__contacts">
+											<span class="shop-card-contact shop-card__address">
+												<span class="icon-map-pin-in-circle shop-card-contact__icon"></span>
+												<span class="shop-card-contact__text">Львів, вул. Шпитальна 1, тц Магнус</span>
+											</span>
+											<a href="tel:+380930719384" class="shop-card-contact shop-card__phone text-link">
+												<span class="icon-tel shop-card-contact__icon"></span>
+												<span class="shop-card-contact__text">+380930719384</span>
+											</a>
+										</address>
+									</div>
+									<div class="shop-card__actions">
+										<button class="btn btn_rect btn_light shop-card__btn">
+											<div class="btn__icon icon-headphones"></div>
+											<div class="btn__label">Зв'язатися з магазином</div>
+										</button>
+										<button class="btn btn_rect btn_primary shop-card__btn">
+											<div class="btn__icon icon-map-pin"></div>
+											<div class="btn__label">Подивитись на карті</div>
+										</button>
+									</div>
+								</li>
+								<li class="shops-list__item shop-card">
+									<ImgWrap className='shop-card__img'>
+										<img src="img/store.webp" alt="DiForte Emporio Armani Store">
+									</ImgWrap>
+									<div class="shop-card__info">
+										<h3 class="shop-card__title">DiForte Emporio Armani</h3>
+										<address class="shop-card__contacts">
+											<span class="shop-card-contact shop-card__address">
+												<span class="icon-map-pin-in-circle shop-card-contact__icon"></span>
+												<span class="shop-card-contact__text">Львів, вул. Шпитальна 1, тц Магнус</span>
+											</span>
+											<a href="tel:+380930719384" class="shop-card-contact shop-card__phone text-link">
+												<span class="icon-tel shop-card-contact__icon"></span>
+												<span class="shop-card-contact__text">+380930719384</span>
+											</a>
+										</address>
+									</div>
+									<div class="shop-card__actions">
+										<button class="btn btn_rect btn_light shop-card__btn">
+											<div class="btn__icon icon-headphones"></div>
+											<div class="btn__label">Зв'язатися з магазином</div>
+										</button>
+										<button class="btn btn_rect btn_primary shop-card__btn">
+											<div class="btn__icon icon-map-pin"></div>
+											<div class="btn__label">Подивитись на карті</div>
+										</button>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
 				</div>
-				<div class="brand-section">
-					<h2 class="brand-section__title brand-section-title">
-						<ImgWrap className='brand-section-title__img'>
-							<img src="img/logo.svg" alt="ReSale Logo" title="ReSale" class="filter-invert">
-						</ImgWrap>
-						<span class="brand-section-title__text">ReSale</span>
-					</h2>
-					<p class="brand-section__schedule">Наші менеджери дадуть відповіді на будь які питання, кожен день з 10.00 до 20.00</p>
-					<ul class="shops-list brand-section__list">
-						<!-- Coming soon card -->
-						<li class="coming-soon-card">
-							<span class="icon-clapper coming-soon-card__icon"></span>
-							<div class="coming-soon-card__info">
-								<h3 class="coming-soon-card__title">ШОУРУМ СКОРО</h3>
-								<p class="coming-soon-card__description">Для примірки доступні всі бутики диффорте</p>
-							</div>
-							<button class="btn btn_rect btn_light coming-soon-card__btn">
-								<div class="btn__icon icon-headphones"></div>
-								<div class="btn__label">Зв'язатися з магазином</div>
-							</button>
-						</li>
-					</ul>
+
+				<div class="brand-section disclosure disclosure_shops" data-component=":disclosure:">
+					<div class="disclosure__header" data-elem="disclosure.toggle">
+						<h2 class="brand-section__title brand-section-title">
+							<ImgWrap className='brand-section-title__img'>
+								<img src="img/logo.svg" alt="ReSale Logo" title="ReSale" class="filter-invert">
+							</ImgWrap>
+							<span class="brand-section-title__text">DiForte</span>
+						</h2>
+						<div class="disclosure__indicator icon-small-thick-arrow-down"></div>
+					</div>
+					<div class="disclosure__body">
+						<div class="disclosure__inner" data-elem="disclosure.inner">
+							<!-- <p class="brand-section__schedule">Наші менеджери дадуть відповіді на будь які питання, кожен день з 10.00 до 20.00</p> -->
+							<!-- Shops list -->
+							<ul class="shops-list brand-section__list">
+								<!-- Coming soon card -->
+								<li class="coming-soon-card">
+									<span class="icon-clapper coming-soon-card__icon"></span>
+									<div class="coming-soon-card__info">
+										<h3 class="coming-soon-card__title">ШОУРУМ СКОРО</h3>
+										<p class="coming-soon-card__description">Для примірки доступні всі бутики диффорте</p>
+									</div>
+									<button class="btn btn_rect btn_light coming-soon-card__btn">
+										<div class="btn__icon icon-headphones"></div>
+										<div class="btn__label">Зв'язатися з магазином</div>
+									</button>
+								</li>
+							</ul>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

@@ -1,0 +1,144 @@
+---
+import ImgWrap from '../components/basic/ImgWrap.astro';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="ReSale Shipping" description="Shipping">
+	<div class="shipping">
+		<div class="container shipping__container">
+			<div class="shipping__header page-header">
+				<nav aria-label="Breadcrumb" class="breadcrumbs tg-breadcrumbs page-header__breadcrumbs">
+					<a href="/" class="breadcrumbs__item text-link">Главная</a>
+					<span class="breadcrumbs__separator">›</span>
+					<span class="breadcrumbs__item breadcrumb__item_active">Доставка</span>
+				</nav>
+				<h1 class="tg-page-title page-header__title">Доставка</h1>
+			</div>
+			<div class="shipping__body section-space-bottom">
+				<div class="shipping__section">
+					<div class="shipping-note">
+						<div class="shipping-note__text">Після того як ви оформили своє замовлення, продавець підтверджує угоду і відправляє товар на експертизу RESALE. Коли ми підтвердимо справжність і якість речі, ми відправимо її вам. Термін доставки складає від 2 до 7 днів.</div>
+						<ul class="shipping-note__list notes-list notes-list_shipping-note">
+							<li class="notes-list__item">
+								<div class="notes-list__bullet icon-note-list-bullet"></div>
+								<div class="notes-list__item-body">Ви можете відстежувати статус доставки в особистому кабінеті.</div>
+							</li>
+							<li class="notes-list__item">
+								<div class="notes-list__bullet icon-note-list-bullet"></div>
+								<div class="notes-list__item-body">Оплата на карту - бесплатно при любой цене.</div>
+							</li>
+							<li class="notes-list__item">
+								<div class="notes-list__bullet icon-note-list-bullet"></div>
+								<div class="notes-list__item-body">При оплатеж наложенным платежом - предоплата стоимости доставки на карту.</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="shipping__section">
+					<h2 class="shipping__section-title">Доставка по Україні</h2>
+					<div class="shipping__section-body">
+						<div class="titeled-list">
+							<h3 class="titeled-list__title">Після оформлення замовлення:</h3>
+							<ol class="titeled-list__list ordered-list ordered-list_horizontal tg-shipping-list-item">
+								<li>На вказаний номер телефону і адресу електронної пошти ви отримаєте повідомлення про те, що ми отримали ваше замовлення та воно вже передане в обробку. Замовлення, оформлені до 15:00, відправляються в цей же день. Замовлення, оформлені післе 15:00, будуть відправлені на наступний день.</li>
+								<li>Наш менеджер перевірить наявність товару і зв'яжеться з вами для уточнення всіх деталей.</li>
+								<li>Доставка нашим курʼєром по Київу доступна для замовлень вартістю понад 5000грн</li>
+								<li>Доставка замовлень від 5 тис. грн по Україні – безкоштовна. Доставка замовлень до 5 тис. грн - 99 грн.</li>
+							</ol>
+						</div>
+					</div>
+				</div>
+				<div class="shipping__section shipping__section_international">
+					<h2 class="shipping__section-title">Міжнародна доставка</h2>
+					<div class="shipping__section-body">
+						<ol class="ordered-list ordered-list_horizontal shipping__international-shipping-list tg-shipping-list-item">
+							<li>Міжнародна доставка замовлень понад 400 EUR – безкоштовна. Вартість доставки замовлень до 400 EUR по Європі - 900 грн</li>
+							<li>Міжнародна відправка відбувається тільки після повної оплати. </li>
+						</ol>
+						<div class="shipping-methods">
+							<h3 class="shipping-methods__title">Спосіб доставки:</h3>
+						</div>
+						<div class="shipping-methods__body">
+							<div class="shipping-method-card">
+								<div class="shipping-method-card__img-area">
+									<img src="img/carrier.svg" alt="Caarier" class="shipping-method-card__img"></img>
+								</div>
+								<h4 class="shipping-method-card__title">Кур'єрська доставка по Київу</h4>
+								<div class="shipping-method-card__desc">Ви можете приміряти речі з вашого замовлення в момент доставки і оплатити тільки ті товари, які вам підійшли.</div>
+							</div>
+							<div class="shipping-method-card">
+								<div class="shipping-method-card__img-area">
+									<img src="img/new-post.svg" alt="New post" class="shipping-method-card__img  shipping-method-card__img_md"></img>
+								</div>
+								<h4 class="shipping-method-card__title">Нова пошта (кур'єрська доставка)</h4>
+								<div class="shipping-method-card__desc">За допомогою наших партнерів - «Нова пошта», ви можете скористатися кур'єрською доставкою до дверей по всій Україні.</div>
+							</div>
+							<div class="shipping-method-card">
+								<div class="shipping-method-card__img-area">
+									<img src="img/new-post.svg" alt="New post" class="shipping-method-card__img shipping-method-card__img_md"></img>
+								</div>
+								<h4 class="shipping-method-card__title">Нова пошта (відділення)</h4>
+								<div class="shipping-method-card__desc">За допомогою наших партнерів - «Нова пошта», ви можете отримати товар навіть в самих віддалених куточках України.</div>
+							</div>
+							<div class="shipping-method-card">
+								<div class="shipping-method-card__img-area">
+									<img src="img/international.svg" alt="International" class="shipping-method-card__img"></img>
+								</div>
+								<h4 class="shipping-method-card__title">Міжнародна доставка</h4>
+								<div class="shipping-method-card__desc">Ви можете оформити ваше замовлення за допомогою наших міжнародних партнерів - UPS або DHL в будь-яку країну світу, окрім росії, білорусі, еритреї, кндр, сирії, індії.</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="shipping__section shipping__section_pay-methods">
+					<h2 class="shipping__section-title">Способи оплати</h2>
+					<div class="shipping__section-body">
+						<div class="titeled-list">
+							<h3 class="titeled-list__title">Ви можете оплатити замовлення будь-яким з цих способів:</h3>
+							<ol class="titeled-list__list ordered-list tg-shipping-list-item">
+								<li>Платіжними картами Visa і MasterCard через систему Fondy.  Власники карт Visa і MasterCard можуть повністю оплатити замовлення в момент його оформлення. Даний варіант оплати дозволить зекономити час при отриманні посилки. При зустрічі з кур'єром чи менеджерами поштового відділення вам треба буде просто забрати замовлення, попередньо надавши документ, підтверджуючий особистість отримувача.</li>
+								<li>За допомогою Apple Pay і Google Pay.</li>
+								<li>Післяплата Новою Поштою. При отриманні посилки у відділенні чи кур'єрською доставкою Нової Пошти ви можете розрахуватися, коли замовлення уже приїде до вас.</li>
+							</ol>
+						</div>
+					</div>
+				</div>
+				<div class="shipping__section shipping__section_return">
+					<h2 class="shipping__section-title">Повернення</h2>
+					<div class="shipping__section-body">
+						<div class="titeled-list">
+							<h3 class="titeled-list__title">Якщо по якійсь причині вам не підійшла річ, ви можете оформити повернення наступним чином:</h3>
+							<ul class="titeled-list__list article-list tg-shipping-list-item">
+								<li>У разі кур'єрської доставки по Києву у вас є можливість приміряти речі у себе вдома і відразу повернути будь-яку річ, поки вас буде очікувати кур'єр.</li>
+								<li>Ви можете оформити повернення протягом 3 днів з моменту покупки товару, заповнивши форму на нашому сайті. В одну форму можно оформити повернення на 1 товар. Додаткова інформація буде надіслана на вказаний у формі повернення e-mail. Відправлення відбувається за рахунок покупця згідно з тарифами Нової Пошти.</li>
+							</ul>
+						</div>
+						<div class="titeled-list">
+							<h3 class="titeled-list__title">НЕ підлягають поверненню:</h3>
+							<ul class="titeled-list__list article-list tg-shipping-list-item">
+								<li>товари фінального розпродажу, які мають знижку -40% і більше;</li>
+								<li>нижня білизна, боді, корсети, купальні костюми;</li>
+								<li>ювелірні вироби;</li>
+								<li>панчішно-шкарпетні вироби;</li>
+								<li>рукавички;</li>
+							</ul>
+						</div>
+						<div class="article-remark">*інформація окремо представлена в кожній картці такого товару.</div>
+						<p class="tg-shipping-list-item">Також не підлягають поверненню замовлення відправлені міжнародним способом доставки. Повернення грошових коштів якщо товар, що повертається, був оплачений online на сайті, відбувається на ту картку, з якої була оплата. Терміни зарахування грошових коштів на розхрахунковий рахунок отримувача залежать від внутрішнього регламенту банка-отримувача і складають, як правило, до 7 банківських днів.</p>
+					</div>
+				</div>
+				<div class="shipping__section shipping__section_dressing">
+					<h2 class="shipping__section-title">Примірка</h2>
+					<div class="shipping__section-body">
+						<div class="titeled-list">
+							<h3 class="titeled-list__title">Примірка може бути реалізована:</h3>
+							<ul class="titeled-list__list article-list tg-shipping-list-item">
+								<li>При кур'єрській доставці службою The Originals по Києву. У вас є можливість приміряти речі у себе вдома і відразу повернути будь-яку річ, поки вас буде очікувати кур'єр.</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</Layout>

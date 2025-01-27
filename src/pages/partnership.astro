@@ -1,0 +1,36 @@
+---
+import ImgWrap from 'src/components/basic/ImgWrap.astro';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="ReSale Partnership" description="Partnership">
+	<div class="partnership">
+		<div class="container partnership__container">
+			<div class="partnership__header page-header">
+				<nav aria-label="Breadcrumb" class="breadcrumbs tg-breadcrumbs page-header__breadcrumbs">
+					<a href="/" class="breadcrumbs__item text-link">Главная</a>
+					<span class="breadcrumbs__separator">›</span>
+					<span class="breadcrumbs__item breadcrumb__item_active">Стати партнером</span>
+				</nav>
+			</div>
+			<div class="partnership__body">
+				<div class="partnership__info">
+					<h1 class="partnership__title tg-page-title">Стати партнером</h1>
+					<div class="partnership__info-text">
+						Якщо Ви професійний продавець (власник бутіка або шоурума одягу, взуття, аксесуарів, ювелірних прикрас), то ми пропонуємо Вам розмістити товари класу "преміум" і "люкс" на нашій платформі Trends Hunters. Ми завжди раді новим партнерам і з задоволенням розглянемо Вашу пропозицію, а також запропонуємо Вам вигідні умови співпраці! Щоб стати партнером Trends Hunters, відправте нам інформацію про Ваш магазин. У листі коротко розкажіть про асортимент Ваших товарів. Вкажіть контактну особу для обговорення умов співпраці.
+					</div>
+					<div class="leave-request partnership__leave-request">
+						<div class="leave-request__cap">Залишити заявку</div>
+						<a href="email:partners@trends-hunters.com" class="leave-request__link btn">
+							<div class="btn__icon icon-email"></div>
+							<div class="btn__label">partners@trends-hunters.com</div>
+						</a>
+					</div>
+				</div>
+				<ImgWrap className="partnership__img">
+					<img src="img/partnership.webp" alt="Partnership"></img>
+				</ImgWrap>
+			</div>
+		</div>
+	</div>
+</Layout>

@@ -1,0 +1,40 @@
+---
+import ImgWrap from '../components/basic/ImgWrap.astro';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="ReSale Warranty" description="Warranty">
+	<div class="warranty">
+		<div class="container warranty__container">
+			<div class="warranty__header page-header">
+				<nav aria-label="Breadcrumb" class="breadcrumbs tg-breadcrumbs page-header__breadcrumbs">
+					<a href="/" class="breadcrumbs__item text-link">Главная</a>
+					<span class="breadcrumbs__separator">›</span>
+					<span class="breadcrumbs__item breadcrumb__item_active">Гарантія підлінності</span>
+				</nav>
+				<h1 class="tg-page-title page-header__title">Гарантія підлінності</h1>
+			</div>
+			<div class="warranty__body section-space-bottom">
+				<div class="article-decorated-img warranty__img">
+					<div class="article-decorated-img__inner">
+						<ImgWrap className='article-decorated-img__img img-wrap_cut'>
+							<img src="img/warranty.webp" alt="Warranty" title="Warranty">
+						</ImgWrap>
+						<div class="article-decorated-img__decor  article-decorated-img__decor_left"></div>
+						<div class="article-decorated-img__decor  article-decorated-img__decor_right"></div>
+					</div>
+				</div>
+				<div class="article-block article-block_warranty warranty__info">
+					<p>Доверие наших покупателей - это приоритет нашей работы! Мы гарантируем 100% подлинность каждой вещи, которую вы приобретаете на нашем сайте. Мы имеем многолетний опыт работы в сфере продажи люксовых брендов, и знаем на сколько важно для покупателя быть уверенным, что приобретенная им вещь является оригиналом.</p>
+					<p>Главным принципом SELLUXURY является индивидуальная аутентификация и подтверждение соответствия заявленого состояния товара. Не имеет значения, купили вы товар у частного продавца или профессионального, любая проданная вещь будет доставлена на проверку нашим экспертам и только потом отправлена покупателю.</p>
+					<p>На сайте действует двухэтапная аутентификация. Наши модераторы детально исследуют все фотографии товаров до их публикации на сайте, что помогает нам на 99.9% сразу же исключить не оригинал. Затем, по факту продажи, товар доставляется продавцом в наш офис для фактической проверки.</p>
+					<p>Наши эксперты строго придерживаются всех правил аутентификации, тщательно проверяя соответствие серийного номера, гравировки на фурнитуре, точность шрифтов, материалы, логотипы и многое другое. Сумки CHANEL серии 21 и выше, дополнительно проверяются на официальной базе данных CHANEL. Мы также используем микроскоп ENTRUPY, что бы предоставить нашим покупателям годовую финансовую гарантию подлинности на сумки 15-ти брендов. Важно отметить, что окончательное заключение наших экспертов не основывается на результате оценки ENTRUPY, но только на нашем личном опыте приобретенном более чем за десять лет работы в этой сфере. Это означает, что если по мнению наших экспертов, товар будет определен как подделка, даже не смотря на положительный результат микроскопа ENTRUPY, сделка будет отменена. Товар будет возвращен обратно продавцу, после оплаты штрафа за попытку продажи подделки. Для дополнительных вопросов, касающихся аутентификации, пожалуйста свяжитесь с нами по ссылке.</p>
+					<div class="warranty__actions">
+						<a href="" class="btn btn_rect btn_primary article-block__btn">Дізнатись більше</a>
+						<a href="" class="btn btn_rect btn_light article-block__btn">Перейти до каталогу</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</Layout>
