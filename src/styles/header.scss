@@ -103,6 +103,7 @@
 }
 .header-bottom {
 	background-color: var(--sf-semi-dark);
+	
 	@media (max-width: config.$mbpM) {
 		position: fixed;
 		right: 100%;
@@ -112,6 +113,7 @@
 		width: 100%;
 		transition: transform 0.3s;
 		background-color: var(--sf-light);
+		max-width: 400px;
 		&.drawer_open {
 			transform: translateX(100%);
 		}
@@ -196,25 +198,28 @@
 	}
 	@media (max-width: config.$mbpM) {
 		--active-color: #000000;
-		justify-content: center;
-		gap: 10px;
+		justify-content: stretch;
+		gap: 0;
 		font-size: 14px;
 		font-weight: 500;
 		padding: 0 calc(var(--container-save-space) + 10px);
 		margin-bottom: 16px;
 	}
-	@media (max-width: config.$mbpMM) {
-		justify-content: space-between;
-	}
 	& > .btn {
+		--border-color: transparent;
+		--hover-border-color: transparent;
 		@media (max-width: config.$mbpM) {
-			--border-color: #E5E5E5;
+			--color: black;
+			--hover-color: #3f3d4099;
 			--active-border-color: black;
-			border: 1px solid;
+			--active-bg-color: black;
+			--active-color: white;
+			--active-hover-color: white;
+			--active-hover-bg-color: black;
 			padding: 12px 28px;
 		}
 		@media (max-width: 420px) {
-			padding: 10px 16px;
+			padding: 12px 16px;
 		}
 	}
 }

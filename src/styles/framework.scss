@@ -184,6 +184,14 @@
 			box-shadow: 5px 5px 15px 0px var(--hover-shadow-color, transparent);
 			border-color: var(--hover-border-color, var(--border-color, transparent));
 		}
+		&._active:hover {
+			color: var(--active-hover-color, var(--hover-color, var(--color)));
+			background-color: var(--active-hover-bg-color, var(--hover-bg-color, var(--bg-color, transparent)));
+			transform: var(--active-hover-transform, var(--hover-transform, none));
+			opacity: var(--active-hover-opacity, var(--hover-opacity, none));
+			box-shadow: 5px 5px 15px 0px var(--active-hover-shadow-color, transparent);
+			border-color: var(--active-hover-border-color, var(--hover-border-color, transparent));
+		}
 		&:hover &__icon {
 			color: var(--hover-icon-color, currentColor);
 		}
@@ -3277,4 +3285,7 @@ ul.article-list {
 			font-size: 20px;
 		}
 	}
+}
+.filter-btn {
+	--hover-color: rgba(0, 0, 0, 0.699);
 }

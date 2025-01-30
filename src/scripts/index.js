@@ -388,9 +388,8 @@ window.app.initCardSlider = function(root) {
 		bulletElem.classList.toggle("_active", idx === slider.track.details.rel);
 		bulletsElem.append(bulletElem);
 	});
-	
+	setTimeout(() => slider.update(), 0);
 	slider.on("slideChanged", updateBullets);
-
 	window.app.events.on("storefront-grid-change", () => slider.update());
 }
 document.querySelectorAll(`[data-component*=":card-slider:"]`).forEach(root => window.app.initCardSlider(root));
