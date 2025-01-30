@@ -2,6 +2,7 @@
 // Брейк-поинты без единиц измерения
 // Up to
 $mbpFullHdNu: 1920; // FullHd
+$mbpMPCNu: 1620; // PC
 $mbpPCNu: 1440; // PC
 $mbpFooterCollapseNu: 1300; // PC
 $mbpTNu: 1024; // Tablets, laptops
@@ -14,6 +15,7 @@ $mbpNanoNu: 280; // Nano (половинка Samsung Galaxy Fold)
 // Брейк-поинты
 // Up to
 $mbpFullHd: mixins.px($mbpFullHdNu);
+$mbpMPC: mixins.px($mbpMPCNu);
 $mbpPC: mixins.px($mbpPCNu); // PC
 $mbpFooterCollapse: mixins.px($mbpFooterCollapseNu); // PC
 $mbpT: mixins.px($mbpTNu); // Tablets, laptops

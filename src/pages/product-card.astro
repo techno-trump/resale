@@ -10,12 +10,16 @@ import ProductListCard from 'src/components/ProductListCard.astro';
 	<div class="product-card light-bg section-space-bottom">
 		<div class="container">
 			<div class="product-card__inner">
-				<div class="product-card__breadcrumbs">
-					<nav aria-label="Breadcrumb" class="breadcrumbs tg-breadcrumbs">
-						<a href="/" class="breadcrumbs__item text-link">Главная</a>
-						<span class="breadcrumbs__separator">›</span>
-						<span class="breadcrumbs__item breadcrumb__item_active">Одежда</span>
-					</nav>
+				<div class="product-card__header">
+					<div class="product-card__breadcrumbs">
+						<nav aria-label="Breadcrumb" class="breadcrumbs tg-breadcrumbs">
+							<a href="/" class="breadcrumbs__item text-link">Главная</a>
+							<span class="breadcrumbs__separator">›</span>
+							<span class="breadcrumbs__item breadcrumb__item_active">Одежда</span>
+						</nav>
+						
+					</div>
+					<div class="product-card__id product-card__id_mob">342432</div>
 				</div>
 				<div class="product-card__media product-card-media" data-component=":product-card-media:">
 					<div class="product-card-media__thumbs product-card-media-thumbs">
@@ -68,22 +72,22 @@ import ProductListCard from 'src/components/ProductListCard.astro';
 							</ImgWrap>
 						</a>
 					</div>
+					<div class="product-card-media__progress-bar"></div>
 				</div>
 				<div class="product-card__info">
-					<div class="product-card__header">
+					<div class="product-card__info-header">
 						<div class="product-card__brand">Louis Vuitton</div>
 						<div class="product-card__title">Шкіряна сумка</div>
 						<div class="product-card__id product-card__id_desc">342432</div>
-					</div>
-					<div class="product-card__price">
-						<div class="product-card__full-price">11 300 ₴</div>
+						<div class="product-card__price">
+							<div class="product-card__full-price">11 300 ₴</div>
+						</div>
 					</div>
 					<div class="product-card__actions">
 						<button type="button" class="btn btn_rect btn_md btn_light btn_border-round">Додати в кошик</button>
 						<button type="button" class="btn btn_rect btn_md btn_semi-dark btn_border-round btn_buy"><span class="btn__icon icon-shopper"></span><div class="btn__title">Купити в один клік</div></button>
-						<button type="button" class="btn btn_rect btn_md btn_light btn_border-round">ЗАПРОПОНУВАТИ ЦІНУ</button>
+						<button type="button" class="btn btn_rect btn_md btn_light btn_border-round">Запропонувати ціну</button>
 					</div>
-					<div class="product-card__id product-card__id_mob">342432</div>
 					<div class="product-card__info-group">
 						<div class="disclosure product-info-disclosure" data-component=":disclosure:">
 							<div class="product-info-disclosure__header" data-elem="disclosure.toggle">
@@ -183,7 +187,7 @@ import ProductListCard from 'src/components/ProductListCard.astro';
 		<div class="container">
 			<div class="recomendations__inner">
 				<div class="recomendations__header">
-					<h2 class="recomendations__title tg-section-title">Дивилися раніше</h2>
+					<h2 class="recomendations__title tg-section-title">Переглянуті товари</h2>
 					<div class="recomendations__actions">
 						<button type="button" class="recomendations__btn recomendations__btn_prev btn btn_rect btn_slider"><span class="icon-small-arrow-left btn__icon"></span></button>
 						<button type="button" class="recomendations__btn recomendations__btn_next btn btn_rect btn_slider"><span class="icon-small-arrow-right btn__icon"></span></button>

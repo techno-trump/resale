@@ -20,9 +20,20 @@ const { className, data, type } = Astro.props;
 ---
 <a class:list={["product-list-card", className, type === "storefront" && "product-list-card_storefront"]}>
 	<div class="product-list-card__top">
-		<ImgWrap className="product-list-card__img">
-			<img src={data.imgSrc || "img/product.webp"} alt="Product">
-		</ImgWrap>
+		<div class="product-list-card__images card-slider" data-component=":card-slider:">
+			<div class="card-slider__main">
+				<ImgWrap className="card-slider__img">
+					<img src={data.imgSrc || "img/product.webp"} alt="Product">
+				</ImgWrap>
+				<ImgWrap className="card-slider__img">
+					<img src={data.imgSrc || "img/product.webp"} alt="Product">
+				</ImgWrap>
+				<ImgWrap className="card-slider__img">
+					<img src={data.imgSrc || "img/product.webp"} alt="Product">
+				</ImgWrap>
+			</div>
+			<div class="card-slider__bullets"></div>
+		</div>
 		{ data.sizes &&
 			<div class="product-list-card__sizes">
 				{data.sizes?.map(size => <div class="product-list-card__size-item">{size}</div>)}

@@ -8,7 +8,9 @@ interface Props {
 
 const { className, submenu, title } = Astro.props;
 ---
-{!submenu && <a href="" class="header-menu-item text-link uppercase">{title}</a>}
+{!submenu && <div class:list={["header-menu-item", className]}>
+							<a href="" class="header-menu-item__link text-link uppercase">{title}</a>
+						</div>}
 {submenu &&
 	<div class="header-menu-item header-menu-item_dropdown">
 		<a href="" class="header-menu-item__link text-link uppercase">{title}</a>

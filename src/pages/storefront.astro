@@ -279,14 +279,21 @@ const sizesFilters = [
 		</div>
 		<div class="container storefront__body-container">
 			<div class="storefront-grid storefront__grid">
-				{	
-					Array(12).fill({
-						sizes: [28, 29, 30],
-					}).map(item => <ProductListCard type="storefront" data={item}></ProductListCard>)
-				}
+				<div class="storefront-grid__inner">
+					{	
+						Array(12).fill({
+							sizes: [28, 29, 30],
+						}).map(item => 
+							<div class="storefront-grid__item">
+								<div class="storefront-grid__item-inner">
+									<ProductListCard type="storefront" data={item}></ProductListCard>
+								</div>
+							</div>)
+					}
+				</div>
 			</div>
 			<div class="storefront__show-more">
-				<button type="submit" class="btn btn_rect btn_light btn_bordered btn_md">Показати більше</button>
+				<button type="submit" class="btn btn_rect btn_dark btn_bordered btn_md btn_wide">Показати більше</button>
 			</div>
 			<div class="pagination">
 				<a href="" class="pagination__item btn"><span class="icon-small-arrow-left"></span></a>

@@ -56,7 +56,6 @@ export function initMultiInputs() {
 	rootElems.forEach(rootElem => {
 		const rangeFromInputElem = rootElem.querySelector(doubleRangeSelectors.from);
 		const rangeToInputElem = rootElem.querySelector(doubleRangeSelectors.to);
-			console.log(rootElem, rangeFromInputElem, rangeToInputElem);
 		const [minValue, maxValue] = getMinMax(rangeFromInputElem);
 		const inputFromElem = rootElem.querySelector(fromInputSelector);
 		const inputToElem = rootElem.querySelector(toInputSelector);
