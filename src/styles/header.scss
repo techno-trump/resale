@@ -110,7 +110,7 @@
 		bottom: 0;
 		z-index: 1001;
 		top: var(--header-top-bottom, 0);
-		width: 100%;
+		width: calc(100% - var(--scroll-width));
 		transition: transform 0.3s;
 		background-color: var(--sf-light);
 		max-width: 400px;
@@ -202,8 +202,9 @@
 		gap: 0;
 		font-size: 14px;
 		font-weight: 500;
-		padding: 0 calc(var(--container-save-space) + 10px);
-		margin-bottom: 16px;
+		//padding: 0 calc(var(--container-save-space) + 10px);
+		//margin-bottom: 16px;
+		border-top: 1px solid rgba(0, 0, 0, 0.1);
 	}
 	& > .btn {
 		--border-color: transparent;
@@ -216,10 +217,10 @@
 			--active-color: white;
 			--active-hover-color: white;
 			--active-hover-bg-color: black;
-			padding: 12px 28px;
+			padding: 20px 28px;
 		}
 		@media (max-width: 420px) {
-			padding: 12px 16px;
+			padding: 18px 16px;
 		}
 	}
 }
@@ -262,6 +263,9 @@
 	@media (max-width: config.$mbpM) {
 		text-align: center;
 		border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+		&:first-child {
+			border-top: 1px solid rgba(0, 0, 0, 0.1);
+		}
 		&__link {
 			padding: 24px var(--container-save-space);
 		}

@@ -18,10 +18,11 @@ html {
 	background-color: var(--sf-main-bg);
 }
 html.scroll-lock-by-drawer {
-	--scroll-width: 17px;
+	--scroll-width: 0px;
 	overflow: hidden;
+	padding-right: var(--scroll-width);
 	&:not(.is-mobile) {
-		padding-right: var(--scroll-width);
+		--scroll-width: 17px;
 	}
 }
 body {
