@@ -1,6 +1,7 @@
 import "../styles/index.scss";
 import "./fslightbox.js";
 import throttle from "lodash.throttle";
+import { initAmountSelectors } from "./amount-select.js";
 
 import EventEmitter from "eventemitter3";
 import { Header } from "./header.js";
@@ -17,6 +18,7 @@ window.app.hoverMedia = window.matchMedia("(any-hover: hover)");
 window.app.events = new EventEmitter();
 
 document.documentElement.classList.toggle("is-mobile", isMobile.any());
+initAmountSelectors();
 
 const langSwitchSelector = `[data-component*=":lang-switch:"]`;
 const langSwitchPanelSelector = `.lang-switch__panel`;

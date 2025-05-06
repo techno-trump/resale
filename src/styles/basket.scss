@@ -1,0 +1,181 @@
+@use "./config.scss" as config;
+
+.basket {
+	padding: 40px;
+	background-color: #FFFFFF;
+	@media (max-width: config.$mbpM) {
+		padding: 30px 16px;
+	}
+	&__title {
+		display: flex;
+		align-items: flex-end;
+		gap: 10px;
+		font-weight: 600;
+		font-size: 24px;
+		line-height: 130%;
+	}
+	&__amount {
+		font-size: 20px;
+		opacity: 0.6;
+	}
+	&__body {
+		display: flex;
+		flex-direction: column;
+		gap: 40px;
+		@media (max-width: config.$mbpM) {
+			gap: 20px;
+		}
+	}
+	&__list {
+		
+	}
+	&__total {
+		align-self: flex-end;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.4em;
+		font-weight: 600;
+		font-size: 24px;
+		line-height: 130%;
+		text-align: right;
+		@media (max-width: config.$mbpSM) {
+			font-size: 16px;
+		}
+		& > dd {
+			color: var(--text-primary);
+		}
+	}
+	&__actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 20px;
+		& > * {
+			flex: 1 1 auto;
+		}
+		@media (max-width: config.$mbpM) {
+			gap: 10px;
+		}
+	}
+}
+.basket-list {
+	display: grid;
+	align-items: center;
+	grid-template-columns: min-content minmax(60px, 0.6fr) minmax(140px, 1.5fr) minmax(min-content, 0.5fr) minmax(min-content, 0.5fr) min-content minmax(max-content, 0.8fr);
+	gap: 18px;
+	@media (max-width: config.$mbpM) {
+		grid-template-columns: min-content minmax(60px, 0.6fr) minmax(60px, 0.8fr) min-content;
+		gap: 10px;
+	}
+	&__header {
+		color: #858585;
+		font-weight: 600;
+		font-size: 14px;
+		line-height: 2;
+
+		@media (max-width: config.$mbpM) {
+			display: none;
+		}
+		&_title {
+			grid-column: 2/span 2;
+		}
+		&_size, &_color, &_amount {
+			text-align: center;
+		}
+		&_price {
+			text-align: right;
+			@media (max-width: config.$mbpM) {
+				display: none;
+			}
+		}
+	}
+	&__separator {
+		grid-column: 1/-1;
+		height: 1px;
+		background-color: #DFDFDF;
+		@media (max-width: config.$mbpM) {
+			margin: 10px 0;
+		}
+	}
+	&__drop {
+	}
+	&__view {
+		--height-ratio: 100%;
+	}
+	&__img {
+	}
+	&__title {
+		color: #858585;
+		font-weight: 600;
+		font-size: 14px;
+		line-height: 130%;
+		@media (max-width: config.$mbpM) {
+			grid-column: auto/span 2;
+		}
+	}
+	&__size, &__color, &__price {
+		font-weight: 600;
+		font-size: 16px;
+		line-height: 130%;
+		letter-spacing: 0.41px;
+		text-align: center;
+	}
+	&__size, &__color, &__amount {
+		@media (max-width: config.$mbpM) {
+			display: flex;
+			flex-direction: column;
+			align-items: start;
+			gap: 20px;
+			&::before {
+				color: #858585;
+				font-weight: 600;
+				font-size: 14px;
+				line-height: 2;
+			}
+		}
+		@media (max-width: config.$mbpSM) {
+			&::before {
+				font-size: 12px;
+			}
+		}
+	}
+	&__size {
+		@media (max-width: config.$mbpM) {
+			grid-column: auto/span 2;
+			&::before {
+				content: "Размер";
+			}
+		}
+	}
+	&__color {
+		@media (max-width: config.$mbpM) {
+			&::before {
+				content: "Цвет";
+			}
+		}
+	}
+	&__amount {
+		@media (max-width: config.$mbpM) {
+			&::before {
+				content: "Количество";
+			}
+		}
+	}
+	&__price {
+		color: var(--text-primary);
+		text-align: right;
+		@media (max-width: config.$mbpM) {
+			text-align-last: left;
+			grid-column: 1/ -1;
+		}
+	}
+}
+.amount-select {
+	&__btn {
+	}
+	&__btn_dec {
+	}
+	&__input {
+	}
+	&__btn_inc {
+	}
+}
