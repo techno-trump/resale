@@ -2,14 +2,16 @@
 import BasketDrawer from 'src/components/BasketDrawer.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
+import OneClickBuyDrawer from 'src/components/OneClickBuyDrawer.astro';
 
 interface Props {
 	title: string;
 	description: string;
 	empty?: boolean;
+	flex?: boolean;
 }
 
-const { title, description, empty = false } = Astro.props;
+const { title, description, empty = false, flex = false } = Astro.props;
 
 const mode = import.meta.env.MODE;
 ---
@@ -38,13 +40,14 @@ const mode = import.meta.env.MODE;
 	</head>
 	<body class="tg-regular">
 		{empty ? null : <Header></Header>}
-		<main>
+		<main class:list={[flex && "main_flex"]}>
 			<slot />
 		</main>
 		{empty ? null : <Footer></Footer>}
 		<slot name="drawers" />
 		<div class="drawers">
 			<BasketDrawer/>
+			<OneClickBuyDrawer/>
 		</div>
 	</body>
 </html>

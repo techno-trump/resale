@@ -1,7 +1,9 @@
 import "../styles/index.scss";
+import 'imask';
 import "./fslightbox.js";
 import throttle from "lodash.throttle";
 import { initAmountSelectors } from "./amount-select.js";
+import { initTabsSwitch, initTabs } from "./tabs.js";
 
 import EventEmitter from "eventemitter3";
 import { Header } from "./header.js";
@@ -17,8 +19,12 @@ window.app = window.app || {};
 window.app.hoverMedia = window.matchMedia("(any-hover: hover)");
 window.app.events = new EventEmitter();
 
+document.documentElement.style.setProperty("--scroll-width", `${window.innerWidth - document.documentElement.offsetWidth}px`);
+
 document.documentElement.classList.toggle("is-mobile", isMobile.any());
 initAmountSelectors();
+initTabsSwitch();
+initTabs();
 
 const langSwitchSelector = `[data-component*=":lang-switch:"]`;
 const langSwitchPanelSelector = `.lang-switch__panel`;
@@ -120,15 +126,47 @@ matchMedia("(max-width: 768px)").addEventListener("change", ({ matches }) => {
 document.querySelectorAll(`[data-component*=":select:"]`).forEach(elem => {
 	const type = elem.getAttribute("data-type")?.match(/:select.(\w+):/)?.[1];
 	const options = {
+		controlClass: "select__control",
+		dropdownClass: "select__dropdown",
+		dropdownContentClass: "select__options-list",
+		optionClass: 'select__option',
+		itemClass: "select__item",
 		plugins: {
 			addons: {},
+			dropdown_position: {}
 		}
 	};
+	if (type == "field") {
+		options.wrapperClass = "select select_field";
+	}
+
 	switch(type) {
 		case "simple":
 			options.controlInput = false;
 			break;
+		case "field":
+			options.controlInput = false;
+			break;
 	}
+
+	TomSelect.define("dropdown_position", function dropdownPosition(options) {
+		const dropdownMinWidth = 300;
+		this.on('dropdown_open', resetPosition);
+		const self = this;
+		
+		window.addEventListener("resize", throttle(resetPosition, 25));
+
+		function resetPosition() {
+			const wrapperBcr = self.wrapper.getBoundingClientRect();
+			if (wrapperBcr.right - dropdownMinWidth > 0 || self.wrapper.offsetWidth > dropdownMinWidth) {
+				self.dropdown.classList.remove("select__dropdown_left");
+				self.dropdown.classList.add("select__dropdown_right");
+			} else {
+				self.dropdown.classList.remove("select__dropdown_right");
+				self.dropdown.classList.add("select__dropdown_left");
+			} 
+		}
+	});
 
 	TomSelect.define("addons", function(options = {}) {
 		// plugin_options: plugin-specific options
@@ -307,6 +345,28 @@ if (seoHiddenSection) {
 	});
 }
 
+document.querySelectorAll(`[data-component*=":scroll-slider:"]`).forEach((root) => {
+	var slider = new KeenSlider(root, {
+		selector: "scroll-slider__slide",
+		slides: {
+			perView: "auto"
+		},
+		mode: "free",
+	});
+});
+document.querySelectorAll(`[data-component*=":pass-mode-toggle:"]`).forEach((root) => {
+	const wrap = root.closest(".form-field");
+	const input = wrap.querySelector("input");
+	root.addEventListener("click", () => {
+		wrap.classList.toggle("form-field_show-pass");
+		if (wrap.classList.contains("form-field_show-pass")) {
+			input.setAttribute("type", "text");
+		} else {
+			input.setAttribute("type", "password");
+		}
+	});
+});
+
 document.querySelectorAll(`[data-component*=":feedbacks-slider:"]`).forEach(root => {
 	const body = root.querySelector(".feedbacks-slider__body");
 	const prevBtn = root.querySelector(".feedbacks-slider__prev-btn");
@@ -395,6 +455,7 @@ window.app.initCardSlider = function(root) {
 	window.app.events.on("storefront-grid-change", () => slider.update());
 }
 document.querySelectorAll(`[data-component*=":card-slider:"]`).forEach(root => window.app.initCardSlider(root));
+document.querySelectorAll(`[data-component*=":tel-mask:"]`).forEach(root => new IMask(root, { lazy: false, mask: '+{38}(000)00-00-000' }));
 
 initDoubleRangeInputs("#000");
 initMultiInputs();

@@ -1,5 +1,4 @@
 ---
-import Checkbox from 'src/components/Checkbox.astro';
 import ImgWrap from '../components/basic/ImgWrap.astro';
 import Layout from '../layouts/Layout.astro';
 import ProductListCard from 'src/components/ProductListCard.astro';
@@ -17,7 +16,6 @@ import ProductListCard from 'src/components/ProductListCard.astro';
 							<span class="breadcrumbs__separator">›</span>
 							<span class="breadcrumbs__item breadcrumb__item_active">Одежда</span>
 						</nav>
-						
 					</div>
 					<div class="product-card__id product-card__id_mob">342432</div>
 				</div>
@@ -80,9 +78,26 @@ import ProductListCard from 'src/components/ProductListCard.astro';
 						<div class="product-card__title">Шкіряна сумка</div>
 						<div class="product-card__id product-card__id_desc">342432</div>
 						<div class="product-card__price">
-							<div class="product-card__full-price">11 300 ₴</div>
+							<div class="product-card__full-price product-card__full-price_hl">11 300 ₴</div>
+						</div>
+						<div class="product-card__color-size">
+							<select name="size" class="product-card__size" data-component=":select:" data-type=":select.field:">
+								<option value="XS" disabled>XS</option>
+								<option value="S" selected>S</option>
+								<option value="M">M</option>
+								<option value="L">L</option>
+								<option value="XL" disabled>XL</option>
+								<option value="XXL" disabled>XXL</option>
+							</select>
+
+							<select name="color" class="product-card__color" data-component=":select:" data-type=":select.field:">
+								<option value="red">red</option>
+								<option value="green">green</option>
+								<option value="blue">blue</option>
+							</select>
 						</div>
 					</div>
+					<a href="" class="product-card__all-products text-link underline">Усі товари продавця</a>
 					<div class="product-card__actions">
 						<button type="button" class="btn btn_rect btn_md btn_light btn_border-round">Додати в кошик</button>
 						<button type="button" class="btn btn_rect btn_md btn_semi-dark btn_border-round btn_buy"><span class="btn__icon icon-shopper"></span><div class="btn__title">Купити в один клік</div></button>

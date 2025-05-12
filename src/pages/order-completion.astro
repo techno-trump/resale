@@ -1,0 +1,168 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+---
+<Layout title="ReSale Order completion" description="Order completion">
+	<div class="order-completion">
+		<div class="container">
+			<div class="order-completion__header page-header">
+				<nav aria-label="Breadcrumb" class="breadcrumbs tg-breadcrumbs page-header__breadcrumbs">
+					<a href="/" class="breadcrumbs__item text-link">Главная</a>
+					<span class="breadcrumbs__separator">›</span>
+					<span class="breadcrumbs__item breadcrumb__item_active">Оформлення замовлення</span>
+				</nav>
+				<h1 class="tg-page-title page-header__title">Оформлення замовлення</h1>
+			</div>
+			<div class="order-completion__main section-space-bottom">
+				<div class="order-completion__body">
+					<section class="cabinet-section">
+						<h3 class="cabinet-section__title">Одержувач</h3>
+						<div class="cabinet-section__body">
+							<div class="cabinet-form">
+								<label class="form-field cabinet-form__field cabinet-form__field_lg">
+									<div class="form-field__label">ПІБ *</div>
+									<input class="form-field__input" />
+								</label>
+								<label class="form-field cabinet-form__field">
+									<div class="form-field__label">E-mail *</div>
+									<input class="form-field__input" />
+								</label>
+								<label class="form-field cabinet-form__field">
+									<div class="form-field__label">Телефон *</div>
+									<input class="form-field__input" data-component=":tel-mask:"/>
+								</label>
+							</div>
+						</div>
+					</section>
+					<section class="cabinet-section">
+						<h3 class="cabinet-section__title">Доставка</h3>
+						<div class="cabinet-section__body">
+							<div class="tabs-wrap">
+								<div class="scroll-slider" data-component=":scroll-slider:">
+									<div class="tabs-switch tabs-switch_order scroll-slider__slide" data-component=":tabs-switch:" data-switch-for="shipment">
+										{
+											[
+												{ active: true, title: "Самовивіз" },
+												{ active: false, title: "Нова Пошта" },
+												{ active: false, title: "Нова Пошта - доставка за адресою" }
+											].map(({ active, title }) =>
+													<button type="button" class:list={["tabs-switch__btn", active && "tabs-switch__btn_active"]}>
+														<span class="tabs-switch__btn-label">{title}</span>
+													</button>
+												)
+										}
+									</div>
+								</div>
+								<div class="tabs tabs--cabinet" data-component=":tabs-list:" data-tabs-for="shipment">
+									{
+										[true, false, false].map(active =>
+											<div class:list={["tabs__panel", active && "tabs__panel_active"]}>
+												<div class="tabs__inner">
+													<div class="cabinet-form">
+														<label class="form-field cabinet-form__field">
+															<div class="form-field__label">Адреса *</div>
+															<input class="form-field__input" />
+														</label>
+														<label class="form-field cabinet-form__field">
+															<div class="form-field__label">Місто *</div>
+															<input class="form-field__input" />
+														</label>
+														<label class="form-field cabinet-form__field cabinet-form__field_lg">
+															<div class="form-field__label">Відділення №</div>
+															<input class="form-field__input"/>
+														</label>
+													</div>
+												</div>
+											</div>
+										)
+									}
+								</div>
+							</div>
+						</div>
+					</section>
+					<section class="cabinet-section">
+						<h3 class="cabinet-section__title">Оплата</h3>
+						<div class="cabinet-section__body">
+							<div class="tabs-wrap">
+								<div class="scroll-slider" data-component=":scroll-slider:">
+									<div class="tabs-switch tabs-switch_order scroll-slider__slide" data-component=":tabs-switch:" data-switch-for="shipment">
+										{
+											[
+												{ active: true, title: "Готівкою" },
+												{ active: false, title: "Картою" },
+												{ active: false, title: "При отриманні" }
+											].map(({ active, title }) =>
+													<button type="button" class:list={["tabs-switch__btn", active && "tabs-switch__btn_active"]}>
+														<span class="tabs-switch__btn-label">{title}</span>
+													</button>
+												)
+										}
+									</div>
+								</div>
+								<div class="tabs tabs--cabinet" data-component=":tabs-list:" data-tabs-for="shipment">
+									{
+										[true, false, false].map(active =>
+											<div class:list={["tabs__panel", active && "tabs__panel_active"]}>
+												<div class="tabs__inner">
+													Якщо у Вас виникли питання задайте їх оператору на сайті або зверніться в наш call-центр.
+												</div>
+											</div>
+										)
+									}
+								</div>
+							</div>
+						</div>
+					</section>
+				</div>
+				<section class="order-completion__summary cabinet-section cabinet-section_order-summary">
+					<h3 class="cabinet-section__title">Ви обрали</h3>
+					<div class="cabinet-section__body">
+						<div class="basket-list basket-list_order-summary">
+							{ ["", "", ""].map(() =>
+									<Fragment>
+										<div class="basket-list__view img-wrap">
+											<div class="img-wrap__inner">
+												<img src="img/basket-product.jpg" alt="Basket product" class="basket-list__img img-wrap__item">
+											</div>
+										</div>
+										<div class="basket-list__title">Жіночі утеплені лофери з натуральної шкіри</div>
+										<button type="button" class="basket-list__drop btn btn_icon btn_xs"><span class="icon-thin-cross"></span></button>
+										<div class="basket-list__size">M</div>
+										<div class="basket-list__amount">
+											<div class="amount-select">
+												<button type="button" class="amount-select__btn amount-select__btn_dec btn"></button>
+												<input type="number" pattern="\d+" class="amount-select__input" value="0">
+												<button type="button" class="amount-select__btn amount-select__btn_inc btn"></button>
+											</div>
+										</div>
+										<div class="basket-list__price">16 788 ₴</div>
+										<div class="basket-list__separator"></div>
+									</Fragment>
+								)
+							}
+						</div>
+						<label class="form-field">
+							<div class="form-field__label">Промокод *</div>
+							<input class="form-field__input" placeholder="при наявності*"/>
+						</label>
+						<div class="cabinet-section__separator"></div>
+						<dl class="cabinet-section__summary">
+							<div class="cabinet-section__summary-item">
+								<dt>Знижка:</dt><dd>25%</dd>
+							</div>
+							<div class="cabinet-section__summary-item">
+								<dt>Разом:</dt><dd>15 000 грн.</dd>
+							</div>
+							<div class="cabinet-section__summary-item">
+								<dt>Сума до оплати:</dt><dd>24 000 грн.</dd>
+							</div>
+						</dl>
+						<div class="cabinet-section__separator"></div>
+						<button class="btn btn_md btn_rect btn_primary uppercase">Оформити замовлення</button>
+					</div>
+				</section>
+			</div>
+			
+		</div>
+	</div>
+</Layout>

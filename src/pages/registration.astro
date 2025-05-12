@@ -1,0 +1,39 @@
+---
+import Checkbox from 'src/components/Checkbox.astro';
+import Layout from '../layouts/Layout.astro';
+
+---
+<Layout title="ReSale Registration" description="Registration" flex={true}>
+	<div class="auth">
+		<div class="container auth__container">
+			<div class="auth__header page-header">
+				<nav aria-label="Breadcrumb" class="breadcrumbs tg-breadcrumbs page-header__breadcrumbs">
+					<a href="/" class="breadcrumbs__item text-link">Главная</a>
+					<span class="breadcrumbs__separator">›</span>
+					<span class="breadcrumbs__item breadcrumb__item_active">Регистрация</span>
+				</nav>
+				<h1 class="tg-page-title page-header__title">Регистрация</h1>
+			</div>
+			<form class="auth__main section-space-bottom">
+				<div class="form form_auth auth__form">
+					<label class="form-field">
+						<div class="form-field__label">Ім'я</div>
+						<input class="form-field__input" placeholder="Іван*"/>
+					</label>
+					<label class="form-field">
+						<div class="form-field__label">Телефон</div>
+						<input class="form-field__input" data-component=":tel-mask:"/>
+					</label>
+					<label class="form-field">
+						<div class="form-field__label">E-mail</div>
+						<input type="email" class="form-field__input" placeholder="example@gmail.com"/>
+					</label>
+				</div>
+				<button class="btn btn_sm btn_rect btn_round-corners btn_primary uppercase auth__btn">Зареєструватися</button>
+				<div class="auth__alt auth__tg-sm">
+					Уже є обліковий запис? <a href="" class="text-link text-link_primary">Увійти</a>
+				</div>
+			</form>
+		</div>
+	</div>
+</Layout>

@@ -1,0 +1,23 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+---
+<Layout title="ReSale Return" description="Order" flex={true}>
+	<div class="order-closed">
+		<div class="container order-closed__container">
+			<div class="order-closed__header page-header">
+				<nav aria-label="Breadcrumb" class="breadcrumbs tg-breadcrumbs page-header__breadcrumbs">
+					<a href="/" class="breadcrumbs__item text-link">Главная</a>
+					<span class="breadcrumbs__separator">›</span>
+					<span class="breadcrumbs__item breadcrumb__item_active">Оформлення замовлення</span>
+				</nav>
+				<h1 class="tg-page-title page-header__title">Оформлення замовлення</h1>
+			</div>
+			<div class="order-closed__main">
+				<div class="order-closed__number">Ваш номер замовлення: №5435342</div>
+				<div class="order-closed__msg">Ваше замовлення успішно оформлено, менеджер зв'яжеться з вами найближчим часом</div>
+				<button class="btn btn_sm btn_rect btn_round-corners btn_primary uppercase order-closed__btn">Продовжити покупки</button>
+			</div>
+		</div>
+	</div>
+</Layout>

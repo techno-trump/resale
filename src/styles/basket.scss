@@ -3,6 +3,7 @@
 .basket {
 	padding: 40px;
 	background-color: #FFFFFF;
+	max-width: 920px;
 	@media (max-width: config.$mbpM) {
 		padding: 30px 16px;
 	}
@@ -66,6 +67,9 @@
 		grid-template-columns: min-content minmax(60px, 0.6fr) minmax(60px, 0.8fr) min-content;
 		gap: 10px;
 	}
+	&_order-summary {
+		grid-template-columns: minmax(100px, 1fr) minmax(min-content, 1.2fr) min-content min-content max-content;
+	}
 	&__header {
 		color: #858585;
 		font-weight: 600;
@@ -96,10 +100,14 @@
 			margin: 10px 0;
 		}
 	}
-	&__drop {
+	&_order-summary &__drop {
+		align-self: start;
 	}
 	&__view {
 		--height-ratio: 100%;
+	}
+	&_order-summary &__view {
+		grid-row: auto/ span 2;
 	}
 	&__img {
 	}
@@ -108,9 +116,16 @@
 		font-weight: 600;
 		font-size: 14px;
 		line-height: 130%;
+		
+	}
+	&_basket &__title {
 		@media (max-width: config.$mbpM) {
 			grid-column: auto/span 2;
 		}
+	}
+	&_order-summary &__title {
+		align-self: start;
+		grid-column: auto/span 3;
 	}
 	&__size, &__color, &__price {
 		font-weight: 600;
@@ -119,7 +134,7 @@
 		letter-spacing: 0.41px;
 		text-align: center;
 	}
-	&__size, &__color, &__amount {
+	&_basket &__size, &_basket &__color, &_basket &__amount {
 		@media (max-width: config.$mbpM) {
 			display: flex;
 			flex-direction: column;
@@ -138,7 +153,10 @@
 			}
 		}
 	}
-	&__size {
+	&_order-summary &__size {
+		text-align: left;
+	}
+	&_basket &__size {
 		@media (max-width: config.$mbpM) {
 			grid-column: auto/span 2;
 			&::before {
@@ -146,36 +164,35 @@
 			}
 		}
 	}
-	&__color {
+	&_basket &__color {
 		@media (max-width: config.$mbpM) {
 			&::before {
 				content: "Цвет";
 			}
 		}
 	}
-	&__amount {
+	&_basket &__amount {
 		@media (max-width: config.$mbpM) {
 			&::before {
 				content: "Количество";
 			}
 		}
 	}
+	&_order-summary &__amount {
+		grid-column:auto/ span 1;
+	}
 	&__price {
 		color: var(--text-primary);
 		text-align: right;
+		
+	}
+	&_basket &__price {
 		@media (max-width: config.$mbpM) {
 			text-align-last: left;
 			grid-column: 1/ -1;
 		}
 	}
-}
-.amount-select {
-	&__btn {
-	}
-	&__btn_dec {
-	}
-	&__input {
-	}
-	&__btn_inc {
+	&_order-summary &__price {
+		grid-column: auto/span 2;
 	}
 }

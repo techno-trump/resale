@@ -15,6 +15,7 @@
     "astro": "^4.5.4",
     "eventemitter3": "^5.0.1",
     "fslightbox": "^3.4.2",
+    "imask": "^7.6.1",
     "keen-slider": "^6.8.6",
     "lodash.debounce": "^4.0.8",
     "lodash.throttle": "^4.1.1",

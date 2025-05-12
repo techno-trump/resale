@@ -32,7 +32,11 @@ body {
 	min-height: 100%;
 }
 body main {
-	flex: 1 1 auto
+	flex: 1 1 auto;
+}
+.main_flex {
+	display: flex;
+	flex-direction: column;
 }
 .container {
 	width: 100%;
