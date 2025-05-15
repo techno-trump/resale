@@ -1,0 +1,45 @@
+---
+interface Props {
+	className?: string;
+	active: string;
+}
+
+const { className, active } = Astro.props;
+---
+<aside class:list={["cabinet-sidebar", className]}>
+	<div class="cabinet-sidebar__inner">
+		<nav class="cabinet-sidebar__body">
+			<ul class="cabinet-sidebar__list">
+				{
+					[
+						{ name: "Мої товари", href: "/sales", icon: "icon-clapper" },
+						{ name: "Продажі", href: "/orders", icon: "icon-uah" },
+						{ name: "Оформлені повернення", href: "/return", icon: "icon-return", wide: true },
+					].map(({ name, href, icon, wide }) => <li class:list={["cabinet-sidebar__item", wide && "cabinet-sidebar__item_wide"]}>
+							<a href={href} class:list={["cabinet-sidebar__link btn btn_rect", active === href && "cabinet-sidebar__link_active" ]}>
+								<span class:list={["cabinet-sidebar__icon btn__icon", icon]}></span>
+								{name}
+							</a>
+						</li>)
+				}
+			</ul>
+			<ul class="cabinet-sidebar__list">
+				{
+					[
+						{ name: "Мій профіль", href: "/profile", icon: "icon-person" },
+						{ name: "Платіжна інформація", href: "/payment-info", icon: "icon-paycard" },
+						{ name: "Мої адреси", href: "/addresses", icon: "icon-map-pin" },
+						{ name: "Налаштування", href: "/navigation", icon: "icon-settings" },
+						{ name: "Зворотній зв'язок", href: "/feedback", icon: "icon-headphones" },
+						{ name: "Вихід", href: "/logout", icon: "icon-logout" },
+					].map(({ name, href, icon }) => <li class="cabinet-sidebar__item">
+							<a href={href} class:list={["cabinet-sidebar__link btn btn_rect", active === href && "cabinet-sidebar__link_active" ]}>
+								<span class:list={["cabinet-sidebar__icon btn__icon", icon]}></span>
+								{name}
+							</a>
+						</li>)
+				}
+			</ul>
+		</nav>
+	</div>
+</aside>

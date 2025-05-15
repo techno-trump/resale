@@ -1,4 +1,5 @@
 ---
+import CabinetSidebar from 'src/components/CabinetSidebar.astro';
 import ImgWrap from '../components/basic/ImgWrap.astro';
 import Layout from '../layouts/Layout.astro';
 ---
@@ -13,71 +14,8 @@ import Layout from '../layouts/Layout.astro';
 					<span class="breadcrumbs__item breadcrumb__item_active">Одежда</span>
 				</nav>
 			</div>
-			<aside class="cabinet__sidebar cabinet-sidebar">
-				<div class="cabinet-sidebar__inner">
-					<nav class="cabinet-sidebar__body">
-						<ul class="cabinet-sidebar__list">
-							<li class="cabinet-sidebar__item">
-								<a href="/my-goods" class="cabinet-sidebar__link btn btn_rect">
-									<span class="icon-clapper cabinet-sidebar__icon btn__icon"></span>
-									Мої товари
-								</a>
-							</li>
-							<li class="cabinet-sidebar__item">
-								<a href="/sales" class="cabinet-sidebar__link btn btn_rect">
-									<span class="cabinet-sidebar__icon btn__icon icon-uah"></span>
-									Продажі
-								</a>
-							</li>
-							<li class="cabinet-sidebar__item">
-								<a href="/orders" class="cabinet-sidebar__link btn btn_rect">
-									<span class="cabinet-sidebar__icon btn__icon icon-return"></span>
-									Оформлені повернення
-								</a>
-							</li>
-						</ul>
-						<ul class="cabinet-sidebar__list">
-							<li class="cabinet-sidebar__item">
-								<a href="/profile" class="cabinet-sidebar__link cabinet-sidebar__link_active btn btn_rect">
-									<span class="cabinet-sidebar__icon btn__icon icon-person"></span>
-									Мій профіль
-								</a>
-							</li>
-							<li class="cabinet-sidebar__item">
-								<a href="/payment-info" class="cabinet-sidebar__link btn btn_rect">
-									<span class="cabinet-sidebar__icon btn__icon icon-paycard"></span>
-									Платіжна інформація
-								</a>
-							</li>
-							<li class="cabinet-sidebar__item">
-								<a href="/addresses" class="cabinet-sidebar__link btn btn_rect">
-									<span class="cabinet-sidebar__icon btn__icon icon-map-pin"></span>
-									Мої адреси
-								</a>
-							</li>
-							<li class="cabinet-sidebar__item">
-								<a href="/navigation" class="cabinet-sidebar__link btn btn_rect">
-									<span class="cabinet-sidebar__icon btn__icon icon-settings"></span>
-									Налаштування
-								</a>
-							</li>
-							<li class="cabinet-sidebar__item">
-								<a href="/feedback" class="cabinet-sidebar__link btn btn_rect">
-									<span class="cabinet-sidebar__icon btn__icon icon-headphones"></span>
-									Зворотній зв'язок
-								</a>
-							</li>
-							<li class="cabinet-sidebar__item">
-								<a href="/logout" class="cabinet-sidebar__link btn btn_rect">
-									<span class="cabinet-sidebar__icon btn__icon icon-logout"></span>
-									Вихід
-								</a>
-							</li>
-						</ul>
-					</nav>
-				</div>
-			</aside>
-			<h1 class="cabinet__title tg-page-title">Мій профіль</h1>
+			<CabinetSidebar className='cabinet__sidebar' active="/profile"></CabinetSidebar>
+			<h1 class="cabinet__title">Мій профіль</h1>
 			<!-- Main content -->
 			<div class="cabinet__body">
 				<div class="cabinet__section">

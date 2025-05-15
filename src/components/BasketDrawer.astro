@@ -7,36 +7,48 @@
 			</button>
 		</div>
 		<div class="drawer__body basket__body">
-			<div class="basket__list basket-list basket-list_basket">
-				<div class="basket-list__header basket-list__header_title">Название</div>
-				<div class="basket-list__header basket-list__header_size">Размер</div>
-				<div class="basket-list__header basket-list__header_color">Цвет</div>
-				<div class="basket-list__header basket-list__header_amount">Количество</div>
-				<div class="basket-list__header basket-list__header_price">Цена</div>
-				{ ["", "", ""].map(() =>
-						<Fragment>
-							<button type="button" class="basket-list__drop btn btn_icon btn_xs"><span class="icon-thin-cross"></span></button>
-							<div class="basket-list__view img-wrap">
-								<div class="img-wrap__inner">
-									<img src="img/basket-product.jpg" alt="Basket product" class="basket-list__img img-wrap__item">
+			<table class="basket__list basket-list basket-list_basket">
+				<thead>
+					<tr>
+						<th></th>
+						<th colspan="2">Название</th>
+						<th>Размер</th>
+						<th>Цвет</th>
+						<th>Количество</th>
+						<th>Цена</th>
+					</tr>
+				</thead>
+				<tbody>
+					{ ["", "", ""].map(() =>
+						<tr class="basket-list-item basket-list-item_basket">
+							<td class="basket-list-item__drop">
+								<button type="button" class="btn btn_icon btn_xs"><span class="icon-thin-cross"></span></button>
+							</td>
+							<td class="basket-list-item__view">
+								<div class="img-wrap">
+									<div class="img-wrap__inner">
+										<img src="img/basket-product.jpg" alt="Basket product" class="basket-list-item__img img-wrap__item">
+									</div>
 								</div>
-							</div>
-							<div class="basket-list__title">Жіночі утеплені лофери з натуральної шкіри</div>
-							<div class="basket-list__size">M</div>
-							<div class="basket-list__color">Серый</div>
-							<div class="basket-list__amount">
+							</td>
+							<td class="basket-list-item__title">
+								Жіночі утеплені лофери з натуральної шкіри
+							</td>
+							
+							<td class="basket-list-item__size">M</td>
+							<td class="basket-list-item__color">Серый</td>
+							<td class="basket-list-item__amount">
 								<div class="amount-select">
 									<button type="button" class="amount-select__btn amount-select__btn_dec btn"></button>
 									<input type="number" pattern="\d+" class="amount-select__input" value="0">
 									<button type="button" class="amount-select__btn amount-select__btn_inc btn"></button>
 								</div>
-							</div>
-							<div class="basket-list__price">16 788 ₴</div>
-							<div class="basket-list__separator"></div>
-						</Fragment>
-					)
-				}
-			</div>
+							</td>
+							<td class="basket-list-item__price">16 788 ₴</td>
+						</tr>
+					)}
+				</tbody>
+			</table>
 			<dl class="basket__total"><dt>Разом:</dt><dd>15 000 грн.</dd></dl>
 			<div class="basket__actions">
 				<button class="btn btn_rect btn_md btn_semi-dark btn_round-corners">

@@ -4,6 +4,7 @@
 	padding: 40px;
 	background-color: #FFFFFF;
 	max-width: 920px;
+	width: 100%;
 	@media (max-width: config.$mbpM) {
 		padding: 30px 16px;
 	}
@@ -59,18 +60,14 @@
 	}
 }
 .basket-list {
-	display: grid;
-	align-items: center;
-	grid-template-columns: min-content minmax(60px, 0.6fr) minmax(140px, 1.5fr) minmax(min-content, 0.5fr) minmax(min-content, 0.5fr) min-content minmax(max-content, 0.8fr);
-	gap: 18px;
-	@media (max-width: config.$mbpM) {
-		grid-template-columns: min-content minmax(60px, 0.6fr) minmax(60px, 0.8fr) min-content;
-		gap: 10px;
+	border-collapse: collapse;
+	&__head {
+		display: grid;
+		align-items: center;
+		gap: 18px;
+		grid-template-columns: 40px minmax(60px, 0.6fr) minmax(140px, 1.5fr) minmax(60px, 0.5fr) minmax(60px, 0.5fr) 100px minmax(100px, 0.8fr);
 	}
-	&_order-summary {
-		grid-template-columns: minmax(100px, 1fr) minmax(min-content, 1.2fr) min-content min-content max-content;
-	}
-	&__header {
+	& thead {
 		color: #858585;
 		font-weight: 600;
 		font-size: 14px;
@@ -79,44 +76,93 @@
 		@media (max-width: config.$mbpM) {
 			display: none;
 		}
-		&_title {
-			grid-column: 2/span 2;
-		}
-		&_size, &_color, &_amount {
-			text-align: center;
-		}
-		&_price {
-			text-align: right;
-			@media (max-width: config.$mbpM) {
-				display: none;
+		th {
+			padding: 0px 10px;
+			&:first-child {
+				padding-left: 0;
+			}
+			&:last-child {
+				padding-right: 0;
 			}
 		}
+		th:nth-child(2) {
+			text-align: left;
+		}
+		th:last-child {
+			text-align: right;
+		}
 	}
-	&__separator {
-		grid-column: 1/-1;
-		height: 1px;
-		background-color: #DFDFDF;
+}
+.basket-list-item {
+	@media (max-width: config.$mbpM) {
+		display: grid;
+		grid-template-columns: min-content minmax(60px, 0.6fr) minmax(60px, 0.8fr) min-content;
+		gap: 10px 15px;
+		border-bottom: 1px solid #DFDFDF;
+		padding: 20px 0;
+	}
+	td {
+		padding: 20px 10px;
+		border-bottom: 1px solid #DFDFDF;
+		&:first-child {
+			padding-left: 0;
+		}
+		&:last-child {
+			padding-right: 0;
+		}
 		@media (max-width: config.$mbpM) {
-			margin: 10px 0;
+			border-bottom: none;
+			padding: 0;
+		}
+	}
+	
+	&_order-summary {
+		display: grid;
+		grid-template-columns: minmax(80px, 1fr) minmax(40px, 1.6fr) 100px 48px 40px;
+		grid-template-rows: 1fr auto;
+		align-items: center;
+		gap: 22px;
+		padding: 20px 0;
+		border-bottom: 1px solid #DFDFDF;
+		@media (max-width: config.$mbpT) {
+			gap: 16px;
+		}
+		@media (max-width: config.$mbpMM) {
+			grid-template-columns: minmax(65px, 85px) 1fr 48px 40px;
 		}
 	}
 	&_order-summary &__drop {
 		align-self: start;
+		position: relative;
+		right: -12px;
+		top: -12px;
 	}
-	&__view {
+	 &__view {
 		--height-ratio: 100%;
+		@media (max-width: config.$mbpT) {
+			min-width: 80px;
+		}
+		@media (max-width: config.$mbpMM) {
+			min-width: 65px;
+		}
+	 }
+	&_basket &__view {
+		width: 14%;
+		@media (max-width: config.$mbpM) {
+			width: 100%;
+		}
 	}
 	&_order-summary &__view {
 		grid-row: auto/ span 2;
-	}
-	&__img {
+		@media (max-width: config.$mbpMM) {
+			grid-row: auto/ span 1;
+		}
 	}
 	&__title {
 		color: #858585;
 		font-weight: 600;
 		font-size: 14px;
 		line-height: 130%;
-		
 	}
 	&_basket &__title {
 		@media (max-width: config.$mbpM) {
@@ -126,6 +172,9 @@
 	&_order-summary &__title {
 		align-self: start;
 		grid-column: auto/span 3;
+		@media (max-width: config.$mbpMM) {
+			grid-column: auto/span 2;
+		}
 	}
 	&__size, &__color, &__price {
 		font-weight: 600;
@@ -171,6 +220,9 @@
 			}
 		}
 	}
+	&__amount {
+		justify-self: end;
+	}
 	&_basket &__amount {
 		@media (max-width: config.$mbpM) {
 			&::before {
@@ -179,14 +231,14 @@
 		}
 	}
 	&_order-summary &__amount {
-		grid-column:auto/ span 1;
+		grid-column: auto/ span 1;
 	}
 	&__price {
 		color: var(--text-primary);
 		text-align: right;
-		
 	}
 	&_basket &__price {
+		min-width: 110px;
 		@media (max-width: config.$mbpM) {
 			text-align-last: left;
 			grid-column: 1/ -1;

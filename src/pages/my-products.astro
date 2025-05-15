@@ -1,0 +1,50 @@
+---
+import CabinetSidebar from 'src/components/CabinetSidebar.astro';
+import Layout from '../layouts/Layout.astro';
+import ProductListCard from 'src/components/ProductListCard.astro';
+---
+
+<Layout title="ReSale - My products" description="My products">
+	<div class="cabinet section-space-bottom">
+		<div class="container cabinet__container">
+			<div class="cabinet__header">
+				<nav aria-label="Breadcrumb" class="breadcrumbs tg-breadcrumbs cabinet__breadcrumbs">
+					<a href="/" class="breadcrumbs__item text-link">Главная</a>
+					<span class="breadcrumbs__separator">›</span>
+					<span class="breadcrumbs__item breadcrumb__item_active">Мої товари</span>
+				</nav>
+			</div>
+			<CabinetSidebar className='cabinet__sidebar' active="/payment-info"></CabinetSidebar>
+			<h1 class="cabinet__title">Мої товари</h1>
+			<!-- Main content -->
+			<div class="cabinet__body">
+				<div class="cabinet__section my-products-list">
+					<div class="my-products-list__inner">
+						{	
+							Array(12).fill({
+								sizes: [28, 29, 30],
+							}).map(item => 
+								<div class="my-products-list__item">
+									<div class="my-products-list__item-inner">
+										<ProductListCard type="my-products" data={item}></ProductListCard>
+									</div>
+								</div>)
+						}
+					</div>
+					<button type="submit" class="btn btn_rect btn_dark btn_bordered btn_md btn_wide my-products-list__show-more">Показати більше</button>
+					<div class="pagination">
+						<a href="" class="pagination__item btn"><span class="icon-small-arrow-left"></span></a>
+						<a href="" class="pagination__item btn">1</a>
+						<a href="" class="pagination__item btn pagination__item_active">2</a>
+						<a href="" class="pagination__item btn">3</a>
+						<a href="" class="pagination__item btn">...</a>
+						<a href="" class="pagination__item btn">24</a>
+						<a href="" class="pagination__item btn"><span class="icon-small-arrow-right"></span></a>
+					</div>
+				</div>
+				
+			</div>
+			
+		</div>
+	</div>
+</Layout>

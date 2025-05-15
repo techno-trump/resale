@@ -12,7 +12,7 @@ export type TProductListCardData = {
 	};
 interface Props {
 	className?: string;
-	type?: "storefront";
+	type?: "storefront" | "my-products";
 	data: TProductListCardData;
 }
 
@@ -33,6 +33,11 @@ const { className, data, type } = Astro.props;
 				</ImgWrap>
 			</div>
 			<div class="card-slider__bullets"></div>
+			{
+				type === "my-products" && <button type="button" class="product-list-card__settings">
+					<span class="icon-settings"></span>
+				</button>
+			}
 		</div>
 		{ data.sizes &&
 			<div class="product-list-card__sizes">

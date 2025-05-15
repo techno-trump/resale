@@ -1,0 +1,66 @@
+---
+import CabinetSidebar from 'src/components/CabinetSidebar.astro';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="ReSale - Addresses" description="Addresses">
+	<div class="cabinet section-space-bottom">
+		<div class="container cabinet__container">
+			<div class="cabinet__header">
+				<nav aria-label="Breadcrumb" class="breadcrumbs tg-breadcrumbs cabinet__breadcrumbs">
+					<a href="/" class="breadcrumbs__item text-link">Главная</a>
+					<span class="breadcrumbs__separator">›</span>
+					<span class="breadcrumbs__item breadcrumb__item_active">Моя адреса</span>
+				</nav>
+			</div>
+			<CabinetSidebar className='cabinet__sidebar' active="/payment-info"></CabinetSidebar>
+			<h1 class="cabinet__title">Моя адреса</h1>
+			<!-- Main content -->
+			<div class="cabinet__body">
+				<!-- Profile form -->
+				<form class="cabinet__form">
+					<div class="cabinet__section">
+						<h2 class="cabinet__section-title">Дані про клієнта</h2>
+						<div class="cabinet__form-body cabinet__form-body_payment-info">
+							<div class="form-field cabinet__form-field_lg">
+								<label class="form-field__label">ПІБ одержувача*</label>
+								<input type="text" class="form-field__input" required>
+							</div>
+							<div class="form-field">
+								<label class="form-field__label">Телефон одержувача*</label>
+								<input type="text" class="form-field__input" placeholder="Введіть прізвище" data-component=":tel-mask:">
+							</div>
+							<div class="form-field">
+								<label class="form-field__label">Email</label>
+								<input type="email" class="form-field__input" placeholder="example@gmail.com">
+							</div>
+						</div>
+					</div>
+					<div class="cabinet__section">
+						<h2 class="cabinet__section-title">Адреса повернення (Нова Пошта)</h2>
+						<div class="cabinet__form-body cabinet__form-body_payment-info">
+							<div class="form-field cabinet__form-field_lg">
+								<label class="form-field__label">Місто</label>
+								<input type="text" class="form-field__input" placeholder="Киев" required>
+							</div>
+							<div class="form-field">
+								<label class="form-field__label">Відділення Нової Пошти</label>
+								<input type="text" class="form-field__input" placeholder="Відділення №45">
+							</div>
+							<div class="form-field">
+								<label class="form-field__label">Додаткова інформація</label>
+								<input type="text" class="form-field__input" placeholder="Коментар або орієнтир якщо э">
+							</div>
+						</div>
+					</div>
+					<div class="cabinet__tip">
+						Вторинні зміни даних будуть проводитися через адміністрацію сайту. <a href="" class="text-link underline">Зв'язатися</a>
+					</div>
+					<div class="cabinet__section">
+						<button type="submit" class="btn btn_rect btn_primary cabinet__submit">Зберегти зміни</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</Layout>

@@ -133,16 +133,13 @@
 		grid-auto-flow: column;
 		justify-content: space-between;
 		align-items: center;
-		padding: 18px 0;
 		@media (max-width: config.$mbpM) {
 			grid-auto-flow: row;
 			justify-content: stretch;	
-			padding: 0 0 25px;
 		}
 		@media (max-width: config.$mbpM) {
 			grid-auto-flow: row;
 			justify-content: stretch;	
-			padding: 0 0 25px;
 		}
 	}
 	&__logo {
@@ -230,6 +227,7 @@
 	justify-content: center;
 	gap: 24px 50px;
 	overflow: hidden;
+	padding: 18px 0;
 	@media (max-width: config.$mbpT) {
 		gap: 25px;
 	}
@@ -239,6 +237,7 @@
 		position: relative;
 		min-height: var(--submenu-height);
 		transition: min-height 0.3s;
+		padding: 0 0 25px;
 	}
 	&__underlay {
 		position: absolute;

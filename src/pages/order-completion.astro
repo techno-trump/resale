@@ -119,25 +119,24 @@ import Layout from '../layouts/Layout.astro';
 					<div class="cabinet-section__body">
 						<div class="basket-list basket-list_order-summary">
 							{ ["", "", ""].map(() =>
-									<Fragment>
-										<div class="basket-list__view img-wrap">
+									<div class="basket-list-item basket-list-item_order-summary">
+										<div class="basket-list-item__view img-wrap">
 											<div class="img-wrap__inner">
-												<img src="img/basket-product.jpg" alt="Basket product" class="basket-list__img img-wrap__item">
+												<img src="img/basket-product.jpg" alt="Basket product" class="basket-list-item__img img-wrap__item">
 											</div>
 										</div>
-										<div class="basket-list__title">Жіночі утеплені лофери з натуральної шкіри</div>
-										<button type="button" class="basket-list__drop btn btn_icon btn_xs"><span class="icon-thin-cross"></span></button>
-										<div class="basket-list__size">M</div>
-										<div class="basket-list__amount">
+										<div class="basket-list-item__title">Жіночі утеплені лофери з натуральної шкіри</div>
+										<button type="button" class="basket-list-item__drop btn btn_icon btn_xs"><span class="icon-thin-cross"></span></button>
+										<div class="basket-list-item__size">M</div>
+										<div class="basket-list-item__amount">
 											<div class="amount-select">
 												<button type="button" class="amount-select__btn amount-select__btn_dec btn"></button>
 												<input type="number" pattern="\d+" class="amount-select__input" value="0">
 												<button type="button" class="amount-select__btn amount-select__btn_inc btn"></button>
 											</div>
 										</div>
-										<div class="basket-list__price">16 788 ₴</div>
-										<div class="basket-list__separator"></div>
-									</Fragment>
+										<div class="basket-list-item__price">16 788 ₴</div>
+									</div>
 								)
 							}
 						</div>

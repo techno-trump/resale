@@ -1,0 +1,63 @@
+---
+import CabinetSidebar from 'src/components/CabinetSidebar.astro';
+import Layout from '../layouts/Layout.astro';
+import ImgWrap from 'src/components/basic/ImgWrap.astro';
+---
+
+<Layout title="ReSale - Returns" description="My products">
+	<div class="cabinet section-space-bottom">
+		<div class="container cabinet__container">
+			<div class="cabinet__header">
+				<nav aria-label="Breadcrumb" class="breadcrumbs tg-breadcrumbs cabinet__breadcrumbs">
+					<a href="/" class="breadcrumbs__item text-link">Главная</a>
+					<span class="breadcrumbs__separator">›</span>
+					<span class="breadcrumbs__item breadcrumb__item_active">Продажі</span>
+				</nav>
+			</div>
+			<CabinetSidebar className='cabinet__sidebar' active="/orders"></CabinetSidebar>
+			<h1 class="cabinet__title">Продажі</h1>
+			<!-- Main content -->
+			<div class="cabinet__body">
+				<div class="cabinet__section orders-list">
+					<div class="orders-list__header">Товар</div>
+					<div class="orders-list__header">Доставка</div>
+					<div class="orders-list__header">Выплата</div>
+					{
+						[
+							{ status: "Продано", shipmentState: "Доставлено", paymentState: "Виплачено" },
+							{ status: null, shipmentState: "Доставлено", paymentState: "Обробляється" },
+							{ status: null, shipmentState: "Доставляється", paymentState: "-" },
+							{ status: "Відмова", shipmentState: "Доставлено", paymentState: "Відмова отримання (повернення)" },
+						].map(({ status, shipmentState, paymentState }) =>
+								<Fragment>
+									<ImgWrap className="orders-list__item-view" cover={true}>
+										<img src={"img/product.webp"} alt="Product">
+									</ImgWrap>
+									<div class="orders-list__item-info">
+										<div class="orders-list__item-title">Doucal's</div>
+										<div class="orders-list__item-art">ART: 242353112</div>
+									</div>
+									<div class:list={[
+											"orders-list__item-shipment-state",
+											shipmentState == "Доставлено" && "orders-list__item-shipment-state_ok",
+											shipmentState == "Доставляється" && "orders-list__item-shipment-state_shipping",
+										]}>{shipmentState}</div>
+									<div class:list={[
+										"orders-list__item-payment-state",
+										paymentState == "Виплачено" && "orders-list__item-payment-state_ok",
+										paymentState == "Обробляється" && "orders-list__item-payment-state_processing",
+										paymentState == "Відмова отримання (повернення)" && "orders-list__item-payment-state_bad",
+									]}>{paymentState}</div>
+									{ status && <div class:list={["orders-list__item-status",
+											status == "Продано" && "orders-list__item-status_ok",
+											status == "Відмова" && "orders-list__item-status_bad",
+										]}>{status}</div> }
+									<div class="orders-list__separator"></div>
+								</Fragment>
+							)
+					}
+				</div>
+			</div>
+		</div>
+	</div>
+</Layout>
