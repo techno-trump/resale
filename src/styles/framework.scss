@@ -2253,6 +2253,11 @@ ul.article-list {
 			grid-template-columns: 1fr;
 		}
 	}
+	&_returns &__container {
+		@media (max-width: 900px) {
+			grid-template-columns: 1fr;
+		}
+	}
 	&__sidebar {
 		align-self: start;
 		position: sticky;
@@ -2265,12 +2270,23 @@ ul.article-list {
 			position: static;
 		}
 	}
+	&_returns &__sidebar {
+		@media (max-width: 900px) {
+			grid-row: auto/span 1;
+			position: static;
+		}
+	}
 	&__header {
 		padding: 40px 0;
 		grid-column: auto/span 2;
 		@media (max-width: config.$mbpM) {
 			grid-column: auto/span 1;
 			padding-bottom: 14px;
+		}
+	}
+	&_returns &__header {
+		@media (max-width: 900px) {
+			grid-column: auto/span 1;
 		}
 	}
 	&__title {
@@ -2289,6 +2305,7 @@ ul.article-list {
 	}
 	&__section {
 		padding: 40px 0;
+		width: 100%;
 		&:not(:last-child) {
 			border-bottom: 1px solid #E7EBF3;
 		}
@@ -4114,5 +4131,173 @@ ul.article-list {
 	&__separator {
 		grid-column: 1/ -1;
 		border-bottom: 1px solid var(--border-color);
+	}
+}
+
+.returns-list {
+	font-weight: 600;
+	font-size: 18px;
+	line-height: 1.3;
+	letter-spacing: 0.41px;
+	& thead {
+		color: var(--text-secondary-light);
+		font-weight: 500;
+		font-size: 14px;
+		@media (max-width: config.$mbpMM) {
+			display: none;
+		}
+		th {
+			text-align: start;
+			padding: 0px 10px 20px;
+			&:first-child {
+				padding-left: 0;
+			}
+			&:last-child {
+				padding-right: 0;
+			}
+			@media (max-width: config.$mbpT) {
+				padding: 0;
+			}
+		}
+		tr {
+			@media (max-width: config.$mbpT) {
+				display: grid;
+				grid-template-columns: repeat(2, 1fr) minmax(170px, 1fr);
+				gap: 20px;
+			}
+		}
+	}
+}
+.returns-list-item {
+	border-collapse: collapse;
+	@media (max-width: config.$mbpT) {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr) minmax(170px, 1fr);
+		gap: 20px;
+		padding: 20px 0;
+		border-bottom: 1px solid #DFDFDF;
+	}
+	@media (max-width: config.$mbpMM) {
+		grid-template-columns: auto 1fr;
+	}
+	td {
+		padding: 20px 10px;
+		border-bottom: 1px solid #DFDFDF;
+		vertical-align: top;
+		&:first-child {
+			padding-left: 0;
+		}
+		&:last-child {
+			padding-right: 0;
+		}
+		@media (max-width: config.$mbpT) {
+			padding: 0;
+			border-bottom: none;
+		}
+	}
+	&__view {
+		--height-ratio: 116%;
+		width: 20%;
+		min-width: 120px;
+		@media (max-width: config.$mbpT) {
+			grid-column: 1/span 1;
+			grid-row: 1/span 1;
+		}
+		@media (max-width: config.$mbpMM) {
+			grid-row: 1/span 3;
+		}
+		& > * {
+			min-height: 100%;
+		}
+	}
+	&__state {
+		@media (max-width: config.$mbpT) {
+			grid-row: 1/span 1;
+		}
+		@media (max-width: config.$mbpMM) {
+			grid-row: 2/span 1;
+		}
+		@media (max-width: config.$mbpMM) {
+			&::before {
+				content: "Статус";
+				display: block;
+				margin-bottom: 10px;
+			}
+		}
+		&_return {
+			color: #2073DF;
+		}
+		&_ok {
+			color: #22AF47;
+		}
+	}
+	&__info {
+		@media (max-width: config.$mbpT) {
+			grid-column: 1/span 2;
+		}
+		@media (max-width: config.$mbpMM) {
+			grid-row: 1/span 1;
+			grid-column: 2/span 1;
+		}
+	}
+	&__title {
+		font-size: 20px;
+		line-height: 1.4;
+		letter-spacing: 0;
+		margin-bottom: 15px;
+		@media (max-width: config.$mbpMM) {
+			font-size: 14px;
+			line-height: 1;
+		}
+	}
+	&__desc {
+		color: var(--text-secondary-light);
+		margin-bottom: 20px;
+		@media (max-width: config.$mbpMM) {
+			font-size: 12px;
+		}
+		@media (max-width: config.$mbpMM) {
+			margin-bottom: 0;
+		}
+	}
+	&__price {
+		display: inline-flex;
+		gap: 12px;
+		margin-bottom: 10px;
+		@media (max-width: config.$mbpMM) {
+			display: none;
+		}
+	}
+	&__discount-price {
+		color: var(--text-primary);
+	}
+	&__discount {
+		color: var(--text-primary);
+		@media (max-width: config.$mbpMM) {
+			display: none;
+		}
+	}
+	&__ttn {
+		@media (max-width: config.$mbpT) {
+			grid-row: 1/span 1;
+		}
+		@media (max-width: config.$mbpMM) {
+			grid-row: 3/span 1;
+		}
+		@media (max-width: config.$mbpMM) {
+			&::before {
+				content: "Номер ТТН";
+				display: block;
+				margin-bottom: 10px;
+			}
+		}
+	}
+	&__ttn, &__state {
+		@media (max-width: config.$mbpMM) {
+			font-size: 12px;
+			&::before {
+				color: #858585;
+			}
+		}
 	}
 }

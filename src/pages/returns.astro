@@ -5,58 +5,58 @@ import ImgWrap from 'src/components/basic/ImgWrap.astro';
 ---
 
 <Layout title="ReSale - Returns" description="My products">
-	<div class="cabinet section-space-bottom">
+	<div class="cabinet cabinet_returns section-space-bottom">
 		<div class="container cabinet__container">
 			<div class="cabinet__header">
 				<nav aria-label="Breadcrumb" class="breadcrumbs tg-breadcrumbs cabinet__breadcrumbs">
 					<a href="/" class="breadcrumbs__item text-link">Главная</a>
 					<span class="breadcrumbs__separator">›</span>
-					<span class="breadcrumbs__item breadcrumb__item_active">Продажі</span>
+					<span class="breadcrumbs__item breadcrumb__item_active">Оформлені повернення</span>
 				</nav>
 			</div>
-			<CabinetSidebar className='cabinet__sidebar' active="/orders"></CabinetSidebar>
-			<h1 class="cabinet__title">Продажі</h1>
+			<CabinetSidebar className='cabinet__sidebar' active="/returns"></CabinetSidebar>
+			<h1 class="cabinet__title">Оформлені повернення</h1>
 			<!-- Main content -->
 			<div class="cabinet__body">
-				<div class="cabinet__section orders-list">
-					<div class="orders-list__header">Товар</div>
-					<div class="orders-list__header">Доставка</div>
-					<div class="orders-list__header">Выплата</div>
-					{
-						[
-							{ status: "Продано", shipmentState: "Доставлено", paymentState: "Виплачено" },
-							{ status: null, shipmentState: "Доставлено", paymentState: "Обробляється" },
-							{ status: null, shipmentState: "Доставляється", paymentState: "-" },
-							{ status: "Відмова", shipmentState: "Доставлено", paymentState: "Відмова отримання (повернення)" },
-						].map(({ status, shipmentState, paymentState }) =>
-								<Fragment>
-									<ImgWrap className="orders-list__item-view" cover={true}>
-										<img src={"img/product.webp"} alt="Product">
-									</ImgWrap>
-									<div class="orders-list__item-info">
-										<div class="orders-list__item-title">Doucal's</div>
-										<div class="orders-list__item-art">ART: 242353112</div>
-									</div>
-									<div class:list={[
-											"orders-list__item-shipment-state",
-											shipmentState == "Доставлено" && "orders-list__item-shipment-state_ok",
-											shipmentState == "Доставляється" && "orders-list__item-shipment-state_shipping",
-										]}>{shipmentState}</div>
-									<div class:list={[
-										"orders-list__item-payment-state",
-										paymentState == "Виплачено" && "orders-list__item-payment-state_ok",
-										paymentState == "Обробляється" && "orders-list__item-payment-state_processing",
-										paymentState == "Відмова отримання (повернення)" && "orders-list__item-payment-state_bad",
-									]}>{paymentState}</div>
-									{ status && <div class:list={["orders-list__item-status",
-											status == "Продано" && "orders-list__item-status_ok",
-											status == "Відмова" && "orders-list__item-status_bad",
-										]}>{status}</div> }
-									<div class="orders-list__separator"></div>
-								</Fragment>
-							)
-					}
-				</div>
+				<table class="cabinet__section returns-list">
+					<thead>
+						<th colspan="2">Товар</th>
+						<th>Статус</th>
+						<th>Номер ТТН</th>
+					</thead>
+					<tbody>
+						{
+							[
+								{ status: "Посилка повертається" },
+								{ status: "Посилка повертається" },
+								{ status: "Отримано" },
+							].map(({ status }) =>
+									<tr class="returns-list-item">
+										<td class="returns-list-item__view">
+											<ImgWrap className="" cover={true}>
+												<img src={"img/product.webp"} alt="Product">
+											</ImgWrap>
+										</td>
+										<td class="returns-list-item__info">
+											<div class="returns-list-item__title">Doucal's</div>
+											<div class="returns-list-item__desc">Жіночі утеплені лофери з натуральної шкіри</div>
+											<div class="returns-list-item__price">
+												<div class="returns-list-item__full-price">22 090</div>
+												<div class="returns-list-item__discount-price">16 788 ₴</div>
+											</div>
+											<div class="returns-list-item__discount">-30%</div>
+										</td>
+										<td class:list={[
+												"returns-list-item__state",
+												status == "Посилка повертається" && "returns-list-item__state_return",
+												status == "Отримано" && "returns-list-item__state_ok",
+											]}>{status}</td>
+										<td class="returns-list-item__ttn">20450937452187</td>
+									</tr>
+								)
+						}
+					</tbody>
+				</table>
 			</div>
 		</div>
 	</div>
