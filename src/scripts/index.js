@@ -2,6 +2,7 @@ import "../styles/index.scss";
 import 'imask';
 import "./fslightbox.js";
 import throttle from "lodash.throttle";
+import debounce from "lodash.debounce";
 import { initAmountSelectors } from "./amount-select.js";
 import { initTabsSwitch, initTabs } from "./tabs.js";
 
@@ -441,6 +442,7 @@ document.querySelectorAll(`[data-component*=":feedbacks-slider:"]`).forEach(root
 	});
 });
 window.app.initCardSlider = function(root) {
+	root.classList.add("_initialized");
 	const sliderElem = root.querySelector(".card-slider__main");
 	const bulletsElem = root.querySelector(".card-slider__bullets");
 	const slider = new KeenSlider(sliderElem, {
@@ -469,11 +471,15 @@ window.app.initCardSlider = function(root) {
 		bulletElem.classList.toggle("_active", idx === slider.track.details.rel);
 		bulletsElem.append(bulletElem);
 	});
-	setTimeout(() => slider.update(), 0);
+	update();
 	slider.on("slideChanged", updateBullets);
-	window.app.events.on("storefront-grid-change", () => slider.update());
+	window.app.events.on("storefront-grid-change", () => update());
+	window.addEventListener("resize", debounce(update, 25));
+	function update() {
+		setTimeout(() => slider.update(), 0);
+	}
 }
-document.querySelectorAll(`[data-component*=":card-slider:"]`).forEach(root => window.app.initCardSlider(root));
+document.querySelectorAll(`[data-component*=":card-slider:"]:not(._initialized)`).forEach(root => window.app.initCardSlider(root));
 document.querySelectorAll(`[data-component*=":tel-mask:"]`).forEach(root => new IMask(root, { lazy: false, mask: '+{38}(000)00-00-000' }));
 
 initDoubleRangeInputs("#000");
