@@ -80,21 +80,25 @@ import ProductListCard from 'src/components/ProductListCard.astro';
 						<div class="product-card__price">
 							<div class="product-card__full-price product-card__full-price_hl">11 300 ₴</div>
 						</div>
-						<div class="product-card__color-size">
-							<select name="size" class="product-card__size" data-component=":select:" data-type=":select.field:">
-								<option value="XS" disabled>XS</option>
-								<option value="S" selected>S</option>
-								<option value="M">M</option>
-								<option value="L">L</option>
-								<option value="XL" disabled>XL</option>
-								<option value="XXL" disabled>XXL</option>
-							</select>
-
-							<select name="color" class="product-card__color" data-component=":select:" data-type=":select.field:">
-								<option value="red">red</option>
-								<option value="green">green</option>
-								<option value="blue">blue</option>
-							</select>
+						<select name="size" class="product-card__size" data-component=":select:" data-type=":select.field:">
+							<option value="XS" disabled>XS</option>
+							<option value="S" selected>S</option>
+							<option value="M">M</option>
+							<option value="L">L</option>
+							<option value="XL" disabled>XL</option>
+							<option value="XXL" disabled>XXL</option>
+						</select>
+						<div class="product-card__variants">
+							<div class="product-card__block-title">Виберіть колір</div>
+							<div class="product-card__variants-body" data-component=":variants-slider:">
+								{
+									[true,false,false,false,false].map((active) => <a title="Синій" href="" class:list={["product-card__variant-item img-wrap img-wrap_cover", active && "product-card__variant-item_active"]}>
+																												<div class="img-wrap__inner">
+																													<img src="img/variant.jpg" alt="Variant" class="img-wrap__item">
+																												</div>
+																											</a>)
+								}
+							</div>
 						</div>
 					</div>
 					<a href="" class="product-card__all-products text-link underline">Усі товари продавця</a>

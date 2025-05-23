@@ -354,6 +354,25 @@ document.querySelectorAll(`[data-component*=":scroll-slider:"]`).forEach((root) 
 		mode: "free",
 	});
 });
+document.querySelectorAll(`[data-component*=":variants-slider:"]`).forEach((root) => {
+	var slider = new KeenSlider(root, {
+		selector: ".product-card__variant-item",
+		disabled: false,
+		slides: {
+			perView: 2.4,
+			spacing: 10,
+		},
+		mode: "free",
+		breakpoints: {
+			'(min-width: 1024px)': {
+				disabled: true,
+				slides: {
+					perView: "auto"
+				},
+			}
+		}
+	});
+});
 document.querySelectorAll(`[data-component*=":pass-mode-toggle:"]`).forEach((root) => {
 	const wrap = root.closest(".form-field");
 	const input = wrap.querySelector("input");
