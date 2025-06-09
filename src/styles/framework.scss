@@ -4346,3 +4346,60 @@ ul.article-list {
 	}
 }
 
+
+.sell-product-start {
+	&__header {
+		padding-bottom: 40px;
+	}
+	&__content {
+		--gap: 32px;
+
+		width: 100%;
+		display: flex;
+		gap: var(--gap);
+	}
+	&__image {
+		flex: 1;
+		width: 50%;
+	}
+	&__form {
+		flex: 1;
+		width: 50%;
+	}
+	&__title {
+		margin-bottom: 20px;
+		color: #000;
+	}
+	&__subtitle {
+		color: #626262;
+		font-size: 18px;
+		font-weight: 600;
+	}
+}
+
+.sell-product {
+	&__form {
+		padding: 60px;
+		background-color: #fff;
+	}
+	&__block {
+		width: 100%;
+
+		&_padding-big {
+			padding: 60px 0px;
+		}
+
+		&:first-child {
+			padding-top: 0;
+		}
+		&:last-child {
+			padding-bottom: 0;
+		}
+	}
+	&__separator {
+		width: 100%;
+		height: 0;
+		border: none;
+		border-top: 1px solid rgba(0, 0, 0, 0.1);
+	}
+}
