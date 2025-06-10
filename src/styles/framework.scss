@@ -4603,6 +4603,9 @@ ul.article-list {
 		&__property-optional {
 			font-size: 12px;
 		}
+		&__value {
+			gap: 30px;
+		}
 		&__message {
 			font-size: 12px;
 		}
@@ -4904,6 +4907,31 @@ ul.article-list {
 			font-size: 14px;
 		}
 		@media (max-width: config.$mbpM) {
+			font-size: 12px;
+		}
+	}
+
+	&__textbox {
+		min-height: 300px;
+		padding: 40px;
+
+		font-size: 16px;
+		font-weight: 500;
+		background-color: #FBFBFB;
+
+		resize: none;
+
+		&::placeholder {
+			color: #626262;
+		}
+
+		@media (max-width: config.$mbpT) {
+			min-height: 200px;
+			padding: 30px;
+		}
+		@media (max-width: config.$mbpM) {
+			min-height: 140px;
+			padding: 20px;
 			font-size: 12px;
 		}
 	}
