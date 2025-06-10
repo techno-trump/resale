@@ -4401,12 +4401,32 @@ ul.article-list {
 	}
 	&__value {
 		flex: 1 1 auto;
+		display: flex;
+		flex-direction: column;
+		gap: 40px;
+	}
+	&__message {
+		font-size: 16px;
+		font-weight: 500;
+		color: #626262;
+		line-height: 1.5;
 	}
 	&__separator {
 		width: 100%;
 		height: 0;
 		border: none;
 		border-top: 1px solid rgba(0, 0, 0, 0.1);
+	}
+	&__footer {
+		display: flex;
+		justify-content: space-between;
+
+		&-back {
+			padding: 12px 40px;
+		}
+		&-next {
+			padding: 12px 40px;
+		}
 	}
 	@media (max-width: config.$mbpT) {
 		&__form {
@@ -4589,6 +4609,34 @@ ul.article-list {
 
 			&::after {
 				background-color: var(--text-primary);
+			}
+		}
+	}
+
+	&__image {
+		--size: 250px;
+		--icon-size: 64px;
+
+		flex: 0 0 var(--size);
+		width: var(--size);
+		height: var(--size);
+
+		border-image-source: url('./img/sell-product/image-border.svg');
+		border-image-slice: 4;
+		border-style: solid;
+		border-image-width: 4px;
+		background-color: #FBFBFB;
+		border-radius: 15px;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		&-placeholder {
+			height: var(--icon-size);
+
+			img {
+				height: 100%;
 			}
 		}
 	}

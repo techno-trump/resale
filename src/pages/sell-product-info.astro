@@ -20,7 +20,7 @@ import Layout from '../layouts/Layout.astro'
           <div class="sell-product__value">
             <select 
               class="sell-product__select sell-product__select_searchable" 
-              name="size" 
+              name="subcategory" 
               data-sell-product-select
               data-sell-product-select-searchable
             >
@@ -84,6 +84,190 @@ import Layout from '../layouts/Layout.astro'
               <option value="48">EU 48 / US 16 / UK 15.5 / 29.5 см</option>
 						</select>
           </div>
+        </div>
+
+        <hr class="sell-product__separator">
+
+        <div class="sell-product__block sell-product__field sell-product__block_padding-big">
+          <div class="sell-product__property">
+            <h4 class="tg-h4 sell-product__property-name">Колір</h4>
+            <div class="sell-product__property-required">Обов'язкове для заповнення поле</div>
+          </div>
+
+          <div class="sell-product__value">
+            <select 
+              class="sell-product__select sell-product__select_searchable" 
+              name="color" 
+              data-sell-product-select
+              data-sell-product-select-searchable
+              data-sell-product-select-options-columns="2"
+            >
+							<option value="35">EU 35 / US 3 / UK 2.5 / 22.5 см</option>
+              <option value="35.5">EU 35.5 / US 3.5 / UK 3 / 23 см</option>
+              <option value="36">EU 36 / US 4 / UK 3.5 / 23.3 см</option>
+              <option value="36.5">EU 36.5 / US 4.5 / UK 4 / 23.5 см</option>
+              <option value="37">EU 37 / US 5 / UK 4.5 / 23.8 см</option>
+              <option value="37.5">EU 37.5 / US 5.5 / UK 5 / 24 см</option>
+              <option value="38">EU 38 / US 6 / UK 5.5 / 24.5 см</option>
+              <option value="38.5">EU 38.5 / US 6.5 / UK 6 / 24.8 см</option>
+              <option value="39">EU 39 / US 7 / UK 6.5 / 25 см</option>
+              <option value="39.5">EU 39.5 / US 7.5 / UK 7 / 25.3 см</option>
+              <option value="40">EU 40 / US 8 / UK 7.5 / 25.5 см</option>
+              <option value="40.5">EU 40.5 / US 8.5 / UK 8 / 25.8 см</option>
+              <option value="41">EU 41 / US 9 / UK 8.5 / 26 см</option>
+              <option value="41.5">EU 41.5 / US 9.5 / UK 9 / 26.3 см</option>
+              <option value="42">EU 42 / US 10 / UK 9.5 / 26.5 см</option>
+              <option value="42.5">EU 42.5 / US 10.5 / UK 10 / 26.8 см</option>
+              <option value="43">EU 43 / US 11 / UK 10.5 / 27 см</option>
+              <option value="43.5">EU 43.5 / US 11.5 / UK 11 / 27.3 см</option>
+              <option value="44.5">EU 44.5 / US 12.5 / UK 12 / 27.8 см</option>
+              <option value="45">EU 45 / US 13 / UK 12.5 / 28 см</option>
+              <option value="45.5">EU 45.5 / US 13.5 / UK 13 / 28.3 см</option>
+              <option value="46">EU 46 / US 14 / UK 13.5 / 28.5 см</option>
+              <option value="46.5">EU 46.5 / US 14.5 / UK 14 / 28.8 см</option>
+              <option value="47">EU 47 / US 15 / UK 14.5 / 29 см</option>
+              <option value="47.5">EU 47.5 / US 15.5 / UK 15 / 29.3 см</option>
+              <option value="48">EU 48 / US 16 / UK 15.5 / 29.5 см</option>
+						</select>
+          </div>
+        </div>
+
+        <hr class="sell-product__separator">
+
+        <div class="sell-product__block sell-product__field sell-product__block_padding-big">
+          <div class="sell-product__property">
+            <h4 class="tg-h4 sell-product__property-name">Матеріал</h4>
+            <div class="sell-product__property-required">Обов'язкове для заповнення поле</div>
+          </div>
+
+          <div class="sell-product__value">
+            <select 
+              class="sell-product__select sell-product__select_searchable" 
+              name="material" 
+              data-sell-product-select
+              data-sell-product-select-searchable
+            >
+							<option value="leather">Шкіра</option>
+              <option value="artificial_leather">Штучна шкіра</option>
+              <option value="patent_leather">Лакована шкіра</option>
+              <option value="nubuck">Нубук</option>
+              <option value="suede">Замша</option>
+              <option value="neoprene">Неопрен</option>
+              <option value="rubber">Гума</option>
+              <option value="textile">Текстиль</option>
+              <option value="synthetic">Синтетика</option>
+              <option value="canvas">Канва</option>
+              <option value="velvet">Оксамит</option>
+              <option value="other">Інше</option>
+						</select>
+          </div>
+        </div>
+
+        <hr class="sell-product__separator">
+
+        <div class="sell-product__block sell-product__field sell-product__block_padding-big">
+          <div class="sell-product__property">
+            <h4 class="tg-h4 sell-product__property-name">Наявність коробки</h4>
+          </div>
+
+          <div class="sell-product__value">
+            <div class="sell-product__radios">
+              <div class="sell-product__radio-box">
+                <input class="sell-product__radio" id="box-no" type="radio" name="box">
+                <label for="box-no">Ні</label>
+              </div>
+
+              <div class="sell-product__radio-box">
+                <input class="sell-product__radio" id="box-yes" type="radio" name="box">
+                <label for="box-yes">Так</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr class="sell-product__separator">
+
+        <div class="sell-product__block sell-product__field sell-product__block_padding-big">
+          <div class="sell-product__property">
+            <h4 class="tg-h4 sell-product__property-name">Наявність пильовика</h4>
+          </div>
+
+          <div class="sell-product__value">
+            <div class="sell-product__radios">
+              <div class="sell-product__radio-box">
+                <input class="sell-product__radio" id="package-yes" type="radio" name="package">
+                <label for="package-yes">Так</label>
+              </div>
+
+              <div class="sell-product__radio-box">
+                <input class="sell-product__radio" id="package-no" type="radio" name="package">
+                <label for="package-no">Ні</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr class="sell-product__separator">
+
+        <div class="sell-product__block sell-product__field sell-product__block_padding-big">
+          <div class="sell-product__property">
+            <h4 class="tg-h4 sell-product__property-name">Наявність чека</h4>
+          </div>
+
+          <div class="sell-product__value">
+            <div class="sell-product__radios">
+              <div class="sell-product__radio-box">
+                <input class="sell-product__radio" id="package-yes" type="radio" name="package">
+                <label for="package-yes">Так</label>
+              </div>
+
+              <div class="sell-product__radio-box">
+                <input class="sell-product__radio" id="package-no" type="radio" name="package">
+                <label for="package-no">Ні</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr class="sell-product__separator">
+
+        <div class="sell-product__block sell-product__field sell-product__block_padding-big">
+          <div class="sell-product__property"></div>
+
+          <div class="sell-product__value">
+            <div class="sell-product__message">
+              Завантажте фото чека. <br />
+              Дана інформація не буде відображена публічно
+            </div>
+
+            <div class="sell-product__image">
+              <div class="sell-product__image-placeholder">
+                <img src="./img/sell-product/image-placeholder.svg" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr class="sell-product__separator">
+
+        <div class="sell-product__block sell-product__field sell-product__block_padding-big">
+          <div class="sell-product__property">
+            <h4 class="tg-h4 sell-product__property-name">Додаткові розміри</h4>
+          </div>
+
+          <div class="sell-product__value">
+            <div class="sell-product__input">
+              <input class="sell-product__input-control" placeholder="Довжина устілки, см" type="text">
+            </div>
+          </div>
+        </div>
+
+        <hr class="sell-product__separator">
+
+        <div class="sell-product__block sell-product__block_padding-big sell-product__footer">
+          <div />
+          
+          <button class="btn btn_rect btn_round-corners btn_primary uppercase sell-product__footer-next">Далі</button>
         </div>
       </div>
 		</div>
