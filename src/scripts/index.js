@@ -15,6 +15,7 @@ import KeenSlider from "keen-slider";
 import MultilevelChecklist from "./multilevel-checklist.js";
 import { initDoubleRangeInputs, initMultiInputs } from "./double-range-input.js";
 import { initPortals } from "./portal.js";
+import './sell-product.js'
 
 window.app = window.app || {};
 window.app.hoverMedia = window.matchMedia("(any-hover: hover)");

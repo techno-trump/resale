@@ -45,7 +45,12 @@ import Layout from '../layouts/Layout.astro'
               <input class="sell-product__input-control" placeholder="Введіть назву бренду" type="text">
             </div>
 
-            <select name="size" class="product-card__size" data-component=":select:" data-type=":select.field:">
+            <select 
+              class="sell-product__select sell-product__select_searchable" 
+              name="size" 
+              data-sell-product-select
+              data-sell-product-select-searchable
+            >
 							<option value="XS" disabled>XS</option>
 							<option value="S" selected>S</option>
 							<option value="M">M</option>
