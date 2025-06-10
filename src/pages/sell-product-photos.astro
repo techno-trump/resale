@@ -1,0 +1,225 @@
+---
+import Layout from '../layouts/Layout.astro'
+
+---
+<Layout title="ReSale Sell" description="Sell">
+	<div class="light-bg section-space-bottom">
+		<div class="container sell-product__container">
+      <nav aria-label="Breadcrumb" class="breadcrumbs tg-breadcrumbs breadcrumbs_centered sell-product__breadcrumbs">
+        <a href="/" class="breadcrumbs__item text-link">Главная</a>
+        <span class="breadcrumbs__separator">›</span>
+        <span class="breadcrumbs__item breadcrumb__item_active">Продаж</span>
+      </nav>
+
+      <div class="sell-product__header">
+        <h2 class="tg-h2 sell-product__title">100% Capri</h2>
+        <div class="sell-product__subtitle">Для нього - Взуття</div>
+      </div>
+
+      <div class="sell-product__progress">
+        <div class="sell-product__progress-item sell-product__progress-item_passed">
+          <div class="sell-product__progress-item-point"></div>
+          <div class="sell-product__progress-item-text">Інформація</div>
+        </div>
+
+        <div class="sell-product__progress-line sell-product__progress-line_filled"></div>
+
+        <div class="sell-product__progress-item sell-product__progress-item_passed sell-product__progress-item_current">
+          <div class="sell-product__progress-item-point"></div>
+          <div class="sell-product__progress-item-text">Фотографії</div>
+        </div>
+
+        <div class="sell-product__progress-line"></div>
+
+        <div class="sell-product__progress-item">
+          <div class="sell-product__progress-item-point"></div>
+          <div class="sell-product__progress-item-text">Опис</div>
+        </div>
+
+        <div class="sell-product__progress-line"></div>
+
+        <div class="sell-product__progress-item">
+          <div class="sell-product__progress-item-point"></div>
+          <div class="sell-product__progress-item-text">Стан</div>
+        </div>
+      </div>
+
+      <div class="sell-product__form">
+        <div class="sell-product__block sell-product__field sell-product__block_padding-big">
+          <div class="sell-product__property">
+            <h4 class="tg-h4 sell-product__property-name">Фото збоку</h4>
+            <div class="sell-product__property-required">Обов'язкове для заповнення поле</div>
+          </div>
+          
+          <div class="sell-product__value">
+            <div class="sell-product__message">
+              В якості першого завантажте фото на білому фоні, щоб товар було добре видно
+            </div>
+
+            <div class="sell-product__images">
+              <div class="sell-product__image-box">
+                <div class="sell-product__image sell-product__image_placeholder sell-product__image_upload">
+                  <img class="sell-product__image-icon" src="./img/sell-product/image-placeholder.svg" alt="">
+                </div>
+              </div>
+
+              <div class="sell-product__image-box">
+                <div class="sell-product__image">
+                  <img src="./img/sell-product/image-example.png" alt="">
+                </div>
+                <div class="sell-product__image-label">Приклад фото</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr class="sell-product__separator">
+
+        <div class="sell-product__block sell-product__field sell-product__block_padding-big">
+          <div class="sell-product__property">
+            <h4 class="tg-h4 sell-product__property-name">Фото спереду</h4>
+            <div class="sell-product__property-required">Обов'язкове для заповнення поле</div>
+          </div>
+          
+          <div class="sell-product__value">
+            <div class="sell-product__images">
+              <div class="sell-product__image-box">
+                <div class="sell-product__image sell-product__image_placeholder sell-product__image_upload">
+                  <img class="sell-product__image-icon" src="./img/sell-product/image-placeholder.svg" alt="">
+                </div>
+              </div>
+
+              <div class="sell-product__image-box">
+                <div class="sell-product__image">
+                  <img src="./img/sell-product/image-example.png" alt="">
+                </div>
+                <div class="sell-product__image-label">Приклад фото</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr class="sell-product__separator">
+
+        <div class="sell-product__block sell-product__field sell-product__block_padding-big">
+          <div class="sell-product__property">
+            <h4 class="tg-h4 sell-product__property-name">Фото ззаду</h4>
+            <div class="sell-product__property-required">Обов'язкове для заповнення поле</div>
+          </div>
+          
+          <div class="sell-product__value">
+            <div class="sell-product__images">
+              <div class="sell-product__image-box">
+                <div class="sell-product__image sell-product__image_upload">
+                  <img src="./img/sell-product/image-example.png" alt="">
+
+                  <div class="sell-product__image-remove">
+                    <div class="sell-product__image-remove-icon"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="sell-product__image-box">
+                <div class="sell-product__image">
+                  <img src="./img/sell-product/image-example.png" alt="">
+                </div>
+                <div class="sell-product__image-label">Приклад фото</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr class="sell-product__separator">
+
+        <div class="sell-product__block sell-product__field sell-product__block_padding-big">
+          <div class="sell-product__property">
+            <h4 class="tg-h4 sell-product__property-name">Фото із зазначенням розміру</h4>
+            <div class="sell-product__property-required">Обов'язкове для заповнення поле</div>
+          </div>
+          
+          <div class="sell-product__value">
+            <div class="sell-product__images">
+              <div class="sell-product__image-box">
+                <div class="sell-product__image sell-product__image_placeholder sell-product__image_upload">
+                  <img class="sell-product__image-icon" src="./img/sell-product/image-placeholder.svg" alt="">
+                </div>
+              </div>
+
+              <div class="sell-product__image-box">
+                <div class="sell-product__image">
+                  <img src="./img/sell-product/image-example.png" alt="">
+                </div>
+                <div class="sell-product__image-label">Приклад фото</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr class="sell-product__separator">
+
+        <div class="sell-product__block sell-product__field sell-product__block_padding-big">
+          <div class="sell-product__property">
+            <h4 class="tg-h4 sell-product__property-name">Фото підошви</h4>
+            <div class="sell-product__property-required">Обов'язкове для заповнення поле</div>
+          </div>
+          
+          <div class="sell-product__value">
+            <div class="sell-product__images">
+              <div class="sell-product__image-box">
+                <div class="sell-product__image sell-product__image_placeholder sell-product__image_upload">
+                  <img class="sell-product__image-icon" src="./img/sell-product/image-placeholder.svg" alt="">
+                </div>
+              </div>
+
+              <div class="sell-product__image-box">
+                <div class="sell-product__image">
+                  <img src="./img/sell-product/image-example.png" alt="">
+                </div>
+                <div class="sell-product__image-label">Приклад фото</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr class="sell-product__separator">
+
+        <div class="sell-product__block sell-product__field sell-product__block_padding-big">
+          <div class="sell-product__property">
+            <h4 class="tg-h4 sell-product__property-name">Додаткове фото</h4>
+            <div class="sell-product__property-optional">(не обов'язково)</div>
+          </div>
+          
+          <div class="sell-product__value">
+            <div class="sell-product__images">
+              <div class="sell-product__image-box">
+                <div class="sell-product__image sell-product__image_placeholder sell-product__image_upload">
+                  <img class="sell-product__image-icon" src="./img/sell-product/image-placeholder.svg" alt="">
+                </div>
+              </div>
+
+              <div class="sell-product__image-box">
+                <div class="sell-product__image sell-product__image_placeholder sell-product__image_upload">
+                  <img class="sell-product__image-icon" src="./img/sell-product/image-placeholder.svg" alt="">
+                </div>
+              </div>
+
+              <div class="sell-product__image-box">
+                <div class="sell-product__image sell-product__image_placeholder sell-product__image_upload">
+                  <img class="sell-product__image-icon" src="./img/sell-product/image-placeholder.svg" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr class="sell-product__separator">
+
+        <div class="sell-product__block sell-product__block_padding-big sell-product__footer">
+          <button class="btn btn_rect btn_round-corners btn_dark-border uppercase sell-product__footer-back">Назад</button>
+
+          <button class="btn btn_rect btn_round-corners btn_primary uppercase sell-product__footer-next">Далі</button>
+        </div>
+      </div>
+		</div>
+	</div>
+</Layout>

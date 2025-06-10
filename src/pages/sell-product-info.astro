@@ -3,8 +3,8 @@ import Layout from '../layouts/Layout.astro'
 
 ---
 <Layout title="ReSale Sell" description="Sell">
-	<div class="sell-product-start light-bg section-space-bottom">
-		<div class="container sell-product-start__container">
+	<div class="light-bg section-space-bottom">
+		<div class="container sell-product__container">
       <nav aria-label="Breadcrumb" class="breadcrumbs tg-breadcrumbs breadcrumbs_centered sell-product__breadcrumbs">
         <a href="/" class="breadcrumbs__item text-link">Главная</a>
         <span class="breadcrumbs__separator">›</span>
@@ -273,9 +273,11 @@ import Layout from '../layouts/Layout.astro'
               Дана інформація не буде відображена публічно
             </div>
 
-            <div class="sell-product__image">
-              <div class="sell-product__image-placeholder">
-                <img src="./img/sell-product/image-placeholder.svg" alt="">
+            <div class="sell-product__images">
+              <div class="sell-product__image-box">
+                <div class="sell-product__image sell-product__image_placeholder sell-product__image_upload">
+                  <img class="sell-product__image-icon" src="./img/sell-product/image-placeholder.svg" alt="">
+                </div>
               </div>
             </div>
           </div>
