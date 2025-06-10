@@ -1,0 +1,91 @@
+---
+import Layout from '../layouts/Layout.astro'
+
+---
+<Layout title="ReSale Sell" description="Sell">
+	<div class="sell-product-start light-bg section-space-bottom">
+		<div class="container sell-product-start__container">
+      <nav aria-label="Breadcrumb" class="breadcrumbs tg-breadcrumbs breadcrumbs_centered sell-product__breadcrumbs">
+        <a href="/" class="breadcrumbs__item text-link">Главная</a>
+        <span class="breadcrumbs__separator">›</span>
+        <span class="breadcrumbs__item breadcrumb__item_active">Продаж</span>
+      </nav>
+
+      <div class="sell-product__form">
+        <div class="sell-product__block sell-product__field sell-product__block_padding-big">
+          <div class="sell-product__property">
+            <h4 class="tg-h4 sell-product__property-name">Підкатегорія</h4>
+          </div>
+          
+          <div class="sell-product__value">
+            <select 
+              class="sell-product__select sell-product__select_searchable" 
+              name="size" 
+              data-sell-product-select
+              data-sell-product-select-searchable
+            >
+              <option value="boots" disabled>Черевики</option>
+              <option value="brogues">Броги</option>
+              <option value="sneakers_and_canvas_shoes">Кросівки та кеди</option>
+              <option value="loafers_and_moccasins">Лофери та мокасини</option>
+              <option value="beach_footwear">Пляжне взуття</option>
+              <option value="sandals_and_flip_flops">Сандалії та шльопанці</option>
+              <option value="slip_ons">Сліпони</option>
+              <option value="dress_shoes">Туфлі</option>
+              <option value="espadrilles">Еспадрільї</option>
+              <option value="uggs_and_winter_boots">Уггі та зимове взуття</option>
+              <option value="house_slippers">Домашнє взуття</option>
+              <option value="rubber_boots">Гумові чоботи</option>
+						</select>
+          </div>
+        </div>
+
+        <hr class="sell-product__separator">
+
+        <div class="sell-product__block sell-product__field sell-product__block_padding-big">
+          <div class="sell-product__property">
+            <h4 class="tg-h4 sell-product__property-name">Розмір</h4>
+            <div class="sell-product__property-required">Обов'язкове для заповнення поле</div>
+          </div>
+
+          <div class="sell-product__value">
+            <select 
+              class="sell-product__select sell-product__select_searchable" 
+              name="size" 
+              data-sell-product-select
+              data-sell-product-select-searchable
+              data-sell-product-select-options-columns="2"
+            >
+							<option value="35">EU 35 / US 3 / UK 2.5 / 22.5 см</option>
+              <option value="35.5">EU 35.5 / US 3.5 / UK 3 / 23 см</option>
+              <option value="36">EU 36 / US 4 / UK 3.5 / 23.3 см</option>
+              <option value="36.5">EU 36.5 / US 4.5 / UK 4 / 23.5 см</option>
+              <option value="37">EU 37 / US 5 / UK 4.5 / 23.8 см</option>
+              <option value="37.5">EU 37.5 / US 5.5 / UK 5 / 24 см</option>
+              <option value="38">EU 38 / US 6 / UK 5.5 / 24.5 см</option>
+              <option value="38.5">EU 38.5 / US 6.5 / UK 6 / 24.8 см</option>
+              <option value="39">EU 39 / US 7 / UK 6.5 / 25 см</option>
+              <option value="39.5">EU 39.5 / US 7.5 / UK 7 / 25.3 см</option>
+              <option value="40">EU 40 / US 8 / UK 7.5 / 25.5 см</option>
+              <option value="40.5">EU 40.5 / US 8.5 / UK 8 / 25.8 см</option>
+              <option value="41">EU 41 / US 9 / UK 8.5 / 26 см</option>
+              <option value="41.5">EU 41.5 / US 9.5 / UK 9 / 26.3 см</option>
+              <option value="42">EU 42 / US 10 / UK 9.5 / 26.5 см</option>
+              <option value="42.5">EU 42.5 / US 10.5 / UK 10 / 26.8 см</option>
+              <option value="43">EU 43 / US 11 / UK 10.5 / 27 см</option>
+              <option value="43.5">EU 43.5 / US 11.5 / UK 11 / 27.3 см</option>
+              <option value="44.5">EU 44.5 / US 12.5 / UK 12 / 27.8 см</option>
+              <option value="45">EU 45 / US 13 / UK 12.5 / 28 см</option>
+              <option value="45.5">EU 45.5 / US 13.5 / UK 13 / 28.3 см</option>
+              <option value="46">EU 46 / US 14 / UK 13.5 / 28.5 см</option>
+              <option value="46.5">EU 46.5 / US 14.5 / UK 14 / 28.8 см</option>
+              <option value="47">EU 47 / US 15 / UK 14.5 / 29 см</option>
+              <option value="47.5">EU 47.5 / US 15.5 / UK 15 / 29.3 см</option>
+              <option value="48">EU 48 / US 16 / UK 15.5 / 29.5 см</option>
+						</select>
+          </div>
+        </div>
+      </div>
+		</div>
+	</div>
+</Layout>

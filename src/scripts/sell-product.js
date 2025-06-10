@@ -4,12 +4,14 @@ import TomSelect from 'tom-select'
 // Selector for Select control:
 // data-sell-product-select - specifies that current element is TomSelect select
 // data-sell-product-select-searchable - adds input for search
+// data-sell-product-select-options-columns - specifies number of columns for options (1 by default)
 
 // init selects with TomSelect
 document.querySelectorAll(`[data-sell-product-select]`).forEach(elem => {
   const searchable = elem.hasAttribute('data-sell-product-select-searchable')
-
-  // configuration for TomSelect
+	const optionsColumns = Number(elem.getAttribute('data-sell-product-select-options-columns') ?? 1)
+  
+	// configuration for TomSelect
 	const options = {
     // styles
     wrapperClass: "select select_field",
@@ -80,7 +82,12 @@ document.querySelectorAll(`[data-sell-product-select]`).forEach(elem => {
 			this.blur();
 		});
 	});
-	
 
 	new TomSelect(elem, options);
+
+	// add options columns variable
+	const customSelectElement = elem.nextElementSibling
+	if (customSelectElement) {
+		customSelectElement.style.setProperty('--options-columns', optionsColumns)
+	}
 });

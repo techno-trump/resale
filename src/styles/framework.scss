@@ -4486,6 +4486,7 @@ ul.article-list {
 				}
 			}
 		}
+
 		.select__dropdown {
 			@media (max-width: config.$mbpMM) {
 				min-width: 200px;
@@ -4493,6 +4494,11 @@ ul.article-list {
 			}
 		}
 
+		.select__options-list {
+			display: grid;
+			grid-template-columns: repeat(var(--options-columns, 1), 1fr);
+		}
+		
 		&_searchable {
 			input {
 				display: none;
