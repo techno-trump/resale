@@ -4355,38 +4355,15 @@ ul.article-list {
 	}
 }
 
-
-.sell-product-start {
-	&__header {
-		padding-bottom: 40px;
-	}
-	&__content {
-		--gap: 32px;
-
-		width: 100%;
-		display: flex;
-		gap: var(--gap);
-	}
-	&__image {
-		flex: 1;
-		width: 50%;
-	}
-	&__form {
-		flex: 1;
-		width: 50%;
-	}
-	&__title {
-		margin-bottom: 20px;
-		color: #000;
-	}
-	&__subtitle {
-		color: #626262;
-		font-size: 18px;
-		font-weight: 600;
-	}
-}
-
 .sell-product {
+	&__breadcrumbs {
+		margin: 40px 0px;
+
+		@media (max-width: config.$mbpM) {
+			margin: 20px 0px;
+		}
+	}
+
 	&__form {
 		padding: 60px;
 		background-color: #fff;
@@ -4431,6 +4408,40 @@ ul.article-list {
 		border: none;
 		border-top: 1px solid rgba(0, 0, 0, 0.1);
 	}
+	@media (max-width: config.$mbpT) {
+		&__form {
+			padding: 40px;
+		}
+		&__block {
+			&_padding-big {
+				padding: 50px 0px;
+			}
+
+			&:first-child {
+				padding-top: 0;
+			}
+			&:last-child {
+				padding-bottom: 0;
+			}
+		}
+	}
+	@media (max-width: config.$mbpM) {
+		&__form {
+			padding: 30px 20px;
+		}
+		&__block {
+			&_padding-big {
+				padding: 30px 0px;
+			}
+
+			&:first-child {
+				padding-top: 0;
+			}
+			&:last-child {
+				padding-bottom: 0;
+			}
+		}
+	}
 
 	&__input {
 		width: 100%;
@@ -4443,22 +4454,48 @@ ul.article-list {
 		border: 1px solid #13131336;
 
 		@media (max-width: config.$mbpM) {
-			padding: 20px 15px;
+			padding: 15px;
 		}
 	}
 	&__input-control {
+		color: #131313;
 		font-size: 16px;
 		font-weight: 500;
 		line-height: 1.5;
 		
 		&::placeholder {
-			color: #626262;
+			color: #131313;
+		}
+
+		@media (max-width: config.$mbpM) {
+			font-weight: 600;
+			font-size: 12px;
 		}
 	}
 
 	&__select {
+		.select__control {
+			@media (max-width: config.$mbpM) {
+				padding: 15px;
+			}
+
+			.select__item {
+				@media (max-width: config.$mbpM) {
+					font-weight: 600;
+					font-size: 12px;
+				}
+			}
+		}
+		.select__dropdown {
+			@media (max-width: config.$mbpMM) {
+				min-width: 200px;
+				max-width: 250px;
+			}
+		}
+
 		&_searchable {
 			input {
+				display: none;
 				flex: 1 1 auto;
 				font-weight: 500;
 				font-size: 16px;
@@ -4467,6 +4504,10 @@ ul.article-list {
 			
 			&.dropdown-active {
 				.select__control {
+					input {
+						display: block;
+					}
+
 					.select__item {
 						display: none;
 					}
@@ -4475,6 +4516,37 @@ ul.article-list {
 		}
 	}
 
+	&__radios {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		gap: 20px;
+
+		@media (max-width: config.$mbpM) {
+			flex-direction: column;
+			gap: 25px;
+		}
+	}
+	&__radios &__radio-box {
+		flex: 1;
+		width: 100%;
+	}
+	&__radio-box {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+
+		label {
+			font-size: 18px;
+			font-weight: 500;
+			@media (max-width: config.$mbpT) {
+				font-size: 16px;
+			}
+			@media (max-width: config.$mbpM) {
+				font-size: 12px;
+			}
+		}
+	}
 	&__radio {
 		appearance: none;
 		-webkit-appearance: none;
@@ -4512,6 +4584,98 @@ ul.article-list {
 			&::after {
 				background-color: var(--text-primary);
 			}
+		}
+	}
+}
+
+.sell-product-start {
+	&__header {
+		padding-bottom: 40px;
+	}
+	&__content {
+		--gap: 32px;
+
+		width: 100%;
+		display: flex;
+		gap: var(--gap);
+	}
+	&__image {
+		flex: 1;
+		width: 50%;
+	}
+	&__form {
+		flex: 1;
+		width: 50%;
+	}
+	&__title {
+		margin-bottom: 20px;
+		color: #000;
+	}
+	&__subtitle {
+		color: #626262;
+		font-size: 18px;
+		font-weight: 600;
+	}
+	&__category {
+		margin-bottom: 40px;
+
+		&-label {
+			margin-bottom: 20px;
+			font-weight: 500;
+			font-size: 16px;
+		}
+	}
+	&__selects {
+		margin-bottom: 40px;
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+	}
+
+	@media (max-width: config.$mbpT) {
+		&__image {
+			display: none;
+		}
+		&__form {
+			padding: 50px 40px;
+		}
+		&__title {
+			text-align: center;
+			margin-bottom: 15px;
+		}
+		&__subtitle {
+			text-align: center;
+			font-size: 14px;
+		}
+		&__category {
+			margin-bottom: 50px;
+		}
+		&__selects {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+	@media (max-width: config.$mbpM) {
+		&__form {
+			padding: 30px 20px;
+		}
+		&__subtitle {
+			font-size: 12px;
+		}
+		&__category {
+			margin-bottom: 30px;
+
+			&-label {
+				margin-bottom: 30px;
+				font-weight: 600;
+				font-size: 16px;
+			}
+		}
+		&__selects {
+			margin-bottom: 20px;
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
 		}
 	}
 }

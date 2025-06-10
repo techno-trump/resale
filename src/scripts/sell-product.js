@@ -35,12 +35,10 @@ document.querySelectorAll(`[data-sell-product-select]`).forEach(elem => {
     delete options.controlInput
   }
 
-  console.log(options)
-
   // configure dropdown position
 	TomSelect.define("dropdown_position", function dropdownPosition(options) {
     // min width for dropdown
-		const dropdownMinWidth = 300;
+		const dropdownMinWidth = 250;
     // handle resizes
 		this.on('dropdown_open', resetPosition);
 

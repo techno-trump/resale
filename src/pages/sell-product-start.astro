@@ -5,13 +5,11 @@ import Layout from '../layouts/Layout.astro'
 <Layout title="ReSale Sell" description="Sell">
 	<div class="sell-product-start light-bg section-space-bottom">
 		<div class="container sell-product-start__container">
-			<div class="page-header sell-product-start__header">
-				<nav aria-label="Breadcrumb" class="breadcrumbs tg-breadcrumbs page-header__breadcrumbs breadcrumbs_centered">
-					<a href="/" class="breadcrumbs__item text-link">Главная</a>
-					<span class="breadcrumbs__separator">›</span>
-					<span class="breadcrumbs__item breadcrumb__item_active">Продаж</span>
-				</nav>
-			</div>
+      <nav aria-label="Breadcrumb" class="breadcrumbs tg-breadcrumbs breadcrumbs_centered sell-product__breadcrumbs">
+        <a href="/" class="breadcrumbs__item text-link">Главная</a>
+        <span class="breadcrumbs__separator">›</span>
+        <span class="breadcrumbs__item breadcrumb__item_active">Продаж</span>
+      </nav>
 
       <div class="sell-product-start__content">
         <img src="./img/sell-product/start-image.png" class="sell-product-start__image" />
@@ -25,15 +23,56 @@ import Layout from '../layouts/Layout.astro'
           <hr class="sell-product__separator">
           
           <div class="sell-product__block sell-product__block_padding-big">
-            <input class="sell-product__radio" type="radio" name="category">
-            <input class="sell-product__radio" type="radio" name="category">
+            <div class="sell-product-start__category">
+              <div class="sell-product-start__category-label">Категорія</div>
+
+              <div class="sell-product__radios">
+                <div class="sell-product__radio-box">
+                  <input class="sell-product__radio" id="people-category-female" type="radio" name="people-category">
+                  <label for="people-category-female">Жіноче</label>
+                </div>
+
+                <div class="sell-product__radio-box">
+                  <input class="sell-product__radio" id="people-category-male" type="radio" name="people-category" checked>
+                  <label for="people-category-male">Чоловіче</label>
+                </div>
+
+                <div class="sell-product__radio-box">
+                  <input class="sell-product__radio" id="people-category-child" type="radio" name="people-category">
+                  <label for="people-category-child">Дитяче</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="sell-product-start__selects">
+              <select 
+                class="sell-product__select sell-product__select_searchable" 
+                name="item-category" 
+                data-sell-product-select
+                data-sell-product-select-searchable
+              >
+                <option value="XS" disabled selected>Виберіть категорію товару</option>
+                <option value="outerwear">Верхній одяг</option>
+                <option value="tops">Верх</option>
+                <option value="bottoms">Низ</option>
+                <option value="suits-jumpsuits">Костюми та комбінезони</option>
+                <option value="dresses">Сукні</option>
+                <option value="underwear-homewear">Білизна та домашній одяг</option>
+                <option value="shoes">Взуття</option>
+                <option value="accessories">Аксесуари</option>
+              </select>
+
+              <div class="sell-product__input">
+                <input class="sell-product__input-control" placeholder="Введіть назву бренду" type="text">
+              </div>
+            </div>
 
             <button class="btn btn_block btn_md btn_rect btn_primary uppercase">Далі</button>
           </div>
         </div>
       </div>
 
-      <div class="sell-product__form">
+      <!-- <div class="sell-product__form">
         <div class="sell-product__block sell-product__field sell-product__block_padding-big">
           <div class="sell-product__property">
             <h4 class="tg-h4 sell-product__property-name">Розмір</h4>
@@ -60,8 +99,8 @@ import Layout from '../layouts/Layout.astro'
 						</select>
 
           </div>
-       </div>
-      </div>
+        </div>
+      </div> -->
 		</div>
 	</div>
 </Layout>
