@@ -5154,3 +5154,50 @@ ul.article-list {
 		}
 	}
 }
+
+.sell-product-final {
+	&__form {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 80px 20px;
+	}
+	&__pretitle {
+		color: #626262;
+		margin-bottom: 20px;
+		text-align: center;
+	}
+	&__title {
+		font-size: 24px;
+		font-weight: 600;
+		line-height: 1.3;
+		margin-bottom: 40px;
+		text-align: center;
+	}
+	&__button {
+		padding: 10px 16px;
+	}
+
+	@media (max-width: config.$mbpT) {
+		&__form {
+			padding: 40px 20px;
+		}
+		&__title {
+			max-width: 400px;
+			font-size: 20px;
+			line-height: 1.4;
+			margin-bottom: 30px;
+		}
+		&__button {
+			padding: 13px 16px;
+		}
+	}
+	@media (max-width: config.$mbpM) {
+		&__form {
+			padding: 30px 20px;
+		}
+		&__title {
+			font-size: 16px;
+		}
+	}
+}

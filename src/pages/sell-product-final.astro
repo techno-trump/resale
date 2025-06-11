@@ -1,0 +1,54 @@
+---
+import Layout from '../layouts/Layout.astro'
+
+---
+<Layout title="ReSale Sell" description="Sell">
+	<div class="light-bg section-space-bottom">
+		<div class="container sell-product__container">
+      <nav aria-label="Breadcrumb" class="breadcrumbs tg-breadcrumbs breadcrumbs_centered sell-product__breadcrumbs">
+        <a href="/" class="breadcrumbs__item text-link">Главная</a>
+        <span class="breadcrumbs__separator">›</span>
+        <span class="breadcrumbs__item breadcrumb__item_active">Продаж</span>
+      </nav>
+
+      <div class="sell-product__header">
+        <h2 class="tg-h2 sell-product__title">100% Capri</h2>
+        <div class="sell-product__subtitle">Для нього - Взуття</div>
+      </div>
+
+      <div class="sell-product__progress">
+        <div class="sell-product__progress-item sell-product__progress-item_passed">
+          <div class="sell-product__progress-item-point"></div>
+          <div class="sell-product__progress-item-text">Інформація</div>
+        </div>
+
+        <div class="sell-product__progress-line sell-product__progress-line_filled"></div>
+
+        <div class="sell-product__progress-item sell-product__progress-item_passed">
+          <div class="sell-product__progress-item-point"></div>
+          <div class="sell-product__progress-item-text">Фотографії</div>
+        </div>
+
+        <div class="sell-product__progress-line sell-product__progress-line_filled"></div>
+
+        <div class="sell-product__progress-item sell-product__progress-item_passed">
+          <div class="sell-product__progress-item-point"></div>
+          <div class="sell-product__progress-item-text">Опис</div>
+        </div>
+
+        <div class="sell-product__progress-line sell-product__progress-line_filled"></div>
+
+        <div class="sell-product__progress-item sell-product__progress-item_passed sell-product__progress-item_current">
+          <div class="sell-product__progress-item-point"></div>
+          <div class="sell-product__progress-item-text">Стан</div>
+        </div>
+      </div>
+
+      <div class="sell-product__form sell-product-final__form">
+        <h5 class="tg-h5 sell-product-final__pretitle">Ваш номер товара: №5435342</h5>
+        <div class="sell-product-final__title">Ваш товар відправлено на розгляд, очікуйте на публікацію.</div>
+        <button class="btn btn_primary btn_round-corners uppercase sell-product-final__button">Продовжити покупки</button>
+      </div>
+		</div>
+	</div>
+</Layout>
