@@ -4531,6 +4531,10 @@ ul.article-list {
 		font-weight: 500;
 		color: #626262;
 		line-height: 1.5;
+
+		&_price {
+			max-width: 730px;
+		}
 	}
 	&__separator {
 		width: 100%;
@@ -4593,6 +4597,9 @@ ul.article-list {
 		&__property-required,
 		&__property-optional {
 			font-size: 14px;
+		}
+		&__field_without-property &__property {
+			display: none;
 		}
 		&__value {
 			flex: 0 0 auto;
@@ -4750,12 +4757,26 @@ ul.article-list {
 		align-items: center;
 		gap: 20px;
 
+		&_multiple {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 40px;
+		}
+
+		@media (max-width: config.$mbpT) {
+			&_multiple {
+				grid-template-columns: 1fr;
+			}
+		}
 		@media (max-width: config.$mbpM) {
 			flex-direction: column;
 			gap: 25px;
 
 			&_nowrap {
 				flex-direction: row;
+			}
+			&_multiple {
+				gap: 30px;
 			}
 		}
 	}
@@ -4767,6 +4788,10 @@ ul.article-list {
 		display: flex;
 		align-items: center;
 		gap: 10px;
+
+		&_expand {
+			align-items: flex-start;
+		}
 
 		label {
 			font-size: 18px;
@@ -4781,12 +4806,15 @@ ul.article-list {
 		}
 	}
 	&__radio {
+		--size: 20px;
+
 		appearance: none;
 		-webkit-appearance: none;
 		-moz-appearance: none;
 
-		width: 20px;
-		height: 20px;
+		width: var(--size);
+		height: var(--size);
+		flex: 0 0 var(--size);
 		border-radius: 50%;
 
 		position: relative;
@@ -4817,6 +4845,38 @@ ul.article-list {
 			&::after {
 				background-color: var(--text-primary);
 			}
+		}
+	}
+	&__radio-title {
+		font-size: 18px;
+		font-weight: 500;
+		line-height: 1;
+		color: #1E1E1E;
+		
+		@media (max-width: config.$mbpM) {
+			font-size: 12px;
+			font-weight: 600;
+			line-height: 1.5;
+		}
+	}
+	&__radio-text {
+		margin-top: 15px;
+
+		font-size: 14px;
+		font-weight: 500;
+		line-height: 1.3;
+		color: #626262;
+
+		@media (max-width: config.$mbpT) {
+			margin-top: 10px;
+
+			br {
+				display: none;
+			}
+		}
+		@media (max-width: config.$mbpM) {
+			font-size: 12px;
+			line-height: 1.5;
 		}
 	}
 
