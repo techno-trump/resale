@@ -4573,17 +4573,16 @@ ul.article-list {
 		}
 		&__field {
 			flex-direction: column;
-
-			&_without-property {
-				gap: 0px;
-			}
 		}
-		&__block_padding-small &__field {
+		&__block_padding-small {
 			gap: 25px;
 		}
-		&__block_padding-medium &__field,
-		&__block_padding-big &__field {
+		&__block_padding-medium,
+		&__block_padding-big {
 			gap: 40px;
+		}
+		&__field_without-property {
+			gap: 0px;
 		}
 		&__property {
 			flex: 0 0 auto;
@@ -4621,12 +4620,15 @@ ul.article-list {
 				padding-bottom: 0;
 			}
 		}
-		&__block_padding-small &__field {
+		&__block_padding-small {
 			gap: 20px;
 		}
-		&__block_padding-medium &__field,
-		&__block_padding-big &__field {
+		&__block_padding-medium,
+		&__block_padding-big {
 			gap: 30px;
+		}
+		&__field_without-property {
+			gap: 0px;
 		}
 		&__property-name {
 			font-size: 16px;
@@ -4662,14 +4664,15 @@ ul.article-list {
 		justify-content: space-between;
 		align-items: center;
 
-		padding: 20px 20px 15px 20px;
 		border: 1px solid #13131336;
-
-		@media (max-width: config.$mbpM) {
-			padding: 15px;
-		}
+		
 	}
 	&__input-control {
+		display: block;
+		width: 100%;
+
+		padding: 20px 20px 15px 20px;
+
 		color: #131313;
 		font-size: 16px;
 		font-weight: 500;
@@ -4678,8 +4681,9 @@ ul.article-list {
 		&::placeholder {
 			color: #131313;
 		}
-
+		
 		@media (max-width: config.$mbpM) {
+			padding: 15px;
 			font-weight: 600;
 			font-size: 12px;
 		}
@@ -4705,8 +4709,10 @@ ul.article-list {
 				max-width: 250px;
 			}
 		}
-
+		
 		.select__options-list {
+			max-height: 460px;
+			overflow-y: auto;
 			display: grid;
 			grid-template-columns: repeat(var(--options-columns, 1), 1fr);
 
@@ -4747,6 +4753,10 @@ ul.article-list {
 		@media (max-width: config.$mbpM) {
 			flex-direction: column;
 			gap: 25px;
+
+			&_nowrap {
+				flex-direction: row;
+			}
 		}
 	}
 	&__radios &__radio-box {
@@ -4765,6 +4775,7 @@ ul.article-list {
 				font-size: 16px;
 			}
 			@media (max-width: config.$mbpM) {
+				font-weight: 600;
 				font-size: 12px;
 			}
 		}
@@ -5011,6 +5022,9 @@ ul.article-list {
 		display: flex;
 		flex-direction: column;
 		gap: 20px;
+	}
+	&__button {
+		padding: 13px 20px;
 	}
 
 	@media (max-width: config.$mbpT) {

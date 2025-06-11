@@ -85,9 +85,10 @@ document.querySelectorAll(`[data-sell-product-select]`).forEach(elem => {
 
 	new TomSelect(elem, options);
 
-	// add options columns variable
+	// additional settings
 	const customSelectElement = elem.nextElementSibling
 	if (customSelectElement) {
 		customSelectElement.style.setProperty('--options-columns', optionsColumns)
+		customSelectElement.querySelector('.select__dropdown').setAttribute('data-lenis-prevent', '');
 	}
 });
