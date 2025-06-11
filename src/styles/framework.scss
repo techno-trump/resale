@@ -4851,6 +4851,8 @@ ul.article-list {
 		label {
 			font-size: 18px;
 			font-weight: 500;
+			cursor: pointer;
+
 			@media (max-width: config.$mbpT) {
 				font-size: 16px;
 			}
