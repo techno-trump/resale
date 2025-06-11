@@ -4893,6 +4893,7 @@ ul.article-list {
 		}
 	}
 	&__image-box {
+		position: relative;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -4920,21 +4921,13 @@ ul.article-list {
 		justify-content: center;
 		align-items: center;
 
-		img {
-			height: 100%;
-			object-fit: cover;
-		}
-
-		&_upload {
+		&_upload:not(.sell-product__image_uploaded) {
 			border-image-source: url('./img/sell-product/image-border.svg');
 			border-image-slice: 4;
 			border-style: solid;
 			border-image-width: 4px;
 		}
-		&_placeholder &-icon {
-			height: var(--icon-size);
-		}
-
+		
 		@media (max-width: config.$mbpT) {
 			--size: 200px;
 			--icon-size: 50px;
@@ -4943,6 +4936,20 @@ ul.article-list {
 			--size: 120px;
 			--icon-size: 30px;
 		}
+	}
+	&__image-icon {
+		height: var(--icon-size);
+		user-select: none;
+	}
+	&__image_uploaded &__image-icon {
+		display: none;
+	}
+	&__image-preview {
+		height: 100%;
+		object-fit: cover;
+	}
+	&__image:not(.sell-product__image_uploaded) &__image-preview {
+		display: none;
 	}
 	&__image-remove {
 		--size: 40px;
@@ -4954,6 +4961,8 @@ ul.article-list {
 		position: absolute;
 		top: var(--icon-padding);
 		right: var(--icon-padding);
+		z-index: 2;
+
 		cursor: pointer;
 
 		background-color: #1E1E1E;
@@ -4998,7 +5007,7 @@ ul.article-list {
 			--icon-padding: 10px;
 		}
 	}
-	&__image:hover &__image-remove {
+	&__image_uploaded:hover &__image-remove {
 		display: block;
 	}
 	&__image-label {
@@ -5012,6 +5021,16 @@ ul.article-list {
 		@media (max-width: config.$mbpM) {
 			font-size: 12px;
 		}
+	}
+	&__image-input {
+		position: absolute;
+		z-index: 1;
+		top: 0;
+		left: 0;
+
+		width: 100%;
+		height: 100%;
+		opacity: 0;
 	}
 
 	&__textbox {

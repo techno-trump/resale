@@ -92,3 +92,51 @@ document.querySelectorAll(`[data-sell-product-select]`).forEach(elem => {
 		customSelectElement.querySelector('.select__dropdown').setAttribute('data-lenis-prevent', '');
 	}
 });
+
+// Selector for image uploading
+// data-sell-product-upload - specifies that current element is upload
+
+document.querySelectorAll('[data-sell-product-upload]').forEach(element => {
+	// indicator this file is uploaded
+	const uploadedModifier = 'sell-product__image_uploaded'
+
+	const preview = element.querySelector('[data-sell-product-upload-preview]')
+	const remove = element.querySelector('[data-sell-product-upload-remove]')
+	const input = element.querySelector('[data-sell-product-upload-input]')
+
+	// handle drop
+	element.addEventListener('drop', (e) => {
+		const files = Array.from(e?.dataTransfer?.files ?? [])
+		const image = files.find(file => file.type.startsWith('image/'))
+		if (!image) return
+
+		const url = URL.createObjectURL(image)
+		preview.setAttribute('src', url)
+
+		// indicate upload
+		element.classList.add(uploadedModifier)
+	})
+
+	// handle input upload
+	input.addEventListener('change', (e) => {
+		const files = Array.from(e?.target?.files ?? [])
+		const image = files.find(file => file.type.startsWith('image/'))
+		if (!image) return
+
+		const url = URL.createObjectURL(image)
+		preview.setAttribute('src', url)
+
+		// indicate upload
+		element.classList.add(uploadedModifier)
+	})
+
+	// handle remove 
+	remove.addEventListener('click', (e) => {
+		// to prevent input clicking
+		e.stopPropagation()
+
+		preview.removeAttribute('src')
+
+		element.classList.remove(uploadedModifier)
+	})
+})
