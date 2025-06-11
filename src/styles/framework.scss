@@ -4477,6 +4477,12 @@ ul.article-list {
 	&__block {
 		width: 100%;
 
+		&_padding-small {
+			padding: 40px 0px;
+		}
+		&_padding-medium {
+			padding: 40px 0px;
+		}
 		&_padding-big {
 			padding: 60px 0px;
 		}
@@ -4548,6 +4554,12 @@ ul.article-list {
 			padding: 40px;
 		}
 		&__block {
+			&_padding-small {
+			padding: 40px 0px;
+		}
+		&_padding-medium {
+			padding: 40px 0px;
+		}
 			&_padding-big {
 				padding: 40px 0px;
 			}
@@ -4565,6 +4577,13 @@ ul.article-list {
 			&_without-property {
 				gap: 0px;
 			}
+		}
+		&__block_padding-small &__field {
+			gap: 25px;
+		}
+		&__block_padding-medium &__field,
+		&__block_padding-big &__field {
+			gap: 40px;
 		}
 		&__property {
 			flex: 0 0 auto;
@@ -4585,6 +4604,12 @@ ul.article-list {
 			padding: 30px 20px;
 		}
 		&__block {
+			&_padding-small {
+				padding: 30px 0px;
+			}
+			&_padding-medium {
+				padding: 30px 0px;
+			}
 			&_padding-big {
 				padding: 30px 0px;
 			}
@@ -4595,6 +4620,13 @@ ul.article-list {
 			&:last-child {
 				padding-bottom: 0;
 			}
+		}
+		&__block_padding-small &__field {
+			gap: 20px;
+		}
+		&__block_padding-medium &__field,
+		&__block_padding-big &__field {
+			gap: 30px;
 		}
 		&__property-name {
 			font-size: 16px;
