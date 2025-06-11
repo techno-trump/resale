@@ -9,6 +9,7 @@ import TomSelect from 'tom-select'
 // init selects with TomSelect
 document.querySelectorAll(`[data-sell-product-select]`).forEach(elem => {
   const searchable = elem.hasAttribute('data-sell-product-select-searchable')
+	const inline = elem.hasAttribute('data-sell-product-select-inline')
 	const optionsColumns = Number(elem.getAttribute('data-sell-product-select-options-columns') ?? 1)
   
 	// configuration for TomSelect

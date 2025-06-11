@@ -127,6 +127,48 @@ import Layout from '../layouts/Layout.astro'
             <div class="sell-product__message sell-product__message_price">
               Введіть ціну товару. Поруч буде відображена сума, яку ви отримаєте в разі успішного продажу товару. Виплата здійснюється у гривні за комерційним курсом на день оплати товару. Мінімальна ціна товару — 2,140 ГРН
             </div>
+
+            <div class="sell-product__price">
+              <div class="sell-product__price-field">
+                <label class="sell-product__price-field-label" for="sell-product-amount-sell">Ціна на сайті</label>
+
+                <div class="sell-product__input">
+                  <input id="sell-product-amount-sell" class="sell-product__input-control" placeholder="0" type="text">
+                  
+                  <select 
+                    class="sell-product__select sell-product__select_searchable sell-product__select_filled sell-product__select_inline" 
+                    name="currency-sell" 
+                    data-sell-product-select
+                    data-sell-product-select-searchable
+                  >
+                    <option value="UAH-1">UAH</option>
+                    <option value="UAH-2">UAH</option>
+                    <option value="UAH-3">UAH</option>
+                    <option value="UAH-4">UAH</option>                    
+                  </select>
+                </div>
+              </div>
+
+              <div class="sell-product__price-field">
+                <label class="sell-product__price-field-label" for="sell-product-amount-receive">Ви отримаєте</label>
+
+                <div class="sell-product__input">
+                  <input id="sell-product-amount-receive" class="sell-product__input-control" placeholder="0" type="text">
+                  
+                  <select 
+                    class="sell-product__select sell-product__select_searchable sell-product__select_filled sell-product__select_inline" 
+                    name="currency-receive" 
+                    data-sell-product-select
+                    data-sell-product-select-searchable
+                  >
+                    <option value="UAH-1">UAH</option>
+                    <option value="UAH-2">UAH</option>
+                    <option value="UAH-3">UAH</option>
+                    <option value="UAH-4">UAH</option>                    
+                  </select>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
