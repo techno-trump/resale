@@ -4695,6 +4695,24 @@ ul.article-list {
 			font-size: 12px;
 		}
 	}
+	&__input-badge {
+		align-self: stretch;
+		padding: 0px 20px;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		background-color: #F5F6F8;
+		border: none;
+
+		font-size: 16px;
+		font-weight: 500;
+
+		@media (max-width: config.$mbpM) {
+			font-weight: 600;
+		}
+	}
 
 	&__select {
 		.select__control {
@@ -5141,9 +5159,6 @@ ul.article-list {
 		@media (max-width: config.$mbpM) {
 			font-weight: 600;
 		}
-	}
-	&__price-field &__select {
-		flex: 0 0 105px;
 	}
 }
 
